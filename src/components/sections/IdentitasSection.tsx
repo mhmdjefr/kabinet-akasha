@@ -75,29 +75,33 @@ export default function IdentitasSection() {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[284.25px] top-[263px]" data-node-id="1:691">
+        <div
+          className="absolute inset-0 flex items-center justify-center gap-[23px] px-6"
+          data-node-id="1:691"
+          data-name="Identitas Kabinet"
+        >
           <div
-            className="absolute h-[469px] left-[284.25px] top-[263px] w-[344.259px]"
+            className="relative h-[469px] w-[344.259px] shrink-0"
             data-node-id="1:692"
           >
             <img
-              alt=""
+              alt="Logo Kabinet Akasha"
               className="absolute block inset-0 max-w-none size-full"
               src={imgGroup48099463}
             />
           </div>
           <div
-            className="[word-break:break-word] absolute contents leading-[normal] left-[651.51px] text-black top-[417.8px] whitespace-nowrap"
+            className="[word-break:break-word] leading-[normal] text-black whitespace-nowrap"
             data-node-id="1:702"
           >
             <p
-              className="-translate-x-1/2 [text-box-edge:cap_alphabetic] [text-box-trim:trim-both] absolute font-['Plus_Jakarta_Sans:Medium'] font-medium left-[786.51px] text-[72.241px] text-center top-[417.8px]"
+              className="font-['Plus_Jakarta_Sans:Medium'] font-medium text-[72.241px] leading-[1.1]"
               data-node-id="1:703"
             >
               Kabinet
             </p>
             <p
-              className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] absolute font-['Audiowide:Regular'] left-[651.51px] not-italic text-[101.823px] top-[507.03px]"
+              className="mt-[6px] font-['Audiowide:Regular'] not-italic text-[101.823px] leading-[1]"
               data-node-id="1:704"
             >
               AKASHA
