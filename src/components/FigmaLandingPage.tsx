@@ -39,7 +39,6 @@ export default function FigmaLandingPage() {
           transformOrigin: "top center",
           width: 1440,
           height: 12456 * scale,
-          marginBottom: scale < 1 ? -(12456 * (1 - scale)) : 0,
         }}
         className="shrink-0 relative transition-transform duration-75"
       >
