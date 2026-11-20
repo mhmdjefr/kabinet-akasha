@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-violet: #564cf8;
+  --color-lime: #cfffa3;
+  --color-pinky: #f982fb;
+  --color-cream: #fdf9f9;
+  --color-ink: #1d1d1d;
+  --color-white: #fdf9f9;
+  --color-black: #1d1d1d;
+  --color-brand-pink: #f982fb;
+  --color-brand-blue: #564cf8;
+  --color-brand-lime: #cfffa3;
+  --color-brand-black: #1d1d1d;
+
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-inter), Arial, sans-serif;
+  --font-hand: var(--font-gochi-hand), cursive;
+
+  --shadow-brutal: 6px 6px 0 0 #1d1d1d;
+  --shadow-brutal-sm: 4px 4px 0 0 #1d1d1d;
+  --shadow-brutal-lg: 12px 12px 0 0 #1d1d1d;
+  --shadow-brutal-pink: 8px 8px 0 0 #f982fb;
+  --shadow-brutal-lime: 8px 8px 0 0 #cfffa3;
+  --shadow-brutal-blue: 6px 6px 0 0 #564cf8;
+
+  --border-width-brutal: 3px;
+
+  --animate-marquee: marquee 22s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-violet font-sans text-ink antialiased;
+}
+
+::selection {
+  @apply bg-lime text-ink;
+}
+
+.headline {
+  @apply font-display font-black uppercase leading-[0.95] tracking-tight;
+}
