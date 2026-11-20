@@ -1,48 +1,82 @@
-import Image from "next/image";
-import Doodle from "./Doodle";
+"use client";
 
-// Hero memakai asset full-section hasil export Figma (komposisi + teks sudah final).
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
-    <section className="relative aspect-[4/3] overflow-hidden bg-violet sm:aspect-[2/1] lg:aspect-auto lg:min-h-[100svh]">
-      <Image
-        src="/assets/hero-section.png"
-        alt="Kabinet Akasha — Coming Soon"
-        fill
-        priority
-        sizes="100vw"
-        className="object-contain object-center lg:object-cover"
-      />
-
-      {/* Video auto-play di dalam area greenscreen */}
-      <div
-        className="pointer-events-none absolute left-1/2 top-[50.8%] z-10 aspect-[2089/1059] w-[32.24%] overflow-hidden lg:h-[max(16.34vw,39.22svh)] lg:w-[max(32.24vw,77.38svh)]"
-        style={{
-          transform: "translate(-50%, -50%)",
-          clipPath: "ellipse(50% 50% at 50% 50%)",
-        }}
-      >
-        <video
-          src="/assets/video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="h-full w-full object-cover"
+    <section id="hero" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 md:py-24">
+      {/* Background Graphic */}
+      <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+        <Image
+          src="/assets/bg-hero.png"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover object-center opacity-40 mix-blend-multiply"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cream/50 to-cream" />
       </div>
 
-      <Doodle name="doodle-22.png" className="absolute left-[3%] top-[10%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] -rotate-12 opacity-40" />
-      <Doodle name="doodle-23.png" className="absolute left-[13%] top-[8%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] rotate-6 opacity-40" />
-      <Doodle name="doodle-24.png" className="absolute left-[24%] top-[12%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] -rotate-12 opacity-40" />
-      <Doodle name="doodle-25.png" className="absolute left-[35%] top-[8%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] rotate-12 opacity-40" />
-      <Doodle name="doodle-26.png" className="absolute right-[35%] top-[8%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] rotate-6 opacity-40" />
-      <Doodle name="doodle-27.png" className="absolute right-[24%] top-[12%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] -rotate-6 opacity-40" />
-      <Doodle name="doodle-28.png" className="absolute right-[13%] top-[8%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] rotate-12 opacity-40" />
-      <Doodle name="doodle-29.png" className="absolute right-[3%] top-[10%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] rotate-6 opacity-40" />
-      <Doodle name="doodle-30.png" className="absolute left-[45%] top-[8%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] -rotate-12 opacity-40" />
-      <Doodle name="doodle-31.png" className="absolute right-[45%] top-[8%] z-20 w-[clamp(1.5rem,3vw,2.5rem)] rotate-6 opacity-40" />
+      <div className="mx-auto max-w-7xl px-6 w-full">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-6">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 rounded-full border border-violet/30 bg-violet/10 px-4 py-1.5 text-xs font-bold text-violet backdrop-blur-sm"
+          >
+            <span>✨</span>
+            <span>SELAMAT DATANG DI RUANG TEMU & AKSI</span>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-ink leading-[1.05]"
+          >
+            MEMBENTANGKAN RUANG, <br />
+            <span className="text-violet underline decoration-wavy decoration-pinky underline-offset-8">
+              MENEBAR KARYA
+            </span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base sm:text-lg md:text-xl text-zinc-600 max-w-2xl font-medium leading-relaxed"
+          >
+            Kabinet Akasha hadir sebagai akselerator gerak mahasiswa—menyatukan keberagaman aspirasi, membakar semangat inovasi, dan mengukir jejak langkah bersama.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-wrap items-center justify-center gap-4 pt-4"
+          >
+            <Link
+              href="#visimisi"
+              className="rounded-2xl bg-violet px-7 py-3.5 text-sm font-bold text-white shadow-brutal transition-transform hover:-translate-y-0.5 active:translate-y-0"
+            >
+              Lihat Visi & Misi
+            </Link>
+            <Link
+              href="#kandidat"
+              className="rounded-2xl bg-white border-2 border-ink px-7 py-3.5 text-sm font-bold text-ink shadow-brutal transition-transform hover:-translate-y-0.5 active:translate-y-0"
+            >
+              Kenali Paslon 01
+            </Link>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,0 +1,33 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1440" height="265" viewBox="0 0 1440 265" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Rectangle 40235" filter="url(#filter0)">
+<path d="M0 0H1440V265H0V0Z" fill="url(#pattern0_0_44)"/>
+<path d="M0 0H1440V265H0V0Z" fill="url(#paint0_linear_0_44)"/>
+<path d="M0 0H1440V265H0V0Z" fill="#564CF8" fill-opacity="0.24" style="mix-blend-mode:color"/>
+</g>
+<defs>
+<filter id="filter0" x="0" y="0"  width="1440" height="265" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="8811" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_0_44">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<pattern id="pattern0_0_44" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_0_44" transform="matrix(0.000244141 0 0 0.00132665 0.148403 -2.16476)"/>
+</pattern>
+<linearGradient id="paint0_linear_0_44" x1="318" y1="162.5" x2="1440" y2="132.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4137E2"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<image id="image0_0_44" data-name="IMG_1260(edit).jpg" width="4096" height="2731" preserveAspectRatio="none" xlink:href="data:application/octet-stream;base64,"/>
+</defs>
+</svg>
