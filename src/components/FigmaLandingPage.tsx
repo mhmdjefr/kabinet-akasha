@@ -44,7 +44,7 @@ export default function FigmaLandingPage() {
         className="shrink-0 relative transition-transform duration-75"
       >
         <div
-          className="bg-white content-stretch flex flex-col items-start pb-[1055px] relative w-[1440px]"
+          className="bg-white content-stretch flex flex-col items-start relative w-[1440px]"
           data-node-id="1:648"
           data-name="Campaign Website - Landing Page — Rapih"
         >

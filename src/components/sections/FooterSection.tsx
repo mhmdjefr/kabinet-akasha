@@ -9,7 +9,7 @@ const scrollToSection = (id: string) => {
 export default function FooterSection() {
   return (
 <div
-        className="absolute bottom-0 h-[1055px] left-0 right-0"
+        className="h-[1055px] relative shrink-0 w-full"
         data-node-id="1:885"
         data-name="09 · Penutup & Footer"
       >
