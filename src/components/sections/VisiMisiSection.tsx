@@ -17,7 +17,8 @@ import {
 export default function VisiMisiSection() {
   return (
 <div
-        className="h-[2782px] relative shrink-0 w-full"
+        id="visi-misi"
+        className="h-[4468px] md:h-[2782px] relative shrink-0 w-full bg-[#171717]"
         data-node-id="1:774"
         data-name="04 · Visi & Misi"
       >
@@ -82,12 +83,12 @@ export default function VisiMisiSection() {
           </div>
         </div>
         <div
-          className="absolute h-[1610px] left-[93.5px] top-[1076px] w-[1253px]"
+          className="absolute left-[93.5px] top-[1076px] w-[1253px] grid grid-cols-1 md:grid-cols-2 gap-x-[91px] gap-y-[76px] justify-items-center"
           data-node-id="1:782"
           data-name="Misi · 2 × 2 / margin simetris 94px"
         >
           <div
-            className="absolute h-[767px] left-0 top-0 w-[581px]"
+            className="relative h-[767px] w-[581px]"
             data-node-id="1:783"
             data-name="01 · Transparansi"
           >
@@ -147,7 +148,7 @@ export default function VisiMisiSection() {
             </p>
           </div>
           <div
-            className="absolute h-[767px] left-[672px] top-0 w-[581px]"
+            className="relative h-[767px] w-[581px]"
             data-node-id="1:790"
             data-name="02 · Kesempatan Setara"
           >
@@ -207,7 +208,7 @@ export default function VisiMisiSection() {
             </p>
           </div>
           <div
-            className="absolute h-[767px] left-0 top-[843px] w-[581px]"
+            className="relative h-[767px] w-[581px]"
             data-node-id="1:797"
             data-name="03 · Bertumbuh Bersama"
           >
@@ -267,7 +268,7 @@ export default function VisiMisiSection() {
             </p>
           </div>
           <div
-            className="absolute h-[767px] left-[672px] top-[843px] w-[581px]"
+            className="relative h-[767px] w-[581px]"
             data-node-id="1:804"
             data-name="04 · Kemandirian"
           >

@@ -17,10 +17,12 @@ import MobileNavbar from "./sections/MobileNavbar";
 
 export default function FigmaLandingPage() {
   const [scale, setScale] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
+      setIsMobile(screenWidth < 768);
       if (screenWidth < 1440) {
         setScale(screenWidth / 1440);
       } else {
@@ -39,7 +41,7 @@ export default function FigmaLandingPage() {
       <div
         style={{
           width: 1440 * scale,
-          height: 12456 * scale,
+          height: (isMobile ? 14142 : 12456) * scale,
         }}
         className="desktop-canvas shrink-0 relative transition-transform duration-75"
       >
@@ -53,7 +55,7 @@ export default function FigmaLandingPage() {
           data-name="Campaign Website - Landing Page — Rapih"
         >
           {/* 00 · Background Multi-layer Overlay */}
-          <BackgroundOverlay />
+          <BackgroundOverlay isMobile={isMobile} />
 
           {/* 01 · Hero */}
           <HeroSection />

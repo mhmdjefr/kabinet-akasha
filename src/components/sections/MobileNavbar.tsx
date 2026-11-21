@@ -1,99 +1,98 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-import { akashaLogo } from "@/lib/assets";
+import { Home, Orbit, LayoutGrid, Lightbulb } from "lucide-react";
+import { motion } from "framer-motion";
 
-const links = [
-  ["Beranda", "beranda"],
-  ["Program Unggulan", "program-unggulan"],
-  ["Gerakan Inovasi", "gerakan-inovasi"],
-  ["Filosofi Logo", "filosofi-logo"],
-] as const;
+interface NavItem {
+  id: string;
+  label: string;
+  icon: typeof Home;
+}
+
+const navItems: NavItem[] = [
+  { id: "beranda", label: "Beranda", icon: Home },
+  { id: "program-unggulan", label: "Program Unggulan", icon: Orbit },
+  { id: "gerakan-inovasi", label: "Gerakan Inovasi", icon: LayoutGrid },
+  { id: "filosofi-logo", label: "Filosofi Logo", icon: Lightbulb },
+];
 
 export default function MobileNavbar() {
-  const [open, setOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>("beranda");
 
-  useEffect(() => {
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
-    };
-    const closeOnDesktop = () => {
-      if (window.innerWidth >= 768) setOpen(false);
-    };
-
-    window.addEventListener("keydown", closeOnEscape);
-    window.addEventListener("resize", closeOnDesktop);
-
-    return () => {
-      window.removeEventListener("keydown", closeOnEscape);
-      window.removeEventListener("resize", closeOnDesktop);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [open]);
-
-  const navigate = (id: string) => {
-    setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const scrollTo = (id: string) => {
+    setActiveTab(id);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
-  return (
-    <div className="fixed inset-x-0 top-0 z-[100] min-[768px]:hidden">
-      <header className="relative flex h-[67px] items-center bg-[#1d1d1d] pl-[18px] pr-[78px] shadow-[0_6px_18px_rgba(0,0,0,0.28)] [clip-path:polygon(0_0,100%_0,100%_100%,40%_100%,37%_87%,0_87%)]">
-        <button onClick={() => navigate("beranda")} className="relative z-10 flex items-center gap-[7px] text-left" aria-label="Ke beranda">
-          <img src={akashaLogo} alt="Logo Kabinet Akasha" className="h-[48px] w-[35px] object-contain" />
-          <span className="leading-none text-white"><small className="block text-[11px] font-medium">Kabinet</small><strong className="text-[16px]">Akasha</strong></span>
-        </button>
-        <button
-          type="button"
-          aria-label={open ? "Tutup menu" : "Buka menu"}
-          aria-expanded={open}
-          aria-controls="mobile-navigation"
-          onClick={() => setOpen((value) => !value)}
-          className="absolute right-[16px] top-0 z-20 grid h-[67px] w-[62px] place-items-center bg-[#cfffa3] text-[#1d1d1d] transition active:brightness-90 [clip-path:polygon(25%_0,100%_0,75%_100%,0_100%)]"
-        >
-          {open ? <X size={23} /> : <Menu size={23} />}
-        </button>
-      </header>
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200;
 
-      {open && (
-        <>
-          <button
-            type="button"
-            aria-label="Tutup navigasi"
-            onClick={() => setOpen(false)}
-            className="fixed inset-x-0 bottom-0 top-[67px] z-10 bg-black/30"
-          />
-          <div
-            id="mobile-navigation"
-            className="relative z-20 max-h-[calc(100dvh-67px)] overflow-y-auto border-b-2 border-[#564cf8] bg-[#1d1d1d] px-5 pb-6 pt-3 shadow-2xl"
-          >
-            <nav aria-label="Navigasi mobile" className="grid gap-1">
-              {links.map(([label, id]) => (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => navigate(id)}
-                  className="flex min-h-12 items-center justify-between border-b border-white/10 px-2 text-left text-base font-bold text-white last:border-0"
+      // Check sections from bottom to top
+      for (let i = navItems.length - 1; i >= 0; i--) {
+        const item = navItems[i];
+        const el = document.getElementById(item.id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top) {
+            setActiveTab(item.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="fixed bottom-5 inset-x-0 z-[100] flex justify-center pointer-events-none min-[768px]:hidden px-2">
+      <nav
+        aria-label="Navigasi Bawah Mobile"
+        className="pointer-events-auto flex w-full items-center justify-between gap-1.5 p-1.5 bg-[#17171a]/95 backdrop-blur-md rounded-full border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+      >
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = activeTab === item.id;
+
+          return (
+            <motion.button
+              key={item.id}
+              layout
+              transition={{ type: "spring", stiffness: 450, damping: 32 }}
+              onClick={() => scrollTo(item.id)}
+              aria-label={item.label}
+              className={`flex items-center gap-2 rounded-full cursor-pointer select-none transition-colors duration-200 ${
+                isActive
+                  ? "bg-[#cfffa3] text-black px-4 py-2 font-semibold text-xs tracking-tight shadow-sm"
+                  : "text-white/80 hover:text-white px-2.5 py-2"
+              }`}
+            >
+              <Icon
+                className={`w-[18px] h-[18px] shrink-0 ${
+                  isActive ? "text-black stroke-[2.2]" : "text-white stroke-[1.8]"
+                }`}
+              />
+              {isActive && (
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.18 }}
+                  className="whitespace-nowrap font-medium text-[13px]"
                 >
-                  {label}<span className="text-[#f982fb]">→</span>
-                </button>
-              ))}
-            </nav>
-            <p className="mt-4 text-center text-xs font-medium text-white/60">Ruang untuk Semua, Tumbuh dan Berdiri Bersama</p>
-          </div>
-        </>
-      )}
+                  {item.label}
+                </motion.span>
+              )}
+            </motion.button>
+          );
+        })}
+      </nav>
     </div>
   );
 }

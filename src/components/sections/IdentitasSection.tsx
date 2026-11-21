@@ -59,10 +59,10 @@ export default function IdentitasSection() {
             </div>
           </div>
           <div
-            className="absolute flex h-[1583.35px] items-center justify-center left-[-481.85px] top-[-254.35px] w-[2418.731px]"
+            className="absolute flex h-[1583.35px] items-center justify-center left-[-481.85px] top-[-404.35px] w-[2418.731px]"
             data-node-id="1:690"
           >
-            <div className="flex-none rotate-[18.29deg]">
+            <div className="flex-none rotate-[18.29deg] scale-[1.45]">
               <div
                 className="h-[926.838px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-23.148px_254.35px] mask-size-[2402px_1207px] relative w-[2241.081px]"
                 style={{ maskImage: `url("${identityPhotoMask}")` }}
