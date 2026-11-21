@@ -11,7 +11,7 @@ export default function NavbarSection() {
 
   return (
       <nav
-        className="absolute left-0 top-0 z-50 hidden h-[109px] w-full min-[1024px]:block"
+        className="absolute left-0 top-0 z-50 hidden h-[109px] w-full min-[768px]:block"
         data-node-id="1:923"
         data-name="Navbar"
       >
@@ -30,7 +30,7 @@ export default function NavbarSection() {
 
         {/* Brand / Logo */}
         <div
-          className="absolute left-[48px] top-[24px] z-10 flex h-[60px] items-center gap-[16px] cursor-pointer select-none"
+          className="absolute left-[clamp(18px,3.33vw,48px)] top-[24px] z-10 flex h-[60px] scale-[0.8] min-[1100px]:scale-90 min-[1280px]:scale-100 origin-left items-center gap-[16px] cursor-pointer select-none"
           onClick={() => handleNavClick("beranda")}
           data-node-id="1:927"
           data-name="Identitas Akasha"
@@ -92,7 +92,7 @@ export default function NavbarSection() {
 
         {/* Desktop Menu */}
         <div
-          className="absolute right-[48px] top-[14px] z-10 flex h-[44px] items-center gap-[16px]"
+          className="absolute right-[clamp(14px,3.33vw,48px)] top-[14px] z-10 flex h-[44px] origin-right scale-[0.72] min-[900px]:scale-[0.82] min-[1100px]:scale-90 min-[1280px]:scale-100 items-center gap-[16px]"
           data-node-id="1:944"
           data-name="Menu utama"
         >

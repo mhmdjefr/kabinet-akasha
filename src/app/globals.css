@@ -117,3 +117,12 @@
     scroll-behavior: auto;
   }
 }
+
+@media (max-width: 767px) {
+  #beranda,
+  #filosofi-logo,
+  #program-unggulan,
+  #gerakan-inovasi {
+    scroll-margin-top: 67px;
+  }
+}

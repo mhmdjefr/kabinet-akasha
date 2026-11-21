@@ -21,7 +21,7 @@ export default function FigmaLandingPage() {
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth < 1024) {
+      if (screenWidth < 1440) {
         setScale(screenWidth / 1440);
       } else {
         setScale(1);

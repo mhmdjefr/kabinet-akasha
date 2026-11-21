@@ -18,9 +18,29 @@ export default function MobileNavbar() {
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
+    const closeOnDesktop = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
+
     window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
+    window.addEventListener("resize", closeOnDesktop);
+
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      window.removeEventListener("resize", closeOnDesktop);
+    };
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
 
   const navigate = (id: string) => {
     setOpen(false);
@@ -28,7 +48,7 @@ export default function MobileNavbar() {
   };
 
   return (
-    <div className="fixed inset-x-0 top-0 z-[100] min-[1024px]:hidden">
+    <div className="fixed inset-x-0 top-0 z-[100] min-[768px]:hidden">
       <header className="relative flex h-[67px] items-center bg-[#1d1d1d] pl-[18px] pr-[78px] shadow-[0_6px_18px_rgba(0,0,0,0.28)] [clip-path:polygon(0_0,100%_0,100%_100%,40%_100%,37%_87%,0_87%)]">
         <button onClick={() => navigate("beranda")} className="relative z-10 flex items-center gap-[7px] text-left" aria-label="Ke beranda">
           <img src={imgGroup48099456} alt="Logo Kabinet Akasha" className="h-[48px] w-[35px] object-contain" />
@@ -38,6 +58,7 @@ export default function MobileNavbar() {
           type="button"
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           onClick={() => setOpen((value) => !value)}
           className="absolute right-[16px] top-0 z-20 grid h-[67px] w-[62px] place-items-center bg-[#cfffa3] text-[#1d1d1d] transition active:brightness-90 [clip-path:polygon(25%_0,100%_0,75%_100%,0_100%)]"
         >
@@ -46,16 +67,32 @@ export default function MobileNavbar() {
       </header>
 
       {open && (
-        <div className="border-b-2 border-[#564cf8] bg-[#1d1d1d] px-5 pb-6 pt-3 shadow-2xl">
-          <nav aria-label="Navigasi mobile" className="grid gap-1">
-            {links.map(([label, id]) => (
-              <button key={id} onClick={() => navigate(id)} className="flex min-h-12 items-center justify-between border-b border-white/10 px-2 text-left text-base font-bold text-white last:border-0">
-                {label}<span className="text-[#f982fb]">→</span>
-              </button>
-            ))}
-          </nav>
-          <p className="mt-4 text-center text-xs font-medium text-white/60">Ruang untuk Semua, Tumbuh dan Berdiri Bersama</p>
-        </div>
+        <>
+          <button
+            type="button"
+            aria-label="Tutup navigasi"
+            onClick={() => setOpen(false)}
+            className="fixed inset-x-0 bottom-0 top-[67px] z-10 bg-black/30"
+          />
+          <div
+            id="mobile-navigation"
+            className="relative z-20 max-h-[calc(100dvh-67px)] overflow-y-auto border-b-2 border-[#564cf8] bg-[#1d1d1d] px-5 pb-6 pt-3 shadow-2xl"
+          >
+            <nav aria-label="Navigasi mobile" className="grid gap-1">
+              {links.map(([label, id]) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => navigate(id)}
+                  className="flex min-h-12 items-center justify-between border-b border-white/10 px-2 text-left text-base font-bold text-white last:border-0"
+                >
+                  {label}<span className="text-[#f982fb]">→</span>
+                </button>
+              ))}
+            </nav>
+            <p className="mt-4 text-center text-xs font-medium text-white/60">Ruang untuk Semua, Tumbuh dan Berdiri Bersama</p>
+          </div>
+        </>
       )}
     </div>
   );
