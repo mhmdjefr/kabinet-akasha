@@ -41,7 +41,7 @@ export default function FigmaLandingPage() {
           width: 1440 * scale,
           height: 12456 * scale,
         }}
-        className="shrink-0 relative transition-transform duration-75"
+        className="desktop-canvas shrink-0 relative transition-transform duration-75"
       >
         <div
           style={{
