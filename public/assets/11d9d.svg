@@ -1,3 +1,3 @@
 <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1470" height="109" viewBox="0 0 1470 109" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Union" d="M1470 55.0186C1470 63.8551 1462.84 71.0186 1454 71.0186H477.609C473.058 71.0186 468.721 72.9572 465.686 76.3492L441.239 103.669C438.204 107.061 433.867 109 429.316 109H16C7.16343 109 0 101.837 0 93V16C0 7.16345 7.16344 0 16 0H1454C1462.84 0 1470 7.16344 1470 16V55.0186Z" fill="#1D1D1D"/>
+<path id="Union" d="M0 0H1470V71H477.609L441.239 109H0V0Z" fill="#1D1D1D"/>
 </svg>

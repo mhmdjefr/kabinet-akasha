@@ -37,7 +37,7 @@ export default function NavbarSection() {
       </div>
 
       <div
-        className="absolute left-[clamp(18px,3.33vw,48px)] top-[24px] z-10 flex h-[60px] origin-left scale-[0.8] cursor-pointer select-none items-center gap-[16px] min-[1100px]:scale-90 min-[1280px]:scale-100"
+        className="absolute left-[clamp(18px,3.33vw,48px)] top-[21px] z-10 flex h-[60px] origin-left scale-[0.82] cursor-pointer select-none items-center gap-[14px] min-[1100px]:scale-90 min-[1280px]:scale-100"
         onClick={() => navigate("beranda")}
         data-node-id="1:927"
         data-name="Identitas Akasha"
@@ -50,11 +50,11 @@ export default function NavbarSection() {
               src={akashaLogo}
             />
           </div>
-          <div className="col-1 row-1 ml-[48.82px] mt-[14.4px] whitespace-nowrap text-white">
-            <p className="ml-[1.18px] font-['Plus_Jakarta_Sans:Regular'] text-[13.233px]">
+          <div className="col-1 row-1 ml-[48.82px] mt-[12px] whitespace-nowrap text-white">
+            <p className="ml-[1.18px] font-['Plus_Jakarta_Sans:Regular'] text-[13px] leading-[16px]">
               Kabinet
             </p>
-            <p className="mt-[16.76px] font-[Arial] text-[20.137px] font-bold">
+            <p className="mt-[3px] font-[Arial] text-[20px] leading-[22px] font-bold">
               Akasha
             </p>
           </div>
