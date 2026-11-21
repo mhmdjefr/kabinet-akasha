@@ -7,21 +7,31 @@ const scrollToSection = (id: string) => {
 };
 
 export default function NavbarSection() {
+  const handleNavClick = (id: string) => scrollToSection(id);
+
   return (
-<div
-        className="absolute content-stretch flex h-[109px] items-center justify-end left-0 pb-[51px] pt-[14px] px-[48px] right-0 top-0"
+      <nav
+        className="absolute left-0 top-0 z-50 hidden h-[109px] w-full items-center justify-between px-[48px] min-[1024px]:flex"
         data-node-id="1:923"
         data-name="Navbar"
       >
+        {/* Background Union SVG */}
         <div
-          className="absolute h-[109px] left-[-15px] top-0 w-[1470px]"
+          className="absolute inset-0 h-full w-full pointer-events-none overflow-hidden opacity-90"
           data-node-id="1:924"
           data-name="Union"
         >
-          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgUnion1} />
+          <img
+            alt=""
+            className="absolute block inset-0 w-full h-full object-cover"
+            src={imgUnion1}
+          />
         </div>
+
+        {/* Brand / Logo */}
         <div
-          className="absolute content-stretch flex gap-[16px] h-[60px] items-center left-[48px] top-[24px]"
+          className="relative z-10 flex gap-[12px] lg:gap-[16px] h-[50px] lg:h-[60px] items-center cursor-pointer select-none"
+          onClick={() => handleNavClick("beranda")}
           data-node-id="1:927"
           data-name="Identitas Akasha"
         >
@@ -30,35 +40,36 @@ export default function NavbarSection() {
             data-node-id="1:928"
           >
             <div
-              className="col-1 h-[60px] ml-0 mt-0 relative row-1 w-[44.042px]"
+              className="col-1 h-[48px] lg:h-[60px] ml-0 mt-0 relative row-1 w-[35px] lg:w-[44.042px]"
               data-node-id="1:929"
             >
               <img
                 alt=""
-                className="absolute block inset-0 max-w-none size-full"
+                className="absolute block inset-0 max-w-none size-full object-contain"
                 src={imgGroup48099456}
               />
             </div>
             <div
-              className="[word-break:break-word] col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[48.82px] mt-[14.4px] place-items-start relative row-1 text-white whitespace-nowrap"
+              className="[word-break:break-word] col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[38px] lg:ml-[48.82px] mt-[10px] lg:mt-[14.4px] place-items-start relative row-1 text-white whitespace-nowrap"
               data-node-id="1:939"
             >
               <p
-                className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] col-1 font-['Plus_Jakarta_Sans:Regular'] font-normal leading-[normal] ml-[1.18px] mt-0 relative row-1 text-[13.233px] text-center"
+                className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] col-1 font-['Plus_Jakarta_Sans:Regular'] font-normal leading-[normal] ml-[1.18px] mt-0 relative row-1 text-[11px] lg:text-[13.233px] text-center"
                 data-node-id="1:940"
               >
                 Kabinet
               </p>
               <p
-                className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] col-1 font-[Arial] font-bold leading-[normal] ml-0 mt-[16.76px] not-italic relative row-1 text-[20.137px]"
+                className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] col-1 font-[Arial] font-bold leading-[normal] ml-0 mt-[13px] lg:mt-[16.76px] not-italic relative row-1 text-[16px] lg:text-[20.137px]"
                 data-node-id="1:941"
               >
                 Akasha
               </p>
             </div>
           </div>
+
           <div
-            className="flex h-[50.271px] items-center justify-center relative shrink-0 w-[12.048px]"
+            className="hidden sm:flex h-[50.271px] items-center justify-center relative shrink-0 w-[12.048px]"
             data-node-id="1:942"
           >
             <div className="flex-none rotate-[103.48deg]">
@@ -69,21 +80,24 @@ export default function NavbarSection() {
               </div>
             </div>
           </div>
+
           <div
-            className="[word-break:break-word] font-[Arial] font-bold leading-[0] not-italic relative shrink-0 text-[14.58px] text-white w-[208.65px] whitespace-pre-wrap"
+            className="[word-break:break-word] font-[Arial] font-bold leading-[0] not-italic relative shrink-0 text-[12px] lg:text-[14.58px] text-white w-[180px] lg:w-[208.65px] whitespace-pre-wrap hidden md:block"
             data-node-id="1:943"
           >
             <p className="leading-[normal] mb-0">{`Ruang untuk Semua, `}</p>
             <p className="leading-[normal]">Tumbuh dan Berdiri Bersama</p>
           </div>
         </div>
+
+        {/* Desktop Menu */}
         <div
-          className="content-stretch flex gap-[16px] h-[44px] items-center relative shrink-0"
+          className="relative z-10 hidden lg:flex gap-[16px] h-[44px] items-center shrink-0"
           data-node-id="1:944"
           data-name="Menu utama"
         >
           <button
-            onClick={() => scrollToSection("beranda")}
+            onClick={() => handleNavClick("beranda")}
             className="content-stretch cursor-pointer flex gap-[8px] h-[44px] items-center justify-center px-[16px] py-[10px] relative rounded-[2px] shrink-0 w-[144px]"
             data-node-id="1:945"
             data-name="Menu · Beranda"
@@ -106,9 +120,10 @@ export default function NavbarSection() {
               Beranda
             </p>
           </button>
+
           <button
-            onClick={() => scrollToSection("program-unggulan")}
-            className="content-stretch cursor-pointer flex gap-[8px] h-[44px] items-center px-[16px] py-[10px] relative rounded-[2px] shrink-0 transition-colors hover:bg-white/10"
+            onClick={() => handleNavClick("program-unggulan")}
+            className="content-stretch cursor-pointer flex gap-[8px] h-[44px] items-center px-[16px] py-[10px] relative shrink-0 transition-opacity hover:opacity-80 active:opacity-60"
             data-node-id="1:948"
             data-name="Menu · Program Unggulan"
           >
@@ -130,9 +145,10 @@ export default function NavbarSection() {
               />
             </div>
           </button>
+
           <button
-            onClick={() => scrollToSection("gerakan-inovasi")}
-            className="content-stretch cursor-pointer flex gap-[8px] h-[44px] items-center px-[16px] py-[10px] relative rounded-[2px] shrink-0 transition-colors hover:bg-white/10"
+            onClick={() => handleNavClick("gerakan-inovasi")}
+            className="content-stretch cursor-pointer flex gap-[8px] h-[44px] items-center px-[16px] py-[10px] relative shrink-0 transition-opacity hover:opacity-80 active:opacity-60"
             data-node-id="1:953"
             data-name="Menu · Gerakan Inovasi"
           >
@@ -154,9 +170,10 @@ export default function NavbarSection() {
               />
             </div>
           </button>
+
           <button
-            onClick={() => scrollToSection("filosofi-logo")}
-            className="content-stretch cursor-pointer flex h-[44px] items-center px-[16px] py-[10px] relative rounded-[2px] shrink-0 transition-colors hover:bg-white/10"
+            onClick={() => handleNavClick("filosofi-logo")}
+            className="content-stretch cursor-pointer flex h-[44px] items-center px-[16px] py-[10px] relative shrink-0 transition-opacity hover:opacity-80 active:opacity-60"
             data-node-id="1:958"
             data-name="Menu · Filosofi Logo"
           >
@@ -168,6 +185,7 @@ export default function NavbarSection() {
             </p>
           </button>
         </div>
-      </div>
+
+      </nav>
   );
 }

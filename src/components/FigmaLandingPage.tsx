@@ -13,6 +13,7 @@ import ProgramUnggulanSection from "./sections/ProgramUnggulanSection";
 import GerakanInovasiSection from "./sections/GerakanInovasiSection";
 import FooterSection from "./sections/FooterSection";
 import ScrollToTop from "./sections/ScrollToTop";
+import MobileNavbar from "./sections/MobileNavbar";
 
 export default function FigmaLandingPage() {
   const [scale, setScale] = useState(1);
@@ -33,6 +34,7 @@ export default function FigmaLandingPage() {
 
   return (
     <div className="campaign-shell flex justify-center bg-[#171717] min-h-screen overflow-x-hidden">
+      <MobileNavbar />
       <div
         style={{
           transform: `scale(${scale})`,
