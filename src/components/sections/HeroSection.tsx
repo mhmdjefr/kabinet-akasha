@@ -1,6 +1,6 @@
 "use client";
 
-import { imgImg53693, imgVector3, imgVector4, imgVector5, imgVector6 } from "@/lib/assets";
+import { heroBackgroundPhoto, heroOutlineRight, heroOutlineLeft, heroAccentRight, heroAccentLeft } from "@/lib/assets";
 
 export default function HeroSection() {
   return (
@@ -23,7 +23,7 @@ export default function HeroSection() {
             alt=""
             className="absolute block inset-0 max-w-none size-full hero-photo-image"
             height="1086"
-            src={imgImg53693}
+            src={heroBackgroundPhoto}
             width="1936"
           />
         </div>
@@ -33,7 +33,7 @@ export default function HeroSection() {
           data-name="Vector"
         >
           <div className="absolute inset-[-0.25%_-0.21%]">
-            <img alt="" className="block max-w-none size-full" src={imgVector3} />
+            <img alt="" className="block max-w-none size-full" src={heroOutlineRight} />
           </div>
         </div>
         <div
@@ -43,7 +43,7 @@ export default function HeroSection() {
           <div className="flex-none rotate-90">
             <div className="h-[2019.182px] relative w-[2338px]" data-name="Vector">
               <div className="absolute inset-[-0.25%_-0.21%]">
-                <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                <img alt="" className="block max-w-none size-full" src={heroOutlineLeft} />
               </div>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function HeroSection() {
           <div className="flex-none h-[hypot(-24.1605cqw,79.823cqh)] rotate-[15.84deg] w-[hypot(75.8395cqw,20.177cqh)]">
             <div className="relative size-full" data-name="Vector">
               <div className="absolute inset-[-3.42%_-4.96%_-9.29%_-3.84%]">
-                <img alt="" className="block max-w-none size-full" src={imgVector5} />
+                <img alt="" className="block max-w-none size-full" src={heroAccentRight} />
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function HeroSection() {
           <div className="flex-none h-[hypot(24.1626cqw,69.4548cqh)] rotate-[-20.52deg] w-[hypot(75.8374cqw,-30.5452cqh)]">
             <div className="relative size-full" data-name="Vector">
               <div className="absolute inset-[-7.14%_-7.53%_-6.97%_-9.98%]">
-                <img alt="" className="block max-w-none size-full" src={imgVector6} />
+                <img alt="" className="block max-w-none size-full" src={heroAccentLeft} />
               </div>
             </div>
           </div>

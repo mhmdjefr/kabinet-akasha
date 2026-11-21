@@ -1,6 +1,18 @@
 "use client";
 
-import { imgLine1, imgVector10, imgVector11, imgVector12, imgVector13, imgVector14, imgVector15, imgVector16, imgVector17, imgVector18, imgVector9 } from "@/lib/assets";
+import {
+  missionCardPurpleOne,
+  missionCardPurpleTwo,
+  missionCardPurpleThree,
+  missionCardPurpleFour,
+  missionCardPurpleFive,
+  missionCardPurpleSix,
+  missionCardTopOverlayOne,
+  missionCardTopOverlayTwo,
+  visiMisiBackgroundVector,
+  visiMisiDivider,
+  visiMisiTopWave,
+} from "@/lib/assets";
 
 export default function VisiMisiSection() {
   return (
@@ -26,7 +38,7 @@ export default function VisiMisiSection() {
               alt=""
               className="block max-w-none size-full"
               height="355"
-              src={imgVector9}
+              src={visiMisiTopWave}
               width="2135"
             />
           </div>
@@ -37,7 +49,7 @@ export default function VisiMisiSection() {
           data-name="Vector"
         >
           <div className="absolute inset-[-1.44%_-0.39%]">
-            <img alt="" className="block max-w-none size-full" src={imgVector10} />
+            <img alt="" className="block max-w-none size-full" src={visiMisiBackgroundVector} />
           </div>
         </div>
         <li className="absolute left-[292px] list-none top-[123.477px] w-[855px]">
@@ -64,7 +76,7 @@ export default function VisiMisiSection() {
           <div className="flex-none rotate-180">
             <div className="h-0 relative w-[855px]">
               <div className="absolute inset-[-2px_0]">
-                <img alt="" className="block max-w-none size-full" src={imgLine1} />
+                <img alt="" className="block max-w-none size-full" src={visiMisiDivider} />
               </div>
             </div>
           </div>
@@ -87,7 +99,7 @@ export default function VisiMisiSection() {
               <img
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
-                src={imgVector11}
+                src={missionCardPurpleOne}
               />
             </div>
             <div
@@ -97,7 +109,7 @@ export default function VisiMisiSection() {
               <div className="-scale-y-100 flex-none">
                 <div className="h-[767px] relative w-[581px]" data-name="Vector">
                   <div className="absolute inset-[-0.26%_-0.34%]">
-                    <img alt="" className="block max-w-none size-full" src={imgVector12} />
+                    <img alt="" className="block max-w-none size-full" src={missionCardPurpleTwo} />
                   </div>
                 </div>
               </div>
@@ -111,7 +123,7 @@ export default function VisiMisiSection() {
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
                 height="351"
-                src={imgVector13}
+                src={missionCardTopOverlayOne}
                 width="581"
               />
             </div>
@@ -147,7 +159,7 @@ export default function VisiMisiSection() {
               <img
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
-                src={imgVector14}
+                src={missionCardPurpleThree}
               />
             </div>
             <div
@@ -157,7 +169,7 @@ export default function VisiMisiSection() {
               <div className="-scale-y-100 flex-none">
                 <div className="h-[767px] relative w-[581px]" data-name="Vector">
                   <div className="absolute inset-[-0.26%_-0.34%]">
-                    <img alt="" className="block max-w-none size-full" src={imgVector15} />
+                    <img alt="" className="block max-w-none size-full" src={missionCardPurpleFour} />
                   </div>
                 </div>
               </div>
@@ -171,7 +183,7 @@ export default function VisiMisiSection() {
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
                 height="351"
-                src={imgVector16}
+                src={missionCardTopOverlayTwo}
                 width="581"
               />
             </div>
@@ -207,7 +219,7 @@ export default function VisiMisiSection() {
               <img
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
-                src={imgVector14}
+                src={missionCardPurpleThree}
               />
             </div>
             <div
@@ -217,7 +229,7 @@ export default function VisiMisiSection() {
               <div className="-scale-y-100 flex-none">
                 <div className="h-[767px] relative w-[581px]" data-name="Vector">
                   <div className="absolute inset-[-0.26%_-0.34%]">
-                    <img alt="" className="block max-w-none size-full" src={imgVector17} />
+                    <img alt="" className="block max-w-none size-full" src={missionCardPurpleFive} />
                   </div>
                 </div>
               </div>
@@ -231,7 +243,7 @@ export default function VisiMisiSection() {
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
                 height="351"
-                src={imgVector16}
+                src={missionCardTopOverlayTwo}
                 width="581"
               />
             </div>
@@ -267,7 +279,7 @@ export default function VisiMisiSection() {
               <img
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
-                src={imgVector11}
+                src={missionCardPurpleOne}
               />
             </div>
             <div
@@ -279,7 +291,7 @@ export default function VisiMisiSection() {
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
                 height="351"
-                src={imgVector13}
+                src={missionCardTopOverlayOne}
                 width="581"
               />
             </div>
@@ -308,7 +320,7 @@ export default function VisiMisiSection() {
               <div className="-scale-y-100 flex-none">
                 <div className="h-[767px] relative w-[581px]" data-name="Vector">
                   <div className="absolute inset-[-0.26%_-0.34%]">
-                    <img alt="" className="block max-w-none size-full" src={imgVector18} />
+                    <img alt="" className="block max-w-none size-full" src={missionCardPurpleSix} />
                   </div>
                 </div>
               </div>

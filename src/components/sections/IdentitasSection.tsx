@@ -1,6 +1,6 @@
 "use client";
 
-import { imgDsc016982, imgDsc017432, imgDsc17433, imgGroup48099463, imgUnion, imgVector7 } from "@/lib/assets";
+import { identityTopPhoto, identityPhotoMask, identityBottomPhoto, identityKabinetLogo, identityUnionBackground, identityVectorShape } from "@/lib/assets";
 
 export default function IdentitasSection() {
   return (
@@ -15,7 +15,7 @@ export default function IdentitasSection() {
           data-node-id="1:678"
           data-name="Union"
         >
-          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgUnion} />
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={identityUnionBackground} />
         </div>
         <div
           className="absolute contents left-[-505px] top-0"
@@ -27,13 +27,13 @@ export default function IdentitasSection() {
             >
             <div
               className="border-[#cfffa3] border-[0.174px] border-solid h-[1348px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-179px_-347px] mask-size-[2402px_1207px] relative w-[1910px]"
-              style={{ maskImage: `url("${imgDsc017432}")` }}
+              style={{ maskImage: `url("${identityPhotoMask}")` }}
               data-name="DSC01743 2"
             >
               <img
                 alt=""
                 className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full"
-                src={imgDsc17433}
+                src={identityBottomPhoto}
               />
             </div>
           </div>
@@ -46,13 +46,13 @@ export default function IdentitasSection() {
             >
                 <div
                   className="border-[#cfffa3] border-[0.174px] border-solid h-[946px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-1010px_169px] mask-size-[2402px_1207px] relative w-[1200px]"
-                  style={{ maskImage: `url("${imgDsc017432}")` }}
+                  style={{ maskImage: `url("${identityPhotoMask}")` }}
                   data-name="DSC01698 2"
                 >
                   <img
                     alt=""
                     className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full"
-                    src={imgDsc016982}
+                    src={identityTopPhoto}
                   />
                 </div>
               </div>
@@ -65,11 +65,11 @@ export default function IdentitasSection() {
             <div className="flex-none rotate-[18.29deg]">
               <div
                 className="h-[926.838px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-23.148px_254.35px] mask-size-[2402px_1207px] relative w-[2241.081px]"
-                style={{ maskImage: `url("${imgDsc017432}")` }}
+                style={{ maskImage: `url("${identityPhotoMask}")` }}
                 data-name="Vector"
               >
                 <div className="absolute inset-[-0.65%_-0.27%]">
-                  <img alt="" className="block max-w-none size-full" src={imgVector7} />
+                  <img alt="" className="block max-w-none size-full" src={identityVectorShape} />
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function IdentitasSection() {
             <img
               alt="Logo Kabinet Akasha"
               className="absolute block inset-0 max-w-none size-full"
-              src={imgGroup48099463}
+              src={identityKabinetLogo}
             />
           </div>
           <div

@@ -1,6 +1,6 @@
 "use client";
 
-import { imgArtworkScrollToTopDariCobain, imgEllipse253, imgGroup48099464, imgLine2, imgVector21, imgVector22 } from "@/lib/assets";
+import { scrollToTopIcon, footerNavigationDot, footerKabinetLogo, footerDivider, footerTopWave, footerBackgroundVector } from "@/lib/assets";
 
 const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -25,7 +25,7 @@ export default function FooterSection() {
             <img
               alt=""
               className="absolute block inset-0 max-w-none size-full"
-              src={imgGroup48099464}
+              src={footerKabinetLogo}
             />
           </div>
           <div
@@ -55,7 +55,7 @@ export default function FooterSection() {
                 alt=""
                 className="block max-w-none size-full"
                 height="355"
-                src={imgVector21}
+                src={footerTopWave}
                 width="2135"
               />
             </div>
@@ -67,7 +67,7 @@ export default function FooterSection() {
           data-name="Vector"
         >
           <div className="absolute inset-[-1.63%_-0.39%]">
-            <img alt="" className="block max-w-none size-full" src={imgVector22} />
+            <img alt="" className="block max-w-none size-full" src={footerBackgroundVector} />
           </div>
         </div>
         <div
@@ -77,7 +77,7 @@ export default function FooterSection() {
           <div className="flex-none rotate-180">
             <div className="h-0 relative w-[1298px]">
               <div className="absolute inset-[-0.67px_0]">
-                <img alt="" className="block max-w-none size-full" src={imgLine2} />
+                <img alt="" className="block max-w-none size-full" src={footerDivider} />
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function FooterSection() {
             <img
               alt=""
               className="absolute block inset-0 max-w-none size-full"
-              src={imgEllipse253}
+              src={footerNavigationDot}
             />
           </div>
           <p
@@ -116,7 +116,7 @@ export default function FooterSection() {
             <img
               alt=""
               className="absolute block inset-0 max-w-none size-full"
-              src={imgEllipse253}
+              src={footerNavigationDot}
             />
           </div>
           <p
@@ -129,7 +129,7 @@ export default function FooterSection() {
             <img
               alt=""
               className="absolute block inset-0 max-w-none size-full"
-              src={imgEllipse253}
+              src={footerNavigationDot}
             />
           </div>
           <p
@@ -159,7 +159,7 @@ export default function FooterSection() {
             <img
               alt=""
               className="absolute block inset-0 max-w-none size-full"
-              src={imgArtworkScrollToTopDariCobain}
+              src={scrollToTopIcon}
             />
           </div>
         </button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { imgVector19, imgVector20 } from "@/lib/assets";
+import { gagasanAksiOverlay, gagasanAksiBackgroundVector } from "@/lib/assets";
 
 export default function GagasanAksiSection() {
   return (
@@ -19,7 +19,7 @@ export default function GagasanAksiSection() {
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
                 height="403"
-                src={imgVector19}
+                src={gagasanAksiOverlay}
                 width="1536"
               />
             </div>
@@ -31,7 +31,7 @@ export default function GagasanAksiSection() {
           data-name="Vector"
         >
           <div className="absolute inset-[-1.44%_-0.39%]">
-            <img alt="" className="block max-w-none size-full" src={imgVector20} />
+            <img alt="" className="block max-w-none size-full" src={gagasanAksiBackgroundVector} />
           </div>
         </div>
         <li className="absolute left-[202px] list-none top-[132px] w-[1036px]">

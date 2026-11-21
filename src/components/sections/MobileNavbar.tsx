@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { imgGroup48099456 } from "@/lib/assets";
+import { akashaLogo } from "@/lib/assets";
 
 const links = [
   ["Beranda", "beranda"],
@@ -51,7 +51,7 @@ export default function MobileNavbar() {
     <div className="fixed inset-x-0 top-0 z-[100] min-[768px]:hidden">
       <header className="relative flex h-[67px] items-center bg-[#1d1d1d] pl-[18px] pr-[78px] shadow-[0_6px_18px_rgba(0,0,0,0.28)] [clip-path:polygon(0_0,100%_0,100%_100%,40%_100%,37%_87%,0_87%)]">
         <button onClick={() => navigate("beranda")} className="relative z-10 flex items-center gap-[7px] text-left" aria-label="Ke beranda">
-          <img src={imgGroup48099456} alt="Logo Kabinet Akasha" className="h-[48px] w-[35px] object-contain" />
+          <img src={akashaLogo} alt="Logo Kabinet Akasha" className="h-[48px] w-[35px] object-contain" />
           <span className="leading-none text-white"><small className="block text-[11px] font-medium">Kabinet</small><strong className="text-[16px]">Akasha</strong></span>
         </button>
         <button

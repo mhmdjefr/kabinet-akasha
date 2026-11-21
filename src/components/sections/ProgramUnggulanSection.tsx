@@ -1,6 +1,6 @@
 "use client";
 
-import { imgImage896, imgItek, imgLine12, imgTikgem } from "@/lib/assets";
+import { tikgemProgramLogoImage, itekProgramLogo, programSectionDivider, tikgemProgramLogo } from "@/lib/assets";
 
 export default function ProgramUnggulanSection() {
   return (
@@ -25,7 +25,7 @@ export default function ProgramUnggulanSection() {
         </p>
         <div className="absolute h-0 left-[501px] top-[648px] w-[451px]" data-node-id="1:833">
           <div className="absolute inset-[-5px_0_0_0]">
-            <img alt="" className="block max-w-none size-full" src={imgLine12} />
+            <img alt="" className="block max-w-none size-full" src={programSectionDivider} />
           </div>
         </div>
         <div
@@ -59,7 +59,7 @@ export default function ProgramUnggulanSection() {
                 <img
                   alt=""
                   className="absolute h-full left-[-5.55%] max-w-none top-0 w-[111.09%]"
-                  src={imgItek}
+                  src={itekProgramLogo}
                 />
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function ProgramUnggulanSection() {
               <img
                 alt=""
                 className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-                src={imgImage896}
+                src={tikgemProgramLogoImage}
               />
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function ProgramUnggulanSection() {
               <img
                 alt=""
                 className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-                src={imgTikgem}
+                src={tikgemProgramLogo}
               />
             </div>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { imgArtworkScrollToTopDariCobain } from "@/lib/assets";
+import { scrollToTopIcon } from "@/lib/assets";
 
 const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -23,7 +23,7 @@ export default function ScrollToTop() {
             <img
               alt=""
               className="absolute block inset-0 max-w-none size-full"
-              src={imgArtworkScrollToTopDariCobain}
+              src={scrollToTopIcon}
             />
           </div>
         </button>

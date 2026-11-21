@@ -1,6 +1,6 @@
 "use client";
 
-import { imgRectangle40235, imgRectangle40241, imgRectangle40243, imgRectangle40244 } from "@/lib/assets";
+import { innovationBackgroundPhoto, barnabyHeaderStrip, asahHeaderStrip, tikTrackHeaderStrip } from "@/lib/assets";
 
 export default function GerakanInovasiSection() {
   return (
@@ -32,7 +32,7 @@ export default function GerakanInovasiSection() {
             <img
               alt=""
               className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-              src={imgRectangle40244}
+              src={tikTrackHeaderStrip}
             />
           </div>
           <div className="absolute h-[265px] left-0 top-[595px] w-[1440px]" data-node-id="1:856">
@@ -40,7 +40,7 @@ export default function GerakanInovasiSection() {
               <img
                 alt=""
                 className="absolute max-w-none object-bottom size-full"
-                src={imgRectangle40235}
+                src={innovationBackgroundPhoto}
               />
               <div
                 className="absolute inset-0"
@@ -97,7 +97,7 @@ export default function GerakanInovasiSection() {
             <img
               alt=""
               className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-              src={imgRectangle40241}
+              src={barnabyHeaderStrip}
             />
           </div>
           <div className="absolute h-[265px] left-0 top-[1604px] w-[1440px]" data-node-id="1:864">
@@ -105,7 +105,7 @@ export default function GerakanInovasiSection() {
               <img
                 alt=""
                 className="absolute max-w-none object-bottom size-full"
-                src={imgRectangle40235}
+                src={innovationBackgroundPhoto}
               />
               <div
                 className="absolute inset-0"
@@ -201,7 +201,7 @@ export default function GerakanInovasiSection() {
             <img
               alt=""
               className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-              src={imgRectangle40243}
+              src={asahHeaderStrip}
             />
           </div>
           <div
@@ -214,7 +214,7 @@ export default function GerakanInovasiSection() {
                   <img
                     alt=""
                     className="absolute max-w-none object-bottom size-full"
-                    src={imgRectangle40235}
+                    src={innovationBackgroundPhoto}
                   />
                   <div
                     className="absolute inset-0"
