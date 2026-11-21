@@ -37,15 +37,17 @@ export default function FigmaLandingPage() {
       <MobileNavbar />
       <div
         style={{
-          transform: `scale(${scale})`,
-          transformOrigin: "top center",
-          width: 1440,
+          width: 1440 * scale,
           height: 12456 * scale,
         }}
         className="shrink-0 relative transition-transform duration-75"
       >
         <div
-          className="bg-white content-stretch flex flex-col items-start relative w-[1440px]"
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: "top left",
+          }}
+          className="absolute left-0 top-0 bg-white content-stretch flex flex-col items-start w-[1440px]"
           data-node-id="1:648"
           data-name="Campaign Website - Landing Page — Rapih"
         >
