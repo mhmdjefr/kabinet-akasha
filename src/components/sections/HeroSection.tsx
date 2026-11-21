@@ -6,22 +6,22 @@ export default function HeroSection() {
   return (
 <div
         id="beranda"
-        className="h-[974px] relative shrink-0 w-full"
+        className="hero-section h-[974px] relative shrink-0 w-full"
         data-node-id="1:667"
         data-name="01 · Hero"
       >
         <div
-          className="absolute bg-[#f786f8] h-[1044px] left-[-19px] top-[-13px] w-[1474px]"
+          className="hero-pink-layer absolute bg-[#f786f8] h-[1044px] left-[-19px] top-[-13px] w-[1474px]"
           data-node-id="1:668"
         />
         <div
-          className="absolute h-[1086px] left-[-290px] mix-blend-soft-light top-[-55px] w-[1936px]"
+          className="hero-photo-layer absolute h-[1086px] left-[-290px] mix-blend-soft-light top-[-55px] w-[1936px]"
           data-node-id="1:669"
           data-name="IMG_5369 3"
         >
           <img
             alt=""
-            className="absolute block inset-0 max-w-none size-full"
+            className="absolute block inset-0 max-w-none size-full hero-photo-image"
             height="1086"
             src={imgImg53693}
             width="1936"
