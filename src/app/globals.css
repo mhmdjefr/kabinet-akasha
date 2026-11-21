@@ -1,128 +1,134 @@
 @import "tailwindcss";
-
 @font-face {
-  font-family: "Audiowide:Regular";
-  src: url("https://static.figma.com/font/Audiowide-Regular_2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
+    font-family: "Audiowide:Regular";
+    src: url("https://static.figma.com/font/Audiowide-Regular_2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "Plus Jakarta Sans:Bold";
-  src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
-  font-style: normal;
-  font-weight: 700;
+    font-family: "Plus Jakarta Sans:Bold";
+    src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "Plus Jakarta Sans:Medium";
-  src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
-  font-style: normal;
-  font-weight: 500;
+    font-family: "Plus Jakarta Sans:Medium";
+    src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
+    font-style: normal;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "Plus Jakarta Sans:Regular";
-  src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
+    font-family: "Plus Jakarta Sans:Regular";
+    src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "Plus Jakarta Sans:SemiBold";
-  src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
-  font-style: normal;
-  font-weight: 600;
+    font-family: "Plus Jakarta Sans:SemiBold";
+    src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
+    font-style: normal;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "Sansation:Bold";
-  src: url("https://static.figma.com/font/Sansation-Bold_1") format("woff2");
-  font-style: normal;
-  font-weight: 700;
+    font-family: "Sansation:Bold";
+    src: url("https://static.figma.com/font/Sansation-Bold_1") format("woff2");
+    font-style: normal;
+    font-weight: 700;
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    background: #171717;
-  }
-
-  body {
-    min-width: 320px;
-    overflow-x: hidden;
-    background: #171717;
-    font-family: "Plus Jakarta Sans:Regular", Arial, sans-serif;
-    color: #ffffff;
-  }
-
-  button {
-    touch-action: manipulation;
-  }
+    html {
+        scroll-behavior: smooth;
+        background: #171717;
+    }
+    body {
+        min-width: 320px;
+        overflow-x: hidden;
+        background: #171717;
+        font-family: "Plus Jakarta Sans:Regular", Arial, sans-serif;
+        color: #ffffff;
+    }
+    button {
+        touch-action: manipulation;
+    }
 }
 
 .campaign-shell {
-  position: relative;
-  width: 100%;
-  min-height: 100dvh;
-  overflow: hidden;
-  background: #171717;
+    position: relative;
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: #171717;
 }
 
 .campaign-canvas {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 720px);
-  width: 1440px;
-  height: 12456px;
-  transform-origin: top center;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 12456px;
+    transform-origin: top center;
 }
+
 
 /* The exported Figma artboard is 1440px wide.  On wider viewports only the
    hero needs to bleed to both edges; the rest of the campaign composition
    deliberately remains on its fixed artboard. */
+
 @media (min-width: 1440px) {
-  .hero-section {
-    width: 100vw !important;
-    margin-left: calc((1440px - 100vw) / 2) !important;
-  }
-
-  .hero-pink-layer {
-    left: 0 !important;
-    width: 100% !important;
-  }
-
-  .hero-photo-layer {
-    left: 0 !important;
-    width: 100% !important;
-  }
-
-  .hero-photo-image {
-    object-fit: cover;
-  }
+    .hero-section {
+        width: 100vw !important;
+        margin-left: calc((1440px - 100vw) / 2) !important;
+    }
+    .hero-pink-layer {
+        left: 0 !important;
+        width: 100% !important;
+    }
+    .hero-photo-layer {
+        left: 0 !important;
+        width: 100% !important;
+    }
+    .hero-photo-image {
+        object-fit: cover;
+    }
 }
 
 .font-\[\'Helvetica\:Bold\'\] {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-}
+ font-family: Arial,
+Helvetica,
+sans-serif;
+font-weight: 700;
 
+}
 .font-\[\'Helvetica\:Regular\'\] {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-}
+ font-family: Arial,
+Helvetica,
+sans-serif;
+font-weight: 400;
 
+}
+.mobile-campaign {
+    display: none;
+}
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+    html {
+        scroll-behavior: auto;
+    }
 }
-
 @media (max-width: 767px) {
-  #beranda,
-  #filosofi-logo,
-  #program-unggulan,
-  #gerakan-inovasi {
-    scroll-margin-top: 67px;
-  }
+    #beranda,
+    #filosofi-logo,
+    #program-unggulan,
+    #gerakan-inovasi {
+        scroll-margin-top: 67px;
+    }
+    .campaign-shell {
+        display: block !important;
+        background: #171717;
+    }
 }
