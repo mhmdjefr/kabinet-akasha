@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { imgGroup48099456 } from "@/lib/assets";
+import { imgGroup48099456, imgUnion1 } from "@/lib/assets";
 
 const links = [
   ["Beranda", "beranda"],
@@ -29,8 +29,9 @@ export default function MobileNavbar() {
 
   return (
     <div className="fixed inset-x-0 top-0 z-[100] min-[1024px]:hidden">
-      <header className="flex h-16 items-center justify-between border-b border-white/20 bg-[#171717]/75 px-4 shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-xl">
-        <button onClick={() => navigate("beranda")} className="flex items-center gap-2 text-left" aria-label="Ke beranda">
+      <header className="relative flex h-[72px] items-center justify-between overflow-hidden px-4 shadow-[0_8px_24px_rgba(0,0,0,0.24)]">
+        <img src={imgUnion1} alt="" className="pointer-events-none absolute inset-0 h-full w-full" />
+        <button onClick={() => navigate("beranda")} className="relative z-10 flex items-center gap-2 text-left" aria-label="Ke beranda">
           <img src={imgGroup48099456} alt="Logo Kabinet Akasha" className="h-10 w-8 object-contain" />
           <span className="leading-none text-white"><small className="block text-[10px] font-medium">Kabinet</small><strong className="text-sm">Akasha</strong></span>
         </button>
@@ -39,18 +40,18 @@ export default function MobileNavbar() {
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
-          className="grid size-11 place-items-center rounded-xl border border-white/20 bg-white/10 text-white transition active:scale-95"
+          className="relative z-10 grid size-11 place-items-center rounded-xl bg-[#cfffa3] text-[#1d1d1d] shadow-[0_4px_12px_rgba(207,255,163,0.24)] transition active:scale-95"
         >
           {open ? <X size={23} /> : <Menu size={23} />}
         </button>
       </header>
 
       {open && (
-        <div className="border-b border-white/15 bg-[#171717]/90 px-5 pb-6 pt-3 shadow-2xl backdrop-blur-2xl">
+        <div className="border-b-2 border-[#564cf8] bg-[#1d1d1d] px-5 pb-6 pt-3 shadow-2xl">
           <nav aria-label="Navigasi mobile" className="grid gap-1">
             {links.map(([label, id]) => (
               <button key={id} onClick={() => navigate(id)} className="flex min-h-12 items-center justify-between border-b border-white/10 px-2 text-left text-base font-bold text-white last:border-0">
-                {label}<span className="text-[#cfffa3]">→</span>
+                {label}<span className="text-[#f982fb]">→</span>
               </button>
             ))}
           </nav>

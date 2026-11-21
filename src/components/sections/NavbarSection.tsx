@@ -11,26 +11,26 @@ export default function NavbarSection() {
 
   return (
       <nav
-        className="absolute left-0 top-0 z-50 hidden h-[109px] w-full items-center justify-between border-b border-white/15 bg-[#171717]/55 px-[48px] shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-xl min-[1024px]:flex"
+        className="absolute left-0 top-0 z-50 hidden h-[109px] w-full min-[1024px]:block"
         data-node-id="1:923"
         data-name="Navbar"
       >
         {/* Background Union SVG */}
         <div
-          className="absolute inset-0 h-full w-full pointer-events-none overflow-hidden opacity-45"
+          className="absolute left-[-15px] top-0 h-[109px] w-[1470px] pointer-events-none"
           data-node-id="1:924"
           data-name="Union"
         >
           <img
             alt=""
-            className="absolute block inset-0 w-full h-full object-cover"
+            className="absolute block inset-0 max-w-none size-full"
             src={imgUnion1}
           />
         </div>
 
         {/* Brand / Logo */}
         <div
-          className="relative z-10 flex gap-[12px] lg:gap-[16px] h-[50px] lg:h-[60px] items-center cursor-pointer select-none"
+          className="absolute left-[48px] top-[24px] z-10 flex h-[60px] items-center gap-[16px] cursor-pointer select-none"
           onClick={() => handleNavClick("beranda")}
           data-node-id="1:927"
           data-name="Identitas Akasha"
@@ -40,7 +40,7 @@ export default function NavbarSection() {
             data-node-id="1:928"
           >
             <div
-              className="col-1 h-[48px] lg:h-[60px] ml-0 mt-0 relative row-1 w-[35px] lg:w-[44.042px]"
+              className="col-1 h-[60px] ml-0 mt-0 relative row-1 w-[44.042px]"
               data-node-id="1:929"
             >
               <img
@@ -50,17 +50,17 @@ export default function NavbarSection() {
               />
             </div>
             <div
-              className="[word-break:break-word] col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[38px] lg:ml-[48.82px] mt-[10px] lg:mt-[14.4px] place-items-start relative row-1 text-white whitespace-nowrap"
+              className="[word-break:break-word] col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[48.82px] mt-[14.4px] place-items-start relative row-1 text-white whitespace-nowrap"
               data-node-id="1:939"
             >
               <p
-                className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] col-1 font-['Plus_Jakarta_Sans:Regular'] font-normal leading-[normal] ml-[1.18px] mt-0 relative row-1 text-[11px] lg:text-[13.233px] text-center"
+                className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] col-1 font-['Plus_Jakarta_Sans:Regular'] font-normal leading-[normal] ml-[1.18px] mt-0 relative row-1 text-[13.233px] text-center"
                 data-node-id="1:940"
               >
                 Kabinet
               </p>
               <p
-                className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] col-1 font-[Arial] font-bold leading-[normal] ml-0 mt-[13px] lg:mt-[16.76px] not-italic relative row-1 text-[16px] lg:text-[20.137px]"
+                className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] col-1 font-[Arial] font-bold leading-[normal] ml-0 mt-[16.76px] not-italic relative row-1 text-[20.137px]"
                 data-node-id="1:941"
               >
                 Akasha
@@ -69,7 +69,7 @@ export default function NavbarSection() {
           </div>
 
           <div
-            className="hidden sm:flex h-[50.271px] items-center justify-center relative shrink-0 w-[12.048px]"
+            className="flex h-[50.271px] items-center justify-center relative shrink-0 w-[12.048px]"
             data-node-id="1:942"
           >
             <div className="flex-none rotate-[103.48deg]">
@@ -82,7 +82,7 @@ export default function NavbarSection() {
           </div>
 
           <div
-            className="[word-break:break-word] font-[Arial] font-bold leading-[0] not-italic relative shrink-0 text-[12px] lg:text-[14.58px] text-white w-[180px] lg:w-[208.65px] whitespace-pre-wrap hidden md:block"
+            className="[word-break:break-word] font-[Arial] font-bold leading-[0] not-italic relative shrink-0 text-[14.58px] text-white w-[208.65px] whitespace-pre-wrap"
             data-node-id="1:943"
           >
             <p className="leading-[normal] mb-0">{`Ruang untuk Semua, `}</p>
@@ -92,7 +92,7 @@ export default function NavbarSection() {
 
         {/* Desktop Menu */}
         <div
-          className="relative z-10 hidden lg:flex gap-[16px] h-[44px] items-center shrink-0"
+          className="absolute right-[48px] top-[14px] z-10 flex h-[44px] items-center gap-[16px]"
           data-node-id="1:944"
           data-name="Menu utama"
         >
