@@ -78,6 +78,30 @@
   transform-origin: top center;
 }
 
+/* The exported Figma artboard is 1440px wide.  On wider viewports only the
+   hero needs to bleed to both edges; the rest of the campaign composition
+   deliberately remains on its fixed artboard. */
+@media (min-width: 1440px) {
+  .hero-section {
+    width: 100vw !important;
+    margin-left: calc((1440px - 100vw) / 2) !important;
+  }
+
+  .hero-pink-layer {
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  .hero-photo-layer {
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  .hero-photo-image {
+    object-fit: cover;
+  }
+}
+
 .font-\[\'Helvetica\:Bold\'\] {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -91,5 +115,14 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  #beranda,
+  #filosofi-logo,
+  #program-unggulan,
+  #gerakan-inovasi {
+    scroll-margin-top: 67px;
   }
 }

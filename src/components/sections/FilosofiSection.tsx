@@ -1,6 +1,6 @@
 "use client";
 
-import { imgFrame48100502, imgFrame48100503, imgFrame48100504, imgFrame48100505, imgVector8 } from "@/lib/assets";
+import { philosophyDividerOne, philosophyDividerTwo, philosophyDividerThree, philosophyDividerFour, philosophyBackgroundVector } from "@/lib/assets";
 
 export default function FilosofiSection() {
   return (
@@ -53,7 +53,7 @@ export default function FilosofiSection() {
           data-name="Vector"
         >
           <div className="absolute inset-[-0.25%_-0.21%]">
-            <img alt="" className="block max-w-none size-full" src={imgVector8} />
+            <img alt="" className="block max-w-none size-full" src={philosophyBackgroundVector} />
           </div>
         </div>
         <li
@@ -163,7 +163,7 @@ export default function FilosofiSection() {
           <img
             alt=""
             className="absolute block inset-0 max-w-none size-full"
-            src={imgFrame48100505}
+            src={philosophyDividerFour}
           />
         </div>
         <div
@@ -173,7 +173,7 @@ export default function FilosofiSection() {
           <img
             alt=""
             className="absolute block inset-0 max-w-none size-full"
-            src={imgFrame48100502}
+            src={philosophyDividerOne}
           />
         </div>
         <div
@@ -183,7 +183,7 @@ export default function FilosofiSection() {
           <img
             alt=""
             className="absolute block inset-0 max-w-none size-full"
-            src={imgFrame48100503}
+            src={philosophyDividerTwo}
           />
         </div>
         <div
@@ -193,7 +193,7 @@ export default function FilosofiSection() {
           <img
             alt=""
             className="absolute block inset-0 max-w-none size-full"
-            src={imgFrame48100504}
+            src={philosophyDividerThree}
           />
         </div>
       </div>

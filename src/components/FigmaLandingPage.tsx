@@ -13,6 +13,7 @@ import ProgramUnggulanSection from "./sections/ProgramUnggulanSection";
 import GerakanInovasiSection from "./sections/GerakanInovasiSection";
 import FooterSection from "./sections/FooterSection";
 import ScrollToTop from "./sections/ScrollToTop";
+import MobileNavbar from "./sections/MobileNavbar";
 
 export default function FigmaLandingPage() {
   const [scale, setScale] = useState(1);
@@ -33,18 +34,21 @@ export default function FigmaLandingPage() {
 
   return (
     <div className="campaign-shell flex justify-center bg-[#171717] min-h-screen overflow-x-hidden">
+      <MobileNavbar />
+      <NavbarSection />
       <div
         style={{
-          transform: `scale(${scale})`,
-          transformOrigin: "top center",
-          width: 1440,
+          width: 1440 * scale,
           height: 12456 * scale,
-          marginBottom: scale < 1 ? -(12456 * (1 - scale)) : 0,
         }}
         className="shrink-0 relative transition-transform duration-75"
       >
         <div
-          className="bg-white content-stretch flex flex-col items-start relative w-[1440px]"
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: "top left",
+          }}
+          className="absolute left-0 top-0 bg-white content-stretch flex flex-col items-start w-[1440px]"
           data-node-id="1:648"
           data-name="Campaign Website - Landing Page — Rapih"
         >
@@ -80,9 +84,6 @@ export default function FigmaLandingPage() {
 
           {/* Tombol · Kembali ke atas */}
           <ScrollToTop />
-
-          {/* Top Navbar */}
-          <NavbarSection />
         </div>
       </div>
     </div>
