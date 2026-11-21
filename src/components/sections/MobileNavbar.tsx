@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { imgGroup48099456, imgUnion1 } from "@/lib/assets";
+import { imgGroup48099456 } from "@/lib/assets";
 
 const links = [
   ["Beranda", "beranda"],
@@ -29,18 +29,17 @@ export default function MobileNavbar() {
 
   return (
     <div className="fixed inset-x-0 top-0 z-[100] min-[1024px]:hidden">
-      <header className="relative flex h-[72px] items-center justify-between overflow-hidden px-4 shadow-[0_8px_24px_rgba(0,0,0,0.24)]">
-        <img src={imgUnion1} alt="" className="pointer-events-none absolute inset-0 h-full w-full" />
-        <button onClick={() => navigate("beranda")} className="relative z-10 flex items-center gap-2 text-left" aria-label="Ke beranda">
-          <img src={imgGroup48099456} alt="Logo Kabinet Akasha" className="h-10 w-8 object-contain" />
-          <span className="leading-none text-white"><small className="block text-[10px] font-medium">Kabinet</small><strong className="text-sm">Akasha</strong></span>
+      <header className="relative flex h-[67px] items-center bg-[#1d1d1d] pl-[18px] pr-[78px] shadow-[0_6px_18px_rgba(0,0,0,0.28)] [clip-path:polygon(0_0,100%_0,100%_100%,40%_100%,37%_87%,0_87%)]">
+        <button onClick={() => navigate("beranda")} className="relative z-10 flex items-center gap-[7px] text-left" aria-label="Ke beranda">
+          <img src={imgGroup48099456} alt="Logo Kabinet Akasha" className="h-[48px] w-[35px] object-contain" />
+          <span className="leading-none text-white"><small className="block text-[11px] font-medium">Kabinet</small><strong className="text-[16px]">Akasha</strong></span>
         </button>
         <button
           type="button"
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
-          className="relative z-10 grid size-11 place-items-center rounded-xl bg-[#cfffa3] text-[#1d1d1d] shadow-[0_4px_12px_rgba(207,255,163,0.24)] transition active:scale-95"
+          className="absolute right-[16px] top-0 z-20 grid h-[67px] w-[62px] place-items-center bg-[#cfffa3] text-[#1d1d1d] transition active:brightness-90 [clip-path:polygon(25%_0,100%_0,75%_100%,0_100%)]"
         >
           {open ? <X size={23} /> : <Menu size={23} />}
         </button>
