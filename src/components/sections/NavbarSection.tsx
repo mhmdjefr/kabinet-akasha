@@ -11,13 +11,13 @@ export default function NavbarSection() {
 
   return (
       <nav
-        className="absolute left-0 top-0 z-50 hidden h-[109px] w-full items-center justify-between px-[48px] min-[1024px]:flex"
+        className="absolute left-0 top-0 z-50 hidden h-[109px] w-full items-center justify-between border-b border-white/15 bg-[#171717]/55 px-[48px] shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-xl min-[1024px]:flex"
         data-node-id="1:923"
         data-name="Navbar"
       >
         {/* Background Union SVG */}
         <div
-          className="absolute inset-0 h-full w-full pointer-events-none overflow-hidden opacity-90"
+          className="absolute inset-0 h-full w-full pointer-events-none overflow-hidden opacity-45"
           data-node-id="1:924"
           data-name="Union"
         >

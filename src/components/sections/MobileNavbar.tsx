@@ -29,7 +29,7 @@ export default function MobileNavbar() {
 
   return (
     <div className="fixed inset-x-0 top-0 z-[100] min-[1024px]:hidden">
-      <header className="flex h-16 items-center justify-between border-b border-white/10 bg-[#171717]/95 px-4 shadow-lg backdrop-blur-md">
+      <header className="flex h-16 items-center justify-between border-b border-white/20 bg-[#171717]/75 px-4 shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-xl">
         <button onClick={() => navigate("beranda")} className="flex items-center gap-2 text-left" aria-label="Ke beranda">
           <img src={imgGroup48099456} alt="Logo Kabinet Akasha" className="h-10 w-8 object-contain" />
           <span className="leading-none text-white"><small className="block text-[10px] font-medium">Kabinet</small><strong className="text-sm">Akasha</strong></span>
@@ -46,7 +46,7 @@ export default function MobileNavbar() {
       </header>
 
       {open && (
-        <div className="border-b border-white/10 bg-[#171717]/[.98] px-5 pb-6 pt-3 shadow-2xl backdrop-blur-xl">
+        <div className="border-b border-white/15 bg-[#171717]/90 px-5 pb-6 pt-3 shadow-2xl backdrop-blur-2xl">
           <nav aria-label="Navigasi mobile" className="grid gap-1">
             {links.map(([label, id]) => (
               <button key={id} onClick={() => navigate(id)} className="flex min-h-12 items-center justify-between border-b border-white/10 px-2 text-left text-base font-bold text-white last:border-0">
