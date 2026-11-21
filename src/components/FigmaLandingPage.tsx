@@ -35,6 +35,7 @@ export default function FigmaLandingPage() {
   return (
     <div className="campaign-shell flex justify-center bg-[#171717] min-h-screen overflow-x-hidden">
       <MobileNavbar />
+      <NavbarSection />
       <div
         style={{
           width: 1440 * scale,
@@ -83,9 +84,6 @@ export default function FigmaLandingPage() {
 
           {/* Tombol · Kembali ke atas */}
           <ScrollToTop />
-
-          {/* Top Navbar */}
-          <NavbarSection />
         </div>
       </div>
     </div>
