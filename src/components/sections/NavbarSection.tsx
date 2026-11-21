@@ -37,40 +37,47 @@ export default function NavbarSection() {
       </div>
 
       <div
-        className="absolute left-[clamp(18px,3.33vw,48px)] top-[21px] z-10 flex h-[60px] origin-left scale-[0.82] cursor-pointer select-none items-center gap-[14px] min-[1100px]:scale-90 min-[1280px]:scale-100"
+        className="absolute left-[clamp(18px,3.33vw,48px)] top-[22px] z-10 flex h-[60px] cursor-pointer select-none items-center gap-[16px]"
         onClick={() => navigate("beranda")}
         data-node-id="1:927"
         data-name="Identitas Akasha"
       >
-        <div className="relative inline-grid h-[60px] shrink-0 grid-cols-[max-content] grid-rows-[max-content] leading-[0]">
-          <div className="col-1 row-1 h-[60px] w-[44.042px]">
-            <img
-              alt="Logo Kabinet Akasha"
-              className="absolute inset-0 block size-full object-contain"
-              src={akashaLogo}
-            />
-          </div>
-          <div className="col-1 row-1 ml-[48.82px] mt-[12px] whitespace-nowrap text-white">
-            <p className="ml-[1.18px] font-['Plus_Jakarta_Sans:Regular'] text-[13px] leading-[16px]">
+        {/* Logo & Teks Akasha */}
+        <div className="flex items-center gap-[12px] shrink-0">
+          <img
+            alt="Logo Kabinet Akasha"
+            className="h-[56px] w-auto object-contain shrink-0"
+            src={akashaLogo}
+          />
+          <div className="flex flex-col justify-center text-white leading-none">
+            <span className="font-['Plus_Jakarta_Sans:Regular'] text-[13.5px] font-medium leading-none text-white/90">
               Kabinet
-            </p>
-            <p className="mt-[3px] font-[Arial] text-[20px] leading-[22px] font-bold">
+            </span>
+            <span className="mt-[5px] font-[Arial] text-[22px] font-bold leading-none tracking-wide text-white">
               Akasha
-            </p>
+            </span>
           </div>
         </div>
 
-        <div className="flex h-[50.271px] w-[12.048px] shrink-0 items-center justify-center">
-          <div className="rotate-[103.48deg]">
+        <div
+          className="flex h-[50px] w-[14px] shrink-0 items-center justify-center"
+          data-node-id="1:942"
+        >
+          <div className="flex-none rotate-[103.48deg]">
             <div className="relative h-0 w-[51.695px]">
-              <img alt="" className="block max-w-none size-full" src={navbarDivider} />
+              <div className="absolute inset-[-0.54px_0]">
+                <img alt="" className="block max-w-none size-full" src={navbarDivider} />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="w-[208.65px] shrink-0 whitespace-pre-wrap font-[Arial] text-[14.58px] font-bold text-white">
-          <p>Ruang untuk Semua,</p>
-          <p>Tumbuh dan Berdiri Bersama</p>
+        <div
+          className="w-[215px] shrink-0 whitespace-pre-wrap font-[Arial] text-[14.5px] font-bold text-white leading-[1.25]"
+          data-node-id="1:943"
+        >
+          <p className="m-0">Ruang untuk Semua,</p>
+          <p className="m-0">Tumbuh dan Berdiri Bersama</p>
         </div>
       </div>
 
