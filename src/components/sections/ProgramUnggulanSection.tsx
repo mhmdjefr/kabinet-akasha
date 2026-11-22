@@ -52,7 +52,7 @@ export default function ProgramUnggulanSection() {
               </div>
             </div>
             <div
-              className="col-1 ml-[55.02px] mt-[58.69px] relative row-1 shadow-[0.093px_0.373px_1.67px_0px_rgba(0,0,0,0.95)] size-[221.416px]"
+              className="col-1 ml-[55.02px] mt-[58.69px] overflow-hidden relative row-1 size-[221.416px] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]"
               data-node-id="1:837"
               data-name="ITEK"
             >
@@ -116,7 +116,7 @@ export default function ProgramUnggulanSection() {
               </div>
             </div>
             <div
-              className="col-1 ml-[42.94px] mt-[43.53px] relative row-1 size-[251.01px]"
+              className="col-1 ml-[42.94px] mt-[43.53px] overflow-hidden relative row-1 size-[251.01px] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]"
               data-node-id="1:843"
               data-name="TIKGEM"
             >
