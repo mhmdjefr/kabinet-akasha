@@ -21,7 +21,7 @@ export default function BackgroundOverlay({ isMobile }: BackgroundOverlayProps) 
 
   return (
     <div
-      className="absolute left-0 top-0 w-[1440px]"
+      className="pointer-events-none absolute left-0 top-0 w-[1440px]"
       style={{ height: 12456 + offset }}
       data-node-id="1:649"
       data-name="00 · Latar lintas section"

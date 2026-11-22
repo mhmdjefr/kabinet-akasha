@@ -30,28 +30,33 @@ export default function MobileNavbar() {
   const isClickScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const finishClickScroll = () => {
+    isClickScrollingRef.current = false;
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+      scrollTimeoutRef.current = null;
+    }
+  };
+
   const scrollTo = (id: string) => {
     setActiveTab(id);
     isClickScrollingRef.current = true;
     if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
 
-    if (id === "beranda") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const targetY = window.scrollY + rect.top - 20;
-        window.scrollTo({
-          top: Math.max(0, targetY),
-          behavior: "smooth",
-        });
-      }
-    }
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const behavior: ScrollBehavior = prefersReducedMotion ? "auto" : "smooth";
+    const element = id === "beranda" ? null : document.getElementById(id);
+    const targetY = element
+      ? Math.max(0, window.scrollY + element.getBoundingClientRect().top - 20)
+      : 0;
 
+    window.scrollTo({ top: targetY, behavior });
+
+    // Smooth scrolling can take longer than a fixed timeout on mobile.
+    // Use scrollend when supported and retain a bounded fallback for Safari.
     scrollTimeoutRef.current = setTimeout(() => {
-      isClickScrollingRef.current = false;
-    }, 850);
+      finishClickScroll();
+    }, 2000);
   };
 
   useEffect(() => {
@@ -87,14 +92,13 @@ export default function MobileNavbar() {
       }
     };
 
-    const handleTouchOrWheel = () => {
-      isClickScrollingRef.current = false;
-      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
-    };
+    const handleTouchOrWheel = finishClickScroll;
+    const handleScrollEnd = finishClickScroll;
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("touchstart", handleTouchOrWheel, { passive: true });
     window.addEventListener("wheel", handleTouchOrWheel, { passive: true });
+    window.addEventListener("scrollend", handleScrollEnd);
 
     // Initial check
     handleScroll();
@@ -103,6 +107,7 @@ export default function MobileNavbar() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("touchstart", handleTouchOrWheel);
       window.removeEventListener("wheel", handleTouchOrWheel);
+      window.removeEventListener("scrollend", handleScrollEnd);
       if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
   }, []);
