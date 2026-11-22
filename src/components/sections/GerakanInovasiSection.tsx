@@ -28,7 +28,7 @@ export default function GerakanInovasiSection() {
           data-node-id="1:854"
           data-name="01 · TIKTrack"
         >
-          <div className="absolute h-[90px] left-[-2px] top-[505px] w-[835px]" data-node-id="1:855">
+          <div id="tiktrack" className="scroll-mt-32 absolute h-[90px] left-[-2px] top-[505px] w-[835px]" data-node-id="1:855">
             <img
               alt=""
               className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
@@ -91,7 +91,8 @@ export default function GerakanInovasiSection() {
           data-name="03 · Barnaby 2.0"
         >
           <div
-            className="absolute h-[90px] left-[-2px] top-[1514px] w-[1146px]"
+            id="barnaby"
+            className="scroll-mt-32 absolute h-[90px] left-[-2px] top-[1514px] w-[1146px]"
             data-node-id="1:863"
           >
             <img
@@ -190,7 +191,8 @@ export default function GerakanInovasiSection() {
           </div>
         </div>
         <div
-          className="absolute h-[534px] left-0 top-[863px] w-[1440px]"
+          id="asah"
+          className="scroll-mt-32 absolute h-[534px] left-0 top-[863px] w-[1440px]"
           data-node-id="1:877"
           data-name="02 · ASAH"
         >
