@@ -1,52 +1,135 @@
 @import "tailwindcss";
-
-@theme inline {
-  --color-violet: #564cf8;
-  --color-lime: #cfffa3;
-  --color-pinky: #f982fb;
-  --color-cream: #fdf9f9;
-  --color-ink: #1d1d1d;
-  --color-white: #fdf9f9;
-  --color-black: #1d1d1d;
-  --color-brand-pink: #f982fb;
-  --color-brand-blue: #564cf8;
-  --color-brand-lime: #cfffa3;
-  --color-brand-black: #1d1d1d;
-
-  --font-display: Arial, Helvetica, sans-serif;
-  --font-sans: var(--font-inter), Arial, sans-serif;
-  --font-hand: var(--font-gochi-hand), cursive;
-
-  --shadow-brutal: 6px 6px 0 0 #1d1d1d;
-  --shadow-brutal-sm: 4px 4px 0 0 #1d1d1d;
-  --shadow-brutal-lg: 12px 12px 0 0 #1d1d1d;
-  --shadow-brutal-pink: 8px 8px 0 0 #f982fb;
-  --shadow-brutal-lime: 8px 8px 0 0 #cfffa3;
-  --shadow-brutal-blue: 6px 6px 0 0 #564cf8;
-
-  --border-width-brutal: 3px;
-
-  --animate-marquee: marquee 22s linear infinite;
+@font-face {
+    font-family: "Audiowide:Regular";
+    src: url("https://static.figma.com/font/Audiowide-Regular_2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
 }
 
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
+@font-face {
+    font-family: "Plus Jakarta Sans:Bold";
+    src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
 }
 
-html {
-  scroll-behavior: smooth;
+@font-face {
+    font-family: "Plus Jakarta Sans:Medium";
+    src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
+    font-style: normal;
+    font-weight: 500;
 }
 
-body {
-  @apply bg-violet font-sans text-ink antialiased;
+@font-face {
+    font-family: "Plus Jakarta Sans:Regular";
+    src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
 }
 
-::selection {
-  @apply bg-lime text-ink;
+@font-face {
+    font-family: "Plus Jakarta Sans:SemiBold";
+    src: url("https://static.figma.com/font/PlusJakartaSans_wght__2") format("woff2");
+    font-style: normal;
+    font-weight: 600;
 }
 
-.headline {
-  @apply font-display font-black uppercase leading-[0.95] tracking-tight;
+@font-face {
+    font-family: "Sansation:Bold";
+    src: url("https://static.figma.com/font/Sansation-Bold_1") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        background: #171717;
+    }
+    body {
+        min-width: 320px;
+        overflow-x: hidden;
+        background: #171717;
+        font-family: "Plus Jakarta Sans:Regular", Arial, sans-serif;
+        color: #ffffff;
+    }
+    button {
+        touch-action: manipulation;
+    }
+}
+
+.campaign-shell {
+    position: relative;
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: #171717;
+}
+
+.campaign-canvas {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 12456px;
+    transform-origin: top center;
+}
+
+
+/* The exported Figma artboard is 1440px wide.  On wider viewports only the
+   hero needs to bleed to both edges; the rest of the campaign composition
+   deliberately remains on its fixed artboard. */
+
+@media (min-width: 1440px) {
+    .hero-section {
+        width: 100vw !important;
+        margin-left: calc((1440px - 100vw) / 2) !important;
+    }
+    .hero-pink-layer {
+        left: 0 !important;
+        width: 100% !important;
+    }
+    .hero-photo-layer {
+        left: 0 !important;
+        width: 100% !important;
+    }
+    .hero-photo-image {
+        object-fit: cover;
+    }
+}
+
+.font-\[\'Helvetica\:Bold\'\] {
+ font-family: Arial,
+Helvetica,
+sans-serif;
+font-weight: 700;
+
+}
+.font-\[\'Helvetica\:Regular\'\] {
+ font-family: Arial,
+Helvetica,
+sans-serif;
+font-weight: 400;
+
+}
+.mobile-campaign {
+    display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+@media (max-width: 767px) {
+    #beranda,
+    #filosofi-logo,
+    #program-unggulan,
+    #gerakan-inovasi {
+        scroll-margin-top: 24px;
+    }
+    .campaign-shell {
+        display: block !important;
+        background: #171717;
+        padding-bottom: 5rem;
+    }
 }

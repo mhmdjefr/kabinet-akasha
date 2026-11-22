@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="344.259" height="469" viewBox="0 0 344.259 469" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 48099463">
+<path id="Union" d="M0 336.565C267.727 128.417 224.706 212.589 3.33008 469C98.7676 334.26 126.23 256.796 0 336.565ZM321.556 0C263.636 95.9954 252.806 156.25 344.259 112.307C156.167 238.368 178.742 175.332 321.556 0Z" fill="url(#paint0_radial_0_86)"/>
+<path id="Union_2" d="M335.165 168.928C273.365 189.595 243.443 218.09 294.295 248.12C174.215 207.131 209.425 184.158 335.165 168.928ZM95.9986 162.997C221.011 184.709 189.825 212.904 68.0132 247.604C125.822 217.53 150.921 184.708 95.9986 162.997Z" fill="url(#paint1_radial_0_86)"/>
+<path id="Union_3" d="M231.162 359.293C177.085 221.552 178.867 174.926 280.755 282.553C226.141 242.431 216.509 285.919 231.162 359.293ZM160.203 38.5813C217.087 175.187 216.258 221.841 112.191 116.321C167.613 155.317 176.354 111.641 160.203 38.5813Z" fill="url(#paint2_radial_0_86)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_86" cx="0" cy="0" r="1" gradientTransform="matrix(-78.9128 81.5719 -59.876 -57.9245 177.57 202.276)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9E98F8"/>
+<stop offset="1" stop-color="#5349F5"/>
+</radialGradient>
+<radialGradient id="paint1_radial_0_86" cx="0" cy="0" r="1" gradientTransform="matrix(24.8766 0.188283 -0.289656 1.64168 290.996 165.681)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CAF176"/>
+<stop offset="1" stop-color="#C1FD42"/>
+</radialGradient>
+<radialGradient id="paint2_radial_0_86" cx="0" cy="0" r="1" gradientTransform="matrix(20.685 86.564 -45.4976 10.8721 196.473 198.937)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F793F9"/>
+<stop offset="1" stop-color="#EF3EF2"/>
+</radialGradient>
+</defs>
+</svg>
