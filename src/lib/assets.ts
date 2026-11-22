@@ -35,10 +35,17 @@ export const identityPhotoMask = `${assetPathPrefix}/b6df5.svg`;
 export const identityVectorShape = `${assetPathPrefix}/3dbd0.svg`;
 export const identityKabinetLogo = `${assetPathPrefix}/e55d6.svg`;
 export const philosophyBackgroundVector = `${assetPathPrefix}/3b352.svg`;
+
 export const philosophyDividerFour = `${assetPathPrefix}/99047.svg`;
 export const philosophyDividerOne = `${assetPathPrefix}/e9d11.svg`;
 export const philosophyDividerTwo = `${assetPathPrefix}/76c10.svg`;
 export const philosophyDividerThree = `${assetPathPrefix}/6c06b.svg`;
+
+export const philosophyDividerOneFix = `${assetPathPrefix}/84927.svg`;
+export const philosophyDividerTwoFix = `${assetPathPrefix}/28472.svg`;
+export const philosophyDividerThreeFix = `${assetPathPrefix}/64827.svg`;
+export const philosophyDividerFourFix = `${assetPathPrefix}/16872.svg`;
+
 export const visiMisiBackgroundVector = `${assetPathPrefix}/3046d.svg`;
 export const visiMisiDivider = `${assetPathPrefix}/3c788.svg`;
 export const missionCardPurpleOne = `${assetPathPrefix}/a0bfc.svg`;
