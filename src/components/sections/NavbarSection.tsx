@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef } from "react";
 import {
   akashaLogo,
   chevronDownIcon,
@@ -7,6 +8,19 @@ import {
   navbarBackground,
   navbarDivider,
 } from "@/lib/assets";
+import { motion, AnimatePresence } from "framer-motion";
+
+const programUnggulanItems = [
+  { label: "ITechnoCup", id: "itechnocup" },
+  { label: "SAUM", id: "saum" },
+  { label: "TIK Games", id: "tik-games" },
+];
+
+const gerakanInovasiItems = [
+  { label: "TIKTrack", id: "tiktrack" },
+  { label: "ASAH", id: "asah" },
+  { label: "Barnaby 2.0", id: "barnaby" },
+];
 
 const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({
@@ -16,7 +30,25 @@ const scrollToSection = (id: string) => {
 };
 
 export default function NavbarSection() {
-  const navigate = (id: string) => scrollToSection(id);
+  const [openDropdown, setOpenDropdown] = useState<"program" | "inovasi" | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (menu: "program" | "inovasi") => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenDropdown(menu);
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150);
+  };
+
+  const navigate = (id: string) => {
+    setOpenDropdown(null);
+    scrollToSection(id);
+  };
 
   return (
     <nav
@@ -102,29 +134,107 @@ export default function NavbarSection() {
           </span>
         </button>
 
-        <button
-          onClick={() => navigate("program-unggulan")}
-          className="flex h-[44px] shrink-0 cursor-pointer items-center gap-[8px] px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
-          data-node-id="1:948"
-          data-name="Menu · Program Unggulan"
+        {/* Dropdown Program Unggulan */}
+        <div
+          className="relative"
+          onMouseEnter={() => handleMouseEnter("program")}
+          onMouseLeave={handleMouseLeave}
         >
-          <span className="whitespace-nowrap font-[Arial] text-[20px] font-bold text-white">
-            Program Unggulan
-          </span>
-          <img alt="" className="size-[16px] shrink-0" src={chevronDownIcon} />
-        </button>
+          <button
+            onClick={() => navigate("program-unggulan")}
+            className="flex h-[44px] shrink-0 cursor-pointer items-center gap-[8px] px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
+            data-node-id="1:948"
+            data-name="Menu · Program Unggulan"
+            aria-expanded={openDropdown === "program"}
+            aria-haspopup="true"
+          >
+            <span className="whitespace-nowrap font-[Arial] text-[20px] font-bold text-white">
+              Program Unggulan
+            </span>
+            <img
+              alt=""
+              className={`size-[16px] shrink-0 transition-transform duration-200 ${
+                openDropdown === "program" ? "rotate-180" : ""
+              }`}
+              src={chevronDownIcon}
+            />
+          </button>
 
-        <button
-          onClick={() => navigate("gerakan-inovasi")}
-          className="flex h-[44px] shrink-0 cursor-pointer items-center gap-[8px] px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
-          data-node-id="1:953"
-          data-name="Menu · Gerakan Inovasi"
+          <AnimatePresence>
+            {openDropdown === "program" && (
+              <motion.div
+                initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 6, scale: 0.95 }}
+                transition={{ duration: 0.16, ease: "easeOut" }}
+                className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50"
+              >
+                <div className="w-[200px] bg-[#17171a]/95 backdrop-blur-md border border-white/15 rounded-md shadow-[0_16px_40px_rgba(0,0,0,0.75)] p-2 flex flex-col gap-1">
+                  {programUnggulanItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => navigate(item.id)}
+                      className="w-full text-left px-3.5 py-2 rounded-sm font-['Plus_Jakarta_Sans:Medium',Arial] text-[15px] font-semibold text-white/90 hover:text-[#17171a] hover:bg-[#cfffa3] transition-colors duration-150 cursor-pointer"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Dropdown Gerakan Inovasi */}
+        <div
+          className="relative"
+          onMouseEnter={() => handleMouseEnter("inovasi")}
+          onMouseLeave={handleMouseLeave}
         >
-          <span className="whitespace-nowrap font-[Arial] text-[20px] font-bold text-white">
-            Gerakan Inovasi
-          </span>
-          <img alt="" className="size-[16px] shrink-0" src={chevronDownIcon} />
-        </button>
+          <button
+            onClick={() => navigate("gerakan-inovasi")}
+            className="flex h-[44px] shrink-0 cursor-pointer items-center gap-[8px] px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
+            data-node-id="1:953"
+            data-name="Menu · Gerakan Inovasi"
+            aria-expanded={openDropdown === "inovasi"}
+            aria-haspopup="true"
+          >
+            <span className="whitespace-nowrap font-[Arial] text-[20px] font-bold text-white">
+              Gerakan Inovasi
+            </span>
+            <img
+              alt=""
+              className={`size-[16px] shrink-0 transition-transform duration-200 ${
+                openDropdown === "inovasi" ? "rotate-180" : ""
+              }`}
+              src={chevronDownIcon}
+            />
+          </button>
+
+          <AnimatePresence>
+            {openDropdown === "inovasi" && (
+              <motion.div
+                initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 6, scale: 0.95 }}
+                transition={{ duration: 0.16, ease: "easeOut" }}
+                className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50"
+              >
+                <div className="w-[200px] bg-[#17171a]/95 backdrop-blur-md border-xl border-white/15 rounded-md shadow-[0_16px_40px_rgba(0,0,0,0.75)] p-2 flex flex-col gap-1">
+                  {gerakanInovasiItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => navigate(item.id)}
+                      className="w-full text-left px-3.5 py-2 rounded-sm font-['Plus_Jakarta_Sans:Medium',Arial] text-[15px] font-semibold text-white/90 hover:text-[#17171a] hover:bg-[#cfffa3] transition-colors duration-150 cursor-pointer"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
         <button
           onClick={() => navigate("filosofi-logo")}

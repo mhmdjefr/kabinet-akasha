@@ -33,7 +33,8 @@ export default function ProgramUnggulanSection() {
           data-node-id="1:834"
         >
           <div
-            className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
+            id="itechnocup"
+            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
             data-node-id="1:835"
           >
             <div
@@ -65,7 +66,8 @@ export default function ProgramUnggulanSection() {
             </div>
           </div>
           <div
-            className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
+            id="saum"
+            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
             data-node-id="1:838"
           >
             <div
@@ -95,7 +97,8 @@ export default function ProgramUnggulanSection() {
             </div>
           </div>
           <div
-            className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
+            id="tik-games"
+            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
             data-node-id="1:841"
           >
             <div
