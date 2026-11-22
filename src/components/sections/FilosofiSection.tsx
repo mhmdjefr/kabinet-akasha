@@ -1,6 +1,6 @@
 "use client";
 
-import { philosophyDividerOne, philosophyDividerTwo, philosophyDividerThree, philosophyDividerFour, philosophyBackgroundVector } from "@/lib/assets";
+import { philosophyDividerOneFix, philosophyDividerTwoFix, philosophyDividerThreeFix, philosophyDividerFourFix, philosophyBackgroundVector } from "@/lib/assets";
 
 export default function FilosofiSection() {
   return (
@@ -159,41 +159,41 @@ export default function FilosofiSection() {
             </p>
           </div>
         </div>
-        <div className="absolute h-[18px] left-0 top-[1175px] w-[1443px]" data-node-id="1:730">
+        <div className="absolute h-[42px] left-0 top-[1161px] w-[1443px]" data-node-id="1:730">
           <img
             alt=""
             className="absolute block inset-0 max-w-none size-full"
-            src={philosophyDividerFour}
+            src={philosophyDividerFourFix}
           />
         </div>
         <div
-          className="absolute h-[18px] left-[-64px] top-[1412px] w-[1565px]"
+          className="absolute h-[42px] left-[-64px] top-[1396px] w-[1565px]"
           data-node-id="1:741"
         >
           <img
             alt=""
             className="absolute block inset-0 max-w-none size-full"
-            src={philosophyDividerOne}
+            src={philosophyDividerOneFix}
           />
         </div>
         <div
-          className="-translate-x-1/2 absolute h-[18px] left-[calc(50%-0.5px)] top-[1660px] w-[1693px]"
+          className="-translate-x-1/2 absolute h-[42px] left-[calc(50%-0.5px)] top-[1631px] w-[1693px]"
           data-node-id="1:752"
         >
           <img
             alt=""
             className="absolute block inset-0 max-w-none size-full"
-            src={philosophyDividerTwo}
+            src={philosophyDividerTwoFix}
           />
         </div>
         <div
-          className="-translate-x-1/2 absolute h-[18px] left-[calc(50%-0.5px)] top-[1890px] w-[1737px]"
+          className="-translate-x-1/2 absolute h-[42px] left-[calc(50%-0.5px)] top-[1866px] w-[1737px]"
           data-node-id="1:763"
         >
           <img
             alt=""
             className="absolute block inset-0 max-w-none size-full"
-            src={philosophyDividerThree}
+            src={philosophyDividerThreeFix}
           />
         </div>
       </div>
