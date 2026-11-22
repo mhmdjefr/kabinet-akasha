@@ -2,25 +2,6 @@
 
 import { scrollToTopIcon, footerNavigationDot, footerKabinetLogo, footerDivider, footerTopWave, footerBackgroundVector } from "@/lib/assets";
 
-function InstagramIcon({ className = "size-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </svg>
-  );
-}
-
 const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
@@ -66,20 +47,6 @@ export default function FooterSection() {
           </div>
         </div>
 
-        {/* Tombol Tautan Instagram Kabinet Akasha */}
-        <a
-          href="https://www.instagram.com/kabinet.akasha/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram Kabinet Akasha @kabinet.akasha"
-          className="absolute left-[662.57px] top-[734px] inline-flex items-center gap-[12px] px-[26px] py-[12px] rounded-full bg-white/10 hover:bg-[#cfffa3] text-white hover:text-[#171717] border border-white/20 hover:border-[#cfffa3] transition-all duration-200 group cursor-pointer shadow-lg backdrop-blur-sm z-10"
-        >
-          <InstagramIcon className="size-[22px] text-[#cfffa3] group-hover:text-[#171717] transition-colors" />
-          <span className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-semibold text-[20px] tracking-wide">
-            @kabinet.akasha
-          </span>
-        </a>
-
         <div className="-translate-x-1/2 absolute h-[351px] left-[calc(50%-0.5px)] top-[9px] w-[2131px]"
           data-node-id="1:901"
             >
@@ -124,7 +91,7 @@ export default function FooterSection() {
           Reserved.
         </p>
         <div
-          className="-translate-x-1/2 absolute content-stretch flex items-center justify-between left-1/2 top-[869px] w-[832px]"
+          className="-translate-x-1/2 absolute content-stretch flex items-center justify-between left-1/2 top-[869px] w-[1000px]"
           data-node-id="1:905"
         >
           <button
@@ -176,6 +143,21 @@ export default function FooterSection() {
           >
             Filosofi Logo
           </button>
+          <div className="relative shrink-0 size-[6px]" aria-hidden="true">
+            <img
+              alt=""
+              className="absolute block inset-0 max-w-none size-full"
+              src={footerNavigationDot}
+            />
+          </div>
+          <a
+            href="https://www.instagram.com/kabinet.akasha/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer hover:text-[#cfffa3] transition-colors [text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap"
+          >
+            More Information
+          </a>
         </div>
         <li className="absolute left-[180px] list-none top-[138.58px] w-[1079px]">
           <span className="font-[Arial] font-bold leading-[117px] text-[#cfffa3] text-[102.038px]">
