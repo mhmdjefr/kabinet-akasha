@@ -92,7 +92,7 @@ export default function BackgroundOverlay({ isMobile }: BackgroundOverlayProps) 
         </div>
         <div
           className="absolute h-[1134px] left-[843px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-938px_74px] mask-size-[1563px_985px] w-[756px]"
-          style={{ maskImage: `url("${programBackgroundMask}")`, top: 6972 + offset }}
+          style={{ maskImage: `url("${programBackgroundMask}")`, top: 7229 + offset }}
           data-node-id="1:660"
           data-name="DSC04588 1"
         >
@@ -104,10 +104,10 @@ export default function BackgroundOverlay({ isMobile }: BackgroundOverlayProps) 
         </div>
         <div
           className="absolute flex h-[965.379px] items-center justify-center left-0 w-[455.756px]"
-          style={{ top: 7229 + offset }}
+          style={{ top: 7255 + offset }}
           data-node-id="1:661"
         >
-          <div className="flex-none rotate-[2.36deg]">
+          <div className="flex-none rotate-[2.36deg] scale-[1.125]">
             <div
               className="h-[949px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-95px_-183px] mask-size-[1563px_985px] relative w-[417px]"
               style={{ maskImage: `url("${programBackgroundMask}")` }}
