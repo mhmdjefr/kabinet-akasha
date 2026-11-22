@@ -100,13 +100,13 @@ export default function MobileCampaign() {
             <img src={candidateJeffriPhoto} alt="M. Jeffri" />
             <strong>M. Jeffri</strong>
             <small>Calon Ketua HIMATIK</small>
-            <em>Periode 2027 - 2028</em>
+            <em>Periode 2026 - 2027</em>
           </article>
           <article>
             <img src={candidateAnisaPhoto} alt="P. Anisa La A." />
             <strong>P. Anisa La A.</strong>
             <small>Calon Wakil Ketua HIMATIK</small>
-            <em>Periode 2027 - 2028</em>
+            <em>Periode 2026 - 2027</em>
           </article>
         </div>
       </section>

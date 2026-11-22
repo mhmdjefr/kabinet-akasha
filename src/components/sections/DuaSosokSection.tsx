@@ -77,7 +77,7 @@ export default function DuaSosokSection() {
             className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[16.162px] text-white whitespace-nowrap"
             data-node-id="1:823"
           >
-            Periode 2027 - 2028
+            Periode 2026 - 2027
           </p>
         </div>
         <div
@@ -88,7 +88,7 @@ export default function DuaSosokSection() {
             className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[16.162px] text-white whitespace-nowrap"
             data-node-id="1:825"
           >
-            Periode 2027 - 2028
+            Periode 2026 - 2027
           </p>
         </div>
       </div>
