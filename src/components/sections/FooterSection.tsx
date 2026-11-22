@@ -46,6 +46,7 @@ export default function FooterSection() {
             </p>
           </div>
         </div>
+
         <div className="-translate-x-1/2 absolute h-[351px] left-[calc(50%-0.5px)] top-[9px] w-[2131px]"
           data-node-id="1:901"
             >
@@ -90,15 +91,16 @@ export default function FooterSection() {
           Reserved.
         </p>
         <div
-          className="-translate-x-1/2 absolute content-stretch flex items-center justify-between left-1/2 top-[869px] w-[832px]"
+          className="-translate-x-1/2 absolute content-stretch flex items-center justify-between left-1/2 top-[869px] w-[1000px]"
           data-node-id="1:905"
         >
-          <p
-            className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap"
+          <button
+            onClick={() => scrollToSection("beranda")}
+            className="cursor-pointer hover:text-[#cfffa3] transition-colors [text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap bg-transparent border-0 p-0"
             data-node-id="1:906"
           >
             Beranda
-          </p>
+          </button>
           <div className="relative shrink-0 size-[6px]" data-node-id="1:907">
             <img
               alt=""
@@ -106,12 +108,13 @@ export default function FooterSection() {
               src={footerNavigationDot}
             />
           </div>
-          <p
-            className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap"
+          <button
+            onClick={() => scrollToSection("program-unggulan")}
+            className="cursor-pointer hover:text-[#cfffa3] transition-colors [text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap bg-transparent border-0 p-0"
             data-node-id="1:908"
           >
             Program Unggulan
-          </p>
+          </button>
           <div className="relative shrink-0 size-[6px]" data-node-id="1:909">
             <img
               alt=""
@@ -119,12 +122,13 @@ export default function FooterSection() {
               src={footerNavigationDot}
             />
           </div>
-          <p
-            className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap"
+          <button
+            onClick={() => scrollToSection("gerakan-inovasi")}
+            className="cursor-pointer hover:text-[#cfffa3] transition-colors [text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap bg-transparent border-0 p-0"
             data-node-id="1:910"
           >
             Gerakan Inovasi
-          </p>
+          </button>
           <div className="relative shrink-0 size-[6px]" data-node-id="1:911">
             <img
               alt=""
@@ -132,12 +136,28 @@ export default function FooterSection() {
               src={footerNavigationDot}
             />
           </div>
-          <p
-            className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap"
+          <button
+            onClick={() => scrollToSection("filosofi-logo")}
+            className="cursor-pointer hover:text-[#cfffa3] transition-colors [text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap bg-transparent border-0 p-0"
             data-node-id="1:912"
           >
             Filosofi Logo
-          </p>
+          </button>
+          <div className="relative shrink-0 size-[6px]" aria-hidden="true">
+            <img
+              alt=""
+              className="absolute block inset-0 max-w-none size-full"
+              src={footerNavigationDot}
+            />
+          </div>
+          <a
+            href="https://www.instagram.com/kabinet.akasha/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer hover:text-[#cfffa3] transition-colors [text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-[Arial] font-normal leading-[normal] not-italic relative shrink-0 text-[#dfdfdf] text-[24px] whitespace-nowrap"
+          >
+            More Information
+          </a>
         </div>
         <li className="absolute left-[180px] list-none top-[138.58px] w-[1079px]">
           <span className="font-[Arial] font-bold leading-[117px] text-[#cfffa3] text-[102.038px]">
