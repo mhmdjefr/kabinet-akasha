@@ -106,6 +106,7 @@ const jsonLd = {
   alternateName: "Akasha HIMATIK",
   url: siteUrl,
   logo: `${siteUrl}/assets/icon.png`,
+  sameAs: ["https://www.instagram.com/kabinet.akasha/"],
   description:
     "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2027–2028: Ruang untuk Semua, Tumbuh dan Berdiri Bersama.",
   founder: [
