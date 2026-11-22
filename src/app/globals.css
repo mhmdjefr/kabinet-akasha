@@ -121,6 +121,10 @@ font-weight: 400;
     }
 }
 @media (max-width: 767px) {
+    html,
+    body {
+        overscroll-behavior-y: none;
+    }
     #beranda,
     #filosofi-logo,
     #program-unggulan,
