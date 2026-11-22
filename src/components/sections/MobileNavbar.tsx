@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Home, Orbit, LayoutGrid, Lightbulb } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -17,37 +17,94 @@ const navItems: NavItem[] = [
   { id: "filosofi-logo", label: "Filosofi Logo", icon: Lightbulb },
 ];
 
+// Visual order from bottom to top of page
+const trackedSectionsBottomToTop = [
+  "gerakan-inovasi",
+  "program-unggulan",
+  "filosofi-logo",
+  "beranda",
+];
+
 export default function MobileNavbar() {
   const [activeTab, setActiveTab] = useState<string>("beranda");
+  const isClickScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const scrollTo = (id: string) => {
     setActiveTab(id);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    isClickScrollingRef.current = true;
+    if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+
+    if (id === "beranda") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const targetY = window.scrollY + rect.top - 20;
+        window.scrollTo({
+          top: Math.max(0, targetY),
+          behavior: "smooth",
+        });
+      }
     }
+
+    scrollTimeoutRef.current = setTimeout(() => {
+      isClickScrollingRef.current = false;
+    }, 850);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
+      if (isClickScrollingRef.current) return;
 
-      // Check sections from bottom to top
-      for (let i = navItems.length - 1; i >= 0; i--) {
-        const item = navItems[i];
-        const el = document.getElementById(item.id);
+      // If near the bottom of page, activate the last section
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 60
+      ) {
+        setActiveTab("gerakan-inovasi");
+        return;
+      }
+
+      // If at the very top of page
+      if (window.scrollY < 100) {
+        setActiveTab("beranda");
+        return;
+      }
+
+      const threshold = Math.min(window.innerHeight * 0.35, 200);
+
+      for (const id of trackedSectionsBottomToTop) {
+        const el = document.getElementById(id);
         if (el) {
-          const top = el.offsetTop;
-          if (scrollPosition >= top) {
-            setActiveTab(item.id);
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= threshold) {
+            setActiveTab(id);
             break;
           }
         }
       }
     };
 
+    const handleTouchOrWheel = () => {
+      isClickScrollingRef.current = false;
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("touchstart", handleTouchOrWheel, { passive: true });
+    window.addEventListener("wheel", handleTouchOrWheel, { passive: true });
+
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("touchstart", handleTouchOrWheel);
+      window.removeEventListener("wheel", handleTouchOrWheel);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
   }, []);
 
   return (
