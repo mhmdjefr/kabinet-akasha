@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Kabinet Akasha",
   },
   description:
-    "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2027–2028 bersama M. Jeffri & P. Anisa La A. Membawa ruang yang terbuka, inklusif, transparan, dan mandiri bagi seluruh mahasiswa TIK.",
+    "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2026–2027 bersama M. Jeffri & P. Anisa La A. Membawa ruang yang terbuka, inklusif, transparan, dan mandiri bagi seluruh mahasiswa TIK.",
   applicationName: "Kabinet Akasha",
   authors: [{ name: "Kabinet Akasha", url: siteUrl }],
   generator: "Next.js",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     siteName: "Kabinet Akasha",
     title: "Kabinet Akasha — Ruang untuk Semua, Tumbuh dan Berdiri Bersama",
     description:
-      "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2027–2028 bersama M. Jeffri & P. Anisa La A. Kenali visi, misi, filosofi, program unggulan, dan gerakan inovasi kami.",
+      "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2026–2027 bersama M. Jeffri & P. Anisa La A. Kenali visi, misi, filosofi, program unggulan, dan gerakan inovasi kami.",
     images: [
       {
         url: "/assets/icon.png",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Kabinet Akasha — Ruang untuk Semua, Tumbuh dan Berdiri Bersama",
     description:
-      "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2027–2028 bersama M. Jeffri & P. Anisa La A.",
+      "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2026–2027 bersama M. Jeffri & P. Anisa La A.",
     images: ["/assets/icon.png"],
     creator: "@himatikpnj",
   },
@@ -108,7 +108,7 @@ const jsonLd = {
   logo: `${siteUrl}/assets/icon.png`,
   sameAs: ["https://www.instagram.com/kabinet.akasha/"],
   description:
-    "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2027–2028: Ruang untuk Semua, Tumbuh dan Berdiri Bersama.",
+    "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2026–2027: Ruang untuk Semua, Tumbuh dan Berdiri Bersama.",
   founder: [
     {
       "@type": "Person",
