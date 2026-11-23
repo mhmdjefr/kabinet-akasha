@@ -210,7 +210,7 @@ export default async function InovasiDetailPage({
                     href={`/inovasi/${item.slug}`}
                     className="inline-flex items-center gap-2 border border-[#564cf8]/25 bg-white px-5 py-2.5 text-sm font-bold text-[#564cf8] transition-all hover:border-[#564cf8] hover:bg-[#564cf8] hover:text-white focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#564cf8]"
                   >
-                    {item.title} →
+                    {item.title}
                   </Link>
                 ))}
             </div>
