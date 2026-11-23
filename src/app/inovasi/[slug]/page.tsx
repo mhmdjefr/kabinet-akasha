@@ -4,6 +4,12 @@ import Image from "next/image";
 import { getInnovation, innovations } from "@/data/innovations";
 import NavbarSection from "@/components/sections/NavbarSection";
 import MobileNavbar from "@/components/sections/MobileNavbar";
+import {
+  innovationBackgroundPhoto,
+  tikTrackHeaderStrip,
+  asahHeaderStrip,
+  barnabyHeaderStrip,
+} from "@/lib/assets";
 
 export function generateStaticParams() {
   return innovations.map((item) => ({ slug: item.slug }));
@@ -44,13 +50,20 @@ export default async function InovasiDetailPage({
 
   const accentColor =
     innovation.slug === "tiktrack"
-      ? "text-[#cfffa3]"
+      ? "text-[#564cf8]"
       : innovation.slug === "asah"
       ? "text-[#f786f8]"
-      : "text-[#cfffa3]";
+      : "text-[#564cf8]";
+
+  const headerStrip =
+    innovation.slug === "tiktrack"
+      ? tikTrackHeaderStrip
+      : innovation.slug === "asah"
+      ? asahHeaderStrip
+      : barnabyHeaderStrip;
 
   return (
-    <div className="min-h-screen bg-[#171717] text-white overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-[#fcfdfb] text-[#171717]">
       {/* Universal Desktop & Mobile Navbars */}
       <MobileNavbar />
       <NavbarSection />
@@ -61,10 +74,10 @@ export default async function InovasiDetailPage({
         <div className="mx-auto max-w-5xl px-4 pt-4 sm:px-6">
           <Link
             href="/#gerakan-inovasi"
-            className="inline-flex items-center gap-2 p-2 pr-5 text-sm font-bold text-white transition-all hover:brightness-110 active:scale-95"
+            className="inline-flex items-center gap-2 p-2 pr-5 text-sm font-bold text-[#171717] transition-all hover:brightness-95 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#564cf8] active:scale-95"
             style={{
               backgroundImage:
-                "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
+                "linear-gradient(90deg, rgba(247, 47, 251, 0.28) 0%, rgba(247, 47, 251, 0) 95%)",
             }}
           >
             <span>← Kembali ke Gerakan Inovasi</span>
@@ -73,20 +86,35 @@ export default async function InovasiDetailPage({
 
         {/* Hero Section */}
         <section className="relative overflow-hidden py-12 sm:py-20">
-          {/* Background glow */}
-          <div className="pointer-events-none absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#564cf8]/20 blur-3xl" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-full max-w-[760px] opacity-[0.09]">
+            <Image
+              src={innovationBackgroundPhoto}
+              alt=""
+              fill
+              className="object-cover object-right"
+              sizes="760px"
+            />
+          </div>
+          <Image
+            src={headerStrip}
+            alt=""
+            aria-hidden="true"
+            width={592}
+            height={90}
+            className="pointer-events-none absolute right-0 top-8 h-[90px] w-[44%] min-w-[320px] max-w-[592px] object-cover"
+          />
 
-          <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6">
             <div className="flex flex-wrap items-center gap-3">
               <span className={`px-3.5 py-1 text-xs font-bold uppercase tracking-wider ${badgeColor}`}>
                 Inovasi {innovation.number}
               </span>
-              <span className="font-['Plus_Jakarta_Sans:Medium'] text-xs uppercase tracking-wider text-white/60">
+              <span className="font-['Plus_Jakarta_Sans:Medium'] text-xs uppercase tracking-wider text-[#171717]/60">
                 {innovation.category}
               </span>
             </div>
 
-            <h1 className="mt-6 font-['Sansation:Bold'] text-5xl font-black uppercase tracking-tight text-white sm:text-7xl lg:text-8xl">
+            <h1 className="mt-6 font-['Sansation:Bold'] text-5xl font-black uppercase tracking-tight text-[#171717] sm:text-7xl lg:text-8xl">
               {innovation.title}
             </h1>
 
@@ -94,7 +122,7 @@ export default async function InovasiDetailPage({
               {innovation.tagline}
             </p>
 
-            <p className="mt-6 max-w-3xl font-['Plus_Jakarta_Sans:Regular'] text-base leading-relaxed text-white/80 sm:text-lg">
+            <p className="mt-6 max-w-3xl font-['Plus_Jakarta_Sans:Regular'] text-base leading-relaxed text-[#171717]/80 sm:text-lg">
               {innovation.description}
             </p>
           </div>
@@ -103,10 +131,10 @@ export default async function InovasiDetailPage({
         {/* Features / Details Section */}
         <section className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-16">
           <div className="mb-10">
-            <span className="font-['Plus_Jakarta_Sans:Bold'] text-xs uppercase tracking-widest text-[#cfffa3]">
+            <span className="font-['Plus_Jakarta_Sans:Bold'] text-xs uppercase tracking-widest text-[#564cf8]">
               Poin Penting & Pelaksanaan
             </span>
-            <h2 className="mt-2 font-['Sansation:Bold'] text-3xl font-bold text-white sm:text-4xl">
+            <h2 className="mt-2 font-['Sansation:Bold'] text-3xl font-bold text-[#171717] sm:text-4xl">
               Langkah & Mekanisme Program
             </h2>
           </div>
@@ -115,15 +143,15 @@ export default async function InovasiDetailPage({
             {innovation.points.map((point, index) => (
               <div
                 key={index}
-                className="group relative border border-white/10 bg-[#212121] p-6 transition-all hover:border-[#564cf8]/50 hover:bg-[#252525]"
+                className="group relative border border-[#171717]/10 bg-white p-6 shadow-sm transition-all hover:border-[#564cf8]/50 hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-['Audiowide:Regular'] text-3xl font-black text-white/20 group-hover:text-[#cfffa3]/40 transition-colors">
+                  <span className="font-['Audiowide:Regular'] text-3xl font-black text-[#564cf8]/20 transition-colors group-hover:text-[#564cf8]/50">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="h-2 w-2 bg-[#564cf8]" />
+                  <span className={`h-2 w-2 ${innovation.slug === "asah" ? "bg-[#f786f8]" : innovation.slug === "barnaby" ? "bg-[#cfffa3]" : "bg-[#564cf8]"}`} />
                 </div>
-                <p className="mt-4 font-['Plus_Jakarta_Sans:Regular'] text-sm leading-relaxed text-white/90 sm:text-base">
+                <p className="mt-4 font-['Plus_Jakarta_Sans:Regular'] text-sm leading-relaxed text-[#171717]/85 sm:text-base">
                   {point}
                 </p>
               </div>
@@ -137,7 +165,7 @@ export default async function InovasiDetailPage({
                 <span className="font-['Plus_Jakarta_Sans:Bold'] text-xs uppercase tracking-widest text-[#f786f8]">
                   Alur & Antarmuka
                 </span>
-                <h2 className="mt-2 font-['Sansation:Bold'] text-3xl font-bold text-white sm:text-4xl">
+                <h2 className="mt-2 font-['Sansation:Bold'] text-3xl font-bold text-[#171717] sm:text-4xl">
                   Tampilan Layar & Sistem
                 </h2>
               </div>
@@ -146,9 +174,9 @@ export default async function InovasiDetailPage({
                 {innovation.images.map((src, i) => (
                   <div
                     key={i}
-                    className="overflow-hidden border border-white/10 bg-[#212121] transition-all hover:border-white/30"
+                    className="overflow-hidden border border-[#171717]/10 bg-white shadow-sm transition-all hover:border-[#564cf8]/40 hover:shadow-md"
                   >
-                    <div className="relative aspect-[4/3] w-full bg-[#171717]">
+                    <div className="relative aspect-[4/3] w-full bg-[#f3f4ef]">
                       <Image
                         src={src}
                         alt={innovation.carouselLabels[i] || `${innovation.title} preview ${i + 1}`}
@@ -158,7 +186,7 @@ export default async function InovasiDetailPage({
                       />
                     </div>
                     <div className="p-4">
-                      <p className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white">
+                      <p className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-[#171717]">
                         {innovation.carouselLabels[i] || `Tahap ${i + 1}`}
                       </p>
                     </div>
@@ -169,8 +197,8 @@ export default async function InovasiDetailPage({
           )}
 
           {/* Bottom Navigation to Other Innovations */}
-          <div className="mt-24 border-t border-white/10 pt-12">
-            <p className="text-center font-['Plus_Jakarta_Sans:Medium'] text-sm text-white/60">
+          <div className="mt-24 border-t border-[#171717]/10 pt-12">
+            <p className="text-center font-['Plus_Jakarta_Sans:Medium'] text-sm text-[#171717]/60">
               Inovasi lainnya dari Kabinet Akasha
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
@@ -180,7 +208,7 @@ export default async function InovasiDetailPage({
                   <Link
                     key={item.slug}
                     href={`/inovasi/${item.slug}`}
-                    className="inline-flex items-center gap-2 border border-white/10 bg-[#212121] px-5 py-2.5 text-sm font-bold text-white transition-all hover:border-[#cfffa3] hover:text-[#cfffa3]"
+                    className="inline-flex items-center gap-2 border border-[#564cf8]/25 bg-white px-5 py-2.5 text-sm font-bold text-[#564cf8] transition-all hover:border-[#564cf8] hover:bg-[#564cf8] hover:text-white focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#564cf8]"
                   >
                     {item.title} →
                   </Link>
@@ -190,8 +218,8 @@ export default async function InovasiDetailPage({
         </section>
 
         {/* Footer */}
-        <footer className="mt-16 border-t border-white/10 py-10 text-center">
-          <p className="font-['Plus_Jakarta_Sans:Regular'] text-xs text-white/40">
+        <footer className="mt-16 border-t border-[#171717]/10 py-10 text-center">
+          <p className="font-['Plus_Jakarta_Sans:Regular'] text-xs text-[#171717]/50">
             © 2026 Kabinet Akasha — Ruang untuk Semua, Tumbuh dan Berdiri Bersama.
           </p>
         </footer>
