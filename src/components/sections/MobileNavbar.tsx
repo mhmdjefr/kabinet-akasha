@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { Home, Orbit, LayoutGrid, Lightbulb } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -26,6 +27,8 @@ const trackedSectionsBottomToTop = [
 ];
 
 export default function MobileNavbar() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [activeTab, setActiveTab] = useState<string>("beranda");
   const isClickScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -39,6 +42,11 @@ export default function MobileNavbar() {
   };
 
   const scrollTo = (id: string) => {
+    if (pathname !== "/") {
+      router.push(`/#${id}`);
+      return;
+    }
+
     setActiveTab(id);
     isClickScrollingRef.current = true;
     if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);

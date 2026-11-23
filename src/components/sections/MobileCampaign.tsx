@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   akashaLogo,
   candidateAnisaPhoto,
@@ -25,9 +26,9 @@ export default function MobileCampaign() {
   ] as const;
 
   const innovations = [
-    ["01", "TIKTrack", "Informasi dalam Genggaman", "Sistem informasi terintegrasi untuk mempermudah akses informasi kegiatan dan kepengurusan HIMATIK."],
-    ["02", "ASAH", "Ruang untuk Berkembang", "Program pendampingan akademik yang mendukung mahasiswa TIK dalam mengembangkan kemampuan dan potensinya."],
-    ["03", "Barnaby 2.0", "Mandiri, Terus Berkembang", "Pengembangan unit usaha HIMATIK melalui layanan dan proyek digital untuk mendukung kemandirian organisasi."],
+    ["01", "TIKTrack", "Informasi dalam Genggaman", "Sistem informasi terintegrasi untuk mempermudah akses informasi kegiatan dan kepengurusan HIMATIK.", "tiktrack"],
+    ["02", "ASAH", "Ruang untuk Berkembang", "Program pendampingan akademik yang mendukung mahasiswa TIK dalam mengembangkan kemampuan dan potensinya.", "asah"],
+    ["03", "Barnaby 2.0", "Mandiri, Terus Berkembang", "Pengembangan unit usaha HIMATIK melalui layanan dan proyek digital untuk mendukung kemandirian organisasi.", "barnaby"],
   ] as const;
 
   return (
@@ -127,14 +128,30 @@ export default function MobileCampaign() {
         <h2>Gerakan Inovasi</h2>
         <p>Akasha menghadirkan inovasi untuk membuka peluang baru, menjawab kebutuhan mahasiswa TIK, dan mendorong HIMATIK terus berkembang.</p>
         <div className="mobile-innovation-list">
-          {innovations.map(([number, name, title, text]) => (
+          {innovations.map(([number, name, title, text, slug]) => (
             <article key={number}>
               <div className="mobile-innovation-number">{number}</div>
               <h3>{name}</h3>
-              <div className="mobile-innovation-card">
+              <Link
+                href={`/inovasi/${slug}`}
+                aria-label={`Lihat detail inovasi ${name}`}
+                className="mobile-innovation-card focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
+              >
                 <img src={innovationBackgroundPhoto} alt="" />
-                <div><strong>{title}</strong><p>{text}</p></div>
-              </div>
+                <div>
+                  <strong>{title}</strong>
+                  <p>{text}</p>
+                  <span
+                    className="mt-3 inline-flex items-center gap-2 p-1.5 pr-4 text-xs font-bold text-white transition-all active:scale-95"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
+                    }}
+                  >
+                    <span>Lihat Detail Inovasi →</span>
+                  </span>
+                </div>
+              </Link>
             </article>
           ))}
         </div>
