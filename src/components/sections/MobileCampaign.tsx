@@ -132,23 +132,26 @@ export default function MobileCampaign() {
             <article key={number}>
               <div className="mobile-innovation-number">{number}</div>
               <h3>{name}</h3>
-              <div className="mobile-innovation-card">
+              <Link
+                href={`/inovasi/${slug}`}
+                aria-label={`Lihat detail inovasi ${name}`}
+                className="mobile-innovation-card focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
+              >
                 <img src={innovationBackgroundPhoto} alt="" />
                 <div>
                   <strong>{title}</strong>
                   <p>{text}</p>
-                  <Link
-                    href={`/inovasi/${slug}`}
-                    className="mt-3 inline-flex items-center gap-2 p-1.5 pr-4 text-xs font-bold text-white transition-all active:scale-95"
+                  <span
+                    className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/70 px-4 py-2 text-xs font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-95"
                     style={{
                       backgroundImage:
                         "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
                     }}
                   >
                     <span>Lihat Detail Inovasi →</span>
-                  </Link>
+                  </span>
                 </div>
-              </div>
+              </Link>
             </article>
           ))}
         </div>
