@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import {
   akashaLogo,
   chevronDownIcon,
@@ -17,21 +18,16 @@ const programUnggulanItems = [
 ];
 
 const gerakanInovasiItems = [
-  { label: "TIKTrack", id: "tiktrack" },
-  { label: "ASAH", id: "asah" },
-  { label: "Barnaby 2.0", id: "barnaby" },
+  { label: "TIKTrack", href: "/inovasi/tiktrack" },
+  { label: "ASAH", href: "/inovasi/asah" },
+  { label: "Barnaby 2.0", href: "/inovasi/barnaby" },
 ];
-
-const scrollToSection = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-};
 
 export default function NavbarSection() {
   const [openDropdown, setOpenDropdown] = useState<"program" | "inovasi" | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleMouseEnter = (menu: "program" | "inovasi") => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -47,7 +43,14 @@ export default function NavbarSection() {
 
   const navigate = (id: string) => {
     setOpenDropdown(null);
-    scrollToSection(id);
+    if (pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      router.push(`/#${id}`);
+    }
   };
 
   return (
@@ -223,8 +226,11 @@ export default function NavbarSection() {
                 <div className="w-[200px] bg-[#17171a]/95 backdrop-blur-md border-xl border-white/15 rounded-md shadow-[0_16px_40px_rgba(0,0,0,0.75)] p-2 flex flex-col gap-1">
                   {gerakanInovasiItems.map((item) => (
                     <button
-                      key={item.id}
-                      onClick={() => navigate(item.id)}
+                      key={item.href}
+                      onClick={() => {
+                        setOpenDropdown(null);
+                        router.push(item.href);
+                      }}
                       className="w-full text-left px-3.5 py-2 rounded-sm font-['Plus_Jakarta_Sans:Medium',Arial] text-[15px] font-semibold text-white/90 hover:text-[#17171a] hover:bg-[#cfffa3] transition-colors duration-150 cursor-pointer"
                     >
                       {item.label}

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { innovationBackgroundPhoto, barnabyHeaderStrip, asahHeaderStrip, tikTrackHeaderStrip } from "@/lib/assets";
 
 export default function GerakanInovasiSection() {
@@ -52,8 +53,10 @@ export default function GerakanInovasiSection() {
               <div className="absolute bg-[rgba(86,76,248,0.24)] inset-0 mix-blend-color" />
             </div>
           </div>
-          <div
-            className="[word-break:break-word] absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[79px] text-white top-[637px] w-[1114.286px]"
+          <Link
+            href="/inovasi/tiktrack"
+            aria-label="Lihat detail inovasi TIKTrack"
+            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[79px] text-white top-[637px] w-[1114.286px] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
             data-node-id="1:857"
           >
             <p
@@ -69,7 +72,18 @@ export default function GerakanInovasiSection() {
               Sistem informasi terintegrasi untuk mempermudah akses informasi kegiatan dan
               kepengurusan HIMATIK.
             </p>
-          </div>
+            <span
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pr-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
+              }}
+            >
+              <span className="font-[Arial] text-[32px] font-bold text-white tracking-wide whitespace-nowrap">
+                Lihat Detail Inovasi →
+              </span>
+            </span>
+          </Link>
           <p
             className="-translate-x-1/2 [word-break:break-word] absolute font-[Arial] font-bold leading-[normal] left-[402.5px] not-italic text-[#171717] text-[187.51px] text-center top-[388px] whitespace-nowrap"
             data-node-id="1:860"
@@ -118,8 +132,10 @@ export default function GerakanInovasiSection() {
               <div className="absolute bg-[rgba(86,76,248,0.24)] inset-0 mix-blend-color" />
             </div>
           </div>
-          <div
-            className="[word-break:break-word] absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[79px] text-white top-[1646px] w-[1114.286px]"
+          <Link
+            href="/inovasi/barnaby"
+            aria-label="Lihat detail inovasi Barnaby 2.0"
+            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[79px] text-white top-[1646px] w-[1114.286px] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
             data-node-id="1:865"
           >
             <p
@@ -135,7 +151,18 @@ export default function GerakanInovasiSection() {
               Pengembangan unit usaha HIMATIK melalui layanan dan proyek digital untuk mendukung
               kemandirian organisasi.
             </p>
-          </div>
+            <span
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pr-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
+              }}
+            >
+              <span className="font-[Arial] text-[32px] font-bold text-white tracking-wide whitespace-nowrap">
+                Lihat Detail Inovasi →
+              </span>
+            </span>
+          </Link>
           <p
             className="-translate-x-1/2 [word-break:break-word] absolute font-[Arial] font-bold leading-[normal] left-[538.5px] not-italic text-[#171717] text-[187.51px] text-center top-[1397px] whitespace-nowrap"
             data-node-id="1:868"
@@ -230,8 +257,10 @@ export default function GerakanInovasiSection() {
               </div>
             </div>
           </div>
-          <div
-            className="[word-break:break-word] absolute content-stretch flex flex-col gap-[16px] items-end leading-[normal] left-[242px] text-white top-[249px] w-[1114.286px]"
+          <Link
+            href="/inovasi/asah"
+            aria-label="Lihat detail inovasi ASAH"
+            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-end leading-[normal] left-[242px] text-white top-[249px] w-[1114.286px] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
             data-node-id="1:880"
           >
             <p
@@ -247,7 +276,18 @@ export default function GerakanInovasiSection() {
               Program pendampingan akademik yang mendukung mahasiswa TIK dalam mengembangkan
               kemampuan dan potensinya.
             </p>
-          </div>
+            <span
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pl-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(270deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
+              }}
+            >
+              <span className="font-[Arial] text-[32px] font-bold text-white tracking-wide whitespace-nowrap">
+                ← Lihat Detail Inovasi
+              </span>
+            </span>
+          </Link>
           <p
             className="-translate-x-1/2 [word-break:break-word] absolute font-[Arial] font-bold leading-[normal] left-[1159px] not-italic text-[#171717] text-[187.51px] text-center top-0 whitespace-nowrap"
             data-node-id="1:883"
