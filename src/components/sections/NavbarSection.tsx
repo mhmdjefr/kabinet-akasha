@@ -18,9 +18,9 @@ const programUnggulanItems = [
 ];
 
 const gerakanInovasiItems = [
-  { label: "TIKTrack", id: "tiktrack" },
-  { label: "ASAH", id: "asah" },
-  { label: "Barnaby 2.0", id: "barnaby" },
+  { label: "TIKTrack", href: "/inovasi/tiktrack" },
+  { label: "ASAH", href: "/inovasi/asah" },
+  { label: "Barnaby 2.0", href: "/inovasi/barnaby" },
 ];
 
 export default function NavbarSection() {
@@ -226,8 +226,11 @@ export default function NavbarSection() {
                 <div className="w-[200px] bg-[#17171a]/95 backdrop-blur-md border-xl border-white/15 rounded-md shadow-[0_16px_40px_rgba(0,0,0,0.75)] p-2 flex flex-col gap-1">
                   {gerakanInovasiItems.map((item) => (
                     <button
-                      key={item.id}
-                      onClick={() => navigate(item.id)}
+                      key={item.href}
+                      onClick={() => {
+                        setOpenDropdown(null);
+                        router.push(item.href);
+                      }}
                       className="w-full text-left px-3.5 py-2 rounded-sm font-['Plus_Jakarta_Sans:Medium',Arial] text-[15px] font-semibold text-white/90 hover:text-[#17171a] hover:bg-[#cfffa3] transition-colors duration-150 cursor-pointer"
                     >
                       {item.label}
