@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import {
   akashaLogo,
   chevronDownIcon,
@@ -22,16 +23,11 @@ const gerakanInovasiItems = [
   { label: "Barnaby 2.0", id: "barnaby" },
 ];
 
-const scrollToSection = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-};
-
 export default function NavbarSection() {
   const [openDropdown, setOpenDropdown] = useState<"program" | "inovasi" | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleMouseEnter = (menu: "program" | "inovasi") => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -47,7 +43,14 @@ export default function NavbarSection() {
 
   const navigate = (id: string) => {
     setOpenDropdown(null);
-    scrollToSection(id);
+    if (pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      router.push(`/#${id}`);
+    }
   };
 
   return (

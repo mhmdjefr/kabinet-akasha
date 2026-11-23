@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { innovationBackgroundPhoto, barnabyHeaderStrip, asahHeaderStrip, tikTrackHeaderStrip } from "@/lib/assets";
 
 export default function GerakanInovasiSection() {
@@ -69,6 +70,18 @@ export default function GerakanInovasiSection() {
               Sistem informasi terintegrasi untuk mempermudah akses informasi kegiatan dan
               kepengurusan HIMATIK.
             </p>
+            <Link
+              href="/inovasi/tiktrack"
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pr-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
+              }}
+            >
+              <span className="font-[Arial] text-[32px] font-bold text-white tracking-wide whitespace-nowrap">
+                Lihat Detail Inovasi →
+              </span>
+            </Link>
           </div>
           <p
             className="-translate-x-1/2 [word-break:break-word] absolute font-[Arial] font-bold leading-[normal] left-[402.5px] not-italic text-[#171717] text-[187.51px] text-center top-[388px] whitespace-nowrap"
@@ -135,6 +148,18 @@ export default function GerakanInovasiSection() {
               Pengembangan unit usaha HIMATIK melalui layanan dan proyek digital untuk mendukung
               kemandirian organisasi.
             </p>
+            <Link
+              href="/inovasi/barnaby"
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pr-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
+              }}
+            >
+              <span className="font-[Arial] text-[32px] font-bold text-white tracking-wide whitespace-nowrap">
+                Lihat Detail Inovasi →
+              </span>
+            </Link>
           </div>
           <p
             className="-translate-x-1/2 [word-break:break-word] absolute font-[Arial] font-bold leading-[normal] left-[538.5px] not-italic text-[#171717] text-[187.51px] text-center top-[1397px] whitespace-nowrap"
@@ -247,6 +272,18 @@ export default function GerakanInovasiSection() {
               Program pendampingan akademik yang mendukung mahasiswa TIK dalam mengembangkan
               kemampuan dan potensinya.
             </p>
+            <Link
+              href="/inovasi/asah"
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pl-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(270deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
+              }}
+            >
+              <span className="font-[Arial] text-[32px] font-bold text-white tracking-wide whitespace-nowrap">
+                ← Lihat Detail Inovasi
+              </span>
+            </Link>
           </div>
           <p
             className="-translate-x-1/2 [word-break:break-word] absolute font-[Arial] font-bold leading-[normal] left-[1159px] not-italic text-[#171717] text-[187.51px] text-center top-0 whitespace-nowrap"
