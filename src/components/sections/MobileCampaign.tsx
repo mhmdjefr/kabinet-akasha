@@ -142,7 +142,7 @@ export default function MobileCampaign() {
                   <strong>{title}</strong>
                   <p>{text}</p>
                   <span
-                    className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/70 px-4 py-2 text-xs font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-95"
+                    className="mt-3 inline-flex items-center gap-2 p-1.5 pr-4 text-xs font-bold text-white transition-all active:scale-95"
                     style={{
                       backgroundImage:
                         "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",

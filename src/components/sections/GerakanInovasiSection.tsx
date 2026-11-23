@@ -7,7 +7,7 @@ export default function GerakanInovasiSection() {
   return (
 <div
         id="gerakan-inovasi"
-        className="h-[2177px] relative z-10 shrink-0 w-full"
+        className="h-[2177px] relative shrink-0 w-full"
         data-node-id="1:851"
         data-name="08 · Gerakan Inovasi"
       >
@@ -56,7 +56,7 @@ export default function GerakanInovasiSection() {
           <Link
             href="/inovasi/tiktrack"
             aria-label="Lihat detail inovasi TIKTrack"
-            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[79px] text-white top-[637px] w-[1114.286px] rounded-sm focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
+            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[79px] text-white top-[637px] w-[1114.286px] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
             data-node-id="1:857"
           >
             <p
@@ -73,7 +73,7 @@ export default function GerakanInovasiSection() {
               kepengurusan HIMATIK.
             </p>
             <span
-              className="mt-[14px] inline-flex min-h-[56px] items-center gap-[12px] rounded-r-full border border-white/70 px-[36px] py-[10px] pr-[36px] shadow-lg shadow-[#171717]/20 transition-all duration-200 hover:brightness-110 hover:shadow-xl focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3] active:scale-[0.98]"
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pr-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
               style={{
                 backgroundImage:
                   "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
@@ -135,7 +135,7 @@ export default function GerakanInovasiSection() {
           <Link
             href="/inovasi/barnaby"
             aria-label="Lihat detail inovasi Barnaby 2.0"
-            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[79px] text-white top-[1646px] w-[1114.286px] rounded-sm focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
+            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[79px] text-white top-[1646px] w-[1114.286px] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
             data-node-id="1:865"
           >
             <p
@@ -152,7 +152,7 @@ export default function GerakanInovasiSection() {
               kemandirian organisasi.
             </p>
             <span
-              className="mt-[14px] inline-flex min-h-[56px] items-center gap-[12px] rounded-r-full border border-white/70 px-[36px] py-[10px] pr-[36px] shadow-lg shadow-[#171717]/20 transition-all duration-200 hover:brightness-110 hover:shadow-xl focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3] active:scale-[0.98]"
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pr-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
               style={{
                 backgroundImage:
                   "linear-gradient(90deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
@@ -260,7 +260,7 @@ export default function GerakanInovasiSection() {
           <Link
             href="/inovasi/asah"
             aria-label="Lihat detail inovasi ASAH"
-            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-end leading-[normal] left-[242px] text-white top-[249px] w-[1114.286px] rounded-sm focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
+            className="[word-break:break-word] absolute z-20 content-stretch flex flex-col gap-[16px] items-end leading-[normal] left-[242px] text-white top-[249px] w-[1114.286px] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3]"
             data-node-id="1:880"
           >
             <p
@@ -277,7 +277,7 @@ export default function GerakanInovasiSection() {
               kemampuan dan potensinya.
             </p>
             <span
-              className="mt-[14px] inline-flex min-h-[56px] items-center gap-[12px] rounded-l-full border border-white/70 px-[36px] py-[10px] pl-[36px] shadow-lg shadow-[#171717]/20 transition-all duration-200 hover:brightness-110 hover:shadow-xl focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#cfffa3] active:scale-[0.98]"
+              className="mt-[14px] inline-flex items-center gap-[12px] p-[10px] pl-[36px] transition-all duration-200 hover:brightness-110 active:scale-[0.98]"
               style={{
                 backgroundImage:
                   "linear-gradient(270deg, rgb(247, 47, 251) 0%, rgba(147, 28, 149, 0) 95%)",
