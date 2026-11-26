@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Home, Orbit, LayoutGrid, Lightbulb } from "lucide-react";
+import { Home, Orbit, LayoutGrid, Lightbulb, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface NavItem {
@@ -168,6 +168,16 @@ export default function MobileNavbar() {
 
   return (
     <div className="fixed bottom-4 inset-x-0 z-[100] flex flex-col items-center pointer-events-none min-[768px]:hidden px-3">
+      {/* Backdrop Tap-Outside to Close */}
+      {openMenu && (
+        <button
+          type="button"
+          aria-label="Tutup menu"
+          onClick={() => setOpenMenu(null)}
+          className="pointer-events-auto fixed inset-0 z-[-1] bg-black/25 backdrop-blur-[1px]"
+        />
+      )}
+
       {/* Popover Sub-menu untuk Program Unggulan & Gerakan Inovasi */}
       <AnimatePresence>
         {activeSubMenu?.subItems && (
@@ -247,6 +257,13 @@ export default function MobileNavbar() {
                 >
                   {item.label}
                 </motion.span>
+              )}
+              {item.subItems && (
+                <ChevronUp
+                  className={`size-3.5 shrink-0 transition-transform duration-200 ${
+                    openMenu === item.id ? "rotate-180" : ""
+                  } ${isActive ? "text-black" : "text-white/60"}`}
+                />
               )}
             </motion.button>
           );
