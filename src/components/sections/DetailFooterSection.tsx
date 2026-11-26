@@ -27,12 +27,12 @@ export default function DetailFooterSection() {
 
   return (
     <footer className="relative w-full bg-[#171717] text-white overflow-hidden">
-      {/* Banner Langkah Baru Dimulai (1-group asset img-footer.png) */}
-      <div className="relative w-full min-h-[130px] sm:min-h-[200px] md:min-h-[260px] aspect-[2242/401] overflow-hidden bg-white">
+      {/* Banner Langkah Baru Dimulai (1-group asset img-footer.png, utuh sesuai vector) */}
+      <div className="relative w-full aspect-[2242/401] min-h-[120px] overflow-hidden bg-white">
         <img
           src={imgFooter}
           alt=""
-          className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 z-0 h-full w-full object-cover sm:object-contain object-center"
         />
         <div className="relative z-10 flex h-full w-full items-center justify-center px-4">
           <h2 className="font-[Arial] text-center text-[6.8vw] font-bold tracking-tight text-[#cfffa3] drop-shadow-md sm:text-5xl md:text-6xl lg:text-[96px]">

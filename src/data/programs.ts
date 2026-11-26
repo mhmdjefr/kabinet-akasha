@@ -28,7 +28,7 @@ export const programs: Program[] = [
     slug: "saum",
     title: "SAUM",
     bannerImage: saumBanner,
-    logo: tikgemProgramLogo,
+    logo: tikgemProgramLogoImage,
     description:
       "SAUM (Satu Aksi Untuk Masyarakat) adalah program kerja Departemen Sosial Mahasiswa yang mengajak dan mewadahi mahasiswa TIK untuk merealisasikan Tri Dharma Perguruan Tinggi yaitu pengabdian kepada masyarakat dengan kegiatan yang bermanfaat dan berdampak.",
   },
@@ -36,7 +36,7 @@ export const programs: Program[] = [
     slug: "tik-games",
     title: "TIK Games",
     bannerImage: tikgamesBanner,
-    logo: tikgemProgramLogoImage,
+    logo: tikgemProgramLogo,
     description:
       "TIKGames adalah program kerja Departemen Kesehatan Mahasiswa yang berupa kompetisi di bidang olahraga guna mengembangkan minat dan bakat mahasiswa TIK. TIKGames juga dapat meningkatkan solidaritas sesama mahasiswa TIK.",
   },

@@ -42,15 +42,15 @@ export default async function ProgramDetailPage({
 
       {/* Tanpa padding-top agar banner langsung menempel dengan navbar tanpa gap */}
       <main>
-        {/* Header Banner (1-group asset itechno.png / saum.png / tikgames.png) */}
-        <section className="relative h-[230px] w-full overflow-hidden bg-white sm:h-[320px] md:h-[390px]">
+        {/* Header Banner (1-group asset itechno.png / saum.png / tikgames.png, utuh sesuai vector) */}
+        <section className="relative w-full aspect-[1636/569] min-h-[160px] overflow-hidden bg-white">
           <img
             src={program.bannerImage}
             alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 z-0 h-full w-full object-cover sm:object-contain object-center"
           />
-          <div className="relative z-10 flex h-full w-full items-center justify-center px-4 pt-10 min-[768px]:pt-16">
-            <h1 className="font-[Arial] text-center text-[10vw] font-bold tracking-tight text-[#cfffa3] drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-7xl md:text-[160px]">
+          <div className="relative z-10 flex h-full w-full items-center justify-center px-4 pt-8 min-[768px]:pt-14">
+            <h1 className="font-[Arial] text-center text-[10vw] font-bold tracking-tight text-[#cfffa3] drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-7xl md:text-[130px] lg:text-[160px]">
               {program.title}
             </h1>
           </div>
