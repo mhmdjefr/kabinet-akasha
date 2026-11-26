@@ -28,18 +28,21 @@ export default function FooterSection() {
 
   return (
     <footer
-      className="relative isolate flex h-[480px] w-full shrink-0 flex-col overflow-hidden bg-[#171717] px-5 pb-6 pt-16 text-white sm:h-[520px] sm:px-8 sm:pt-20 lg:h-[600px] lg:px-12 lg:pt-24"
+      className="relative isolate flex h-[480px] w-full shrink-0 flex-col overflow-hidden bg-[#171717] px-5 pb-6 pt-16 text-white sm:h-[520px] sm:px-8 sm:pt-16 lg:h-[600px] lg:px-12 lg:pt-20"
       data-name="09 · Penutup & Footer"
     >
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-56 overflow-hidden sm:h-64">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-[120px] sm:h-[20vw] lg:h-[clamp(10rem,15.2vw,14rem)]"
+      >
         <img
           alt=""
-          className="absolute left-1/2 top-0 h-auto w-[160%] max-w-none -translate-x-1/2"
+          className="absolute left-1/2 top-0 h-auto w-[180%] max-w-none -translate-x-1/2 sm:w-full lg:w-[min(92%,81rem)]"
           src={footerTopWave}
         />
         <img
           alt=""
-          className="absolute left-0 top-0 h-auto w-full max-w-none"
+          className="absolute left-1/2 top-0 h-auto w-[74%] max-w-none -translate-x-1/2 sm:w-[60%] lg:w-[min(60%,52rem)]"
           src={footerBackgroundVector}
         />
       </div>
@@ -54,11 +57,11 @@ export default function FooterSection() {
           className="h-auto w-20 shrink-0 object-contain sm:w-28 lg:w-36"
           src={footerKabinetLogo}
         />
-        <div className="min-w-0 text-center">
+        <div className="min-w-0 max-w-full text-center">
           <p className="font-['Plus_Jakarta_Sans:Medium'] text-[clamp(1rem,2.4vw,2rem)] font-medium leading-tight">
             Kabinet
           </p>
-          <p className="font-['Audiowide:Regular'] text-[clamp(1.75rem,5vw,4rem)] leading-tight">
+          <p className="max-w-full overflow-hidden font-['Audiowide:Regular'] text-[clamp(1.5rem,5vw,3.5rem)] leading-tight whitespace-nowrap">
             AKASHA
           </p>
         </div>

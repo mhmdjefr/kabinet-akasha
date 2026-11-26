@@ -12,7 +12,6 @@ import GagasanAksiSection from "./sections/GagasanAksiSection";
 import ProgramUnggulanSection from "./sections/ProgramUnggulanSection";
 import GerakanInovasiSection from "./sections/GerakanInovasiSection";
 import FooterSection from "./sections/FooterSection";
-import ScrollToTop from "./sections/ScrollToTop";
 import MobileNavbar from "./sections/MobileNavbar";
 
 export default function FigmaLandingPage() {
@@ -90,8 +89,6 @@ export default function FigmaLandingPage() {
           {/* 09 · Penutup & Footer */}
           <FooterSection />
 
-          {/* Tombol · Kembali ke atas */}
-          <ScrollToTop />
         </div>
       </div>
     </div>
