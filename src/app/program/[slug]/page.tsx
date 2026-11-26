@@ -43,21 +43,21 @@ export default async function ProgramDetailPage({
       {/* Tanpa padding-top agar banner langsung menempel dengan navbar tanpa gap */}
       <main>
         {/* Header Banner (1-group asset itechno.png / saum.png / tikgames.png) */}
-        <section className="relative w-full min-h-[200px] sm:min-h-[280px] md:min-h-[340px] aspect-[1636/569] overflow-hidden bg-white">
+        <section className="relative h-[230px] w-full overflow-hidden bg-white sm:h-[320px] md:h-[390px]">
           <img
             src={program.bannerImage}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
           />
           <div className="relative z-10 flex h-full w-full items-center justify-center px-4 pt-10 min-[768px]:pt-16">
-            <h1 className="font-[Arial] font-bold text-[10vw] sm:text-7xl md:text-8xl text-[#cfffa3] text-center tracking-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
+            <h1 className="font-[Arial] text-center text-[10vw] font-bold tracking-tight text-[#cfffa3] drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-7xl md:text-[160px]">
               {program.title}
             </h1>
           </div>
         </section>
 
         {/* Diamond Logo & Description */}
-        <section className="relative w-full py-12 sm:py-16">
+        <section className="relative w-full py-12 sm:py-16 md:pt-[110px]">
           {/* Dekorasi strip kiri-kanan menggunakan asset program-kiri.png & program-kanan.png */}
           <img
             src={programKiri}
@@ -76,18 +76,18 @@ export default async function ProgramDetailPage({
             {/* Diamond Box */}
             <div className="flex justify-center">
               <div className="rotate-45 border-[6px] border-[#f786f8] bg-white p-[4px] shadow-[0_18px_45px_rgba(86,76,248,0.22)]">
-                <div className="flex h-[180px] w-[180px] items-center justify-center bg-[#171717] sm:h-[236px] sm:w-[236px] md:h-[264px] md:w-[264px]">
+                  <div className="flex h-[180px] w-[180px] items-center justify-center bg-[#171717] sm:h-[236px] sm:w-[236px] md:h-[340px] md:w-[340px]">
                   <img
                     src={program.logo}
                     alt={program.title}
-                    className="h-auto w-auto max-h-[115px] sm:max-h-[150px] md:max-h-[170px] max-w-[115px] sm:max-w-[150px] md:max-w-[170px] -rotate-45 object-contain"
+                    className="h-auto w-auto max-h-[115px] sm:max-h-[150px] md:max-h-[220px] max-w-[115px] sm:max-w-[150px] md:max-w-[220px] -rotate-45 object-contain"
                   />
                 </div>
               </div>
             </div>
 
             {/* Description */}
-            <p className="mx-auto mt-20 sm:mt-24 max-w-2xl text-center font-['Plus_Jakarta_Sans:Medium'] font-medium text-base sm:text-xl leading-relaxed text-[#171717]">
+            <p className="mx-auto mt-20 max-w-6xl text-center font-['Plus_Jakarta_Sans:Medium'] text-base font-medium leading-relaxed text-[#171717] sm:mt-24 sm:text-xl lg:text-[30px]">
               {program.description}
             </p>
           </div>

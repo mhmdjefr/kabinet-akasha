@@ -61,13 +61,13 @@ export function PixelPill({ children }: { children: ReactNode }) {
     <div className="relative inline-flex items-center justify-center">
       <span
         aria-hidden
-        className="absolute -inset-x-4 -inset-y-2.5 bg-[#564cf8] [clip-path:polygon(0%_22%,5%_22%,5%_8%,9%_8%,9%_0%,91%_0%,91%_8%,95%_8%,95%_22%,100%_22%,100%_78%,95%_78%,95%_92%,91%_92%,91%_100%,9%_100%,9%_92%,5%_92%,5%_78%,0%_78%)]"
+        className="absolute -inset-x-5 -inset-y-3 bg-[#564cf8] [clip-path:polygon(0%_22%,5%_22%,5%_8%,9%_8%,9%_0%,91%_0%,91%_8%,95%_8%,95%_22%,100%_22%,100%_78%,95%_78%,95%_92%,91%_92%,91%_100%,9%_100%,9%_92%,5%_92%,5%_78%,0%_78%)]"
       />
       <span
         aria-hidden
-        className="absolute -inset-x-3 -inset-y-1.5 bg-white [clip-path:polygon(0%_22%,5%_22%,5%_8%,9%_8%,9%_0%,91%_0%,91%_8%,95%_8%,95%_22%,100%_22%,100%_78%,95%_78%,95%_92%,91%_92%,91%_100%,9%_100%,9%_92%,5%_92%,5%_78%,0%_78%)]"
+        className="absolute -inset-x-4 -inset-y-2 bg-white [clip-path:polygon(0%_22%,5%_22%,5%_8%,9%_8%,9%_0%,91%_0%,91%_8%,95%_8%,95%_22%,100%_22%,100%_78%,95%_78%,95%_92%,91%_92%,91%_100%,9%_100%,9%_92%,5%_92%,5%_78%,0%_78%)]"
       />
-      <span className="relative bg-[#f786f8] px-10 py-2.5 sm:px-14 sm:py-3">
+      <span className="relative flex h-[72px] w-[280px] items-center justify-center bg-[#f786f8] sm:h-[96px] sm:w-[420px] md:h-[128px] md:w-[560px]">
         {children}
       </span>
     </div>

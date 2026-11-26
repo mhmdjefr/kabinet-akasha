@@ -4,10 +4,11 @@ import MobileNavbar from "@/components/sections/MobileNavbar";
 import DetailFooterSection, { Vote2Chibi } from "@/components/sections/DetailFooterSection";
 import {
   bentukDasar,
+  buttonPillBg,
   elemenTerhubung,
   menyebarDariPusat,
 } from "@/lib/assets";
-import { EdgeGlitch, PixelPill } from "@/components/ui/PixelElements";
+import { EdgeGlitch } from "@/components/ui/PixelElements";
 
 export const metadata: Metadata = {
   title: "Filosofi Logo",
@@ -20,7 +21,7 @@ const shapeCards = [
     src: elemenTerhubung,
     alt: "Elemen yang saling terhubung",
     title: "Elemen yang saling terhubung",
-    desc: "Merepresentasikan kolaborasi, dan semangat saling melengkapi untuk mencapai tujuan bersama.",
+    desc: "Kebersamaan, kolaborasi, dan semangat saling melengkapi untuk mencapai tujuan bersama.",
   },
   {
     src: bentukDasar,
@@ -32,7 +33,7 @@ const shapeCards = [
     src: menyebarDariPusat,
     alt: "Bentuk yang menyebar dari pusat",
     title: "Bentuk yang menyebar dari pusat",
-    desc: "Pertumbuhan yang berawal dari ruang bersama. HIMATIK menjadi wadah bagi potensi untuk tumbuh dan berkembang.",
+    desc: "Pertumbuhan yang berawal dari ruang bersama, HIMATIK menjadi wadah bagi potensi untuk tumbuh ke beragam arah.",
   },
 ];
 
@@ -56,9 +57,6 @@ const colorMeanings = [
   },
 ];
 
-const cardClip =
-  "[clip-path:polygon(0_7%,4%_7%,4%_0,100%_0,100%_93%,96%_93%,96%_100%,0_100%)]";
-
 export default function FilosofiLogoPage() {
   return (
     <div className="min-h-screen bg-white text-[#171717] overflow-x-hidden">
@@ -81,36 +79,65 @@ export default function FilosofiLogoPage() {
           <EdgeGlitch side="right" className="top-24" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-4">
-            <h1 className="font-[Arial] font-bold text-5xl sm:text-6xl md:text-7xl text-[#564cf8] tracking-tight">
+            <h1 className="font-[Arial] text-5xl font-bold tracking-tight text-[#564cf8] sm:text-6xl md:text-7xl lg:text-[128px]">
               Filosofi Logo
             </h1>
           </div>
         </section>
 
         {/* Section: Bentuk */}
-        <section className="relative mx-auto max-w-6xl px-5 py-8 sm:px-6 sm:py-12">
+        <section className="relative w-full px-0 py-8 sm:py-12">
           {/* Pill Header: Bentuk */}
-          <div className="flex justify-center mb-12 sm:mb-14">
-            <PixelPill>
-              <h2 className="font-[Arial] font-bold text-2xl sm:text-3xl text-white tracking-wide">
+          <div className="mb-16 flex justify-center sm:mb-20">
+            <div className="relative inline-flex items-center justify-center w-[220px] sm:w-[320px] md:w-[400px] aspect-[628/174]">
+              <img
+                src={buttonPillBg}
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute inset-0 h-full w-full object-contain"
+              />
+              <h2 className="relative z-10 font-[Arial] text-2xl font-bold tracking-wide text-white sm:text-3xl md:text-5xl">
                 Bentuk
               </h2>
-            </PixelPill>
+            </div>
           </div>
 
-          {/* 3 Cards — carousel di mobile, sejajar di desktop */}
-          <div className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 md:gap-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-3 md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {shapeCards.map((card) => (
               <article
                 key={card.title}
-                className={`relative h-full w-[80%] shrink-0 snap-center sm:w-auto ${cardClip}`}
+                className="flex h-[460px] w-[80vw] shrink-0 snap-center flex-col items-center overflow-hidden rounded-[18px] border-4 border-[#f786f8] bg-[#171717] px-5 pt-4 text-center text-white"
               >
-                {/* border pink */}
-                <div className={`absolute inset-0 bg-[#f786f8] ${cardClip}`} />
-                <div
-                  className={`relative m-[3px] flex h-[calc(100%-6px)] flex-col items-center bg-[#171717] p-5 text-center text-white sm:p-7 ${cardClip}`}
-                >
-                  <div className="flex h-44 w-full items-center justify-center sm:h-52 lg:h-60">
+                <div className="flex h-52 w-full shrink-0 items-center justify-center">
+                  <img src={card.src} alt={card.alt} className="max-h-full w-auto object-contain" />
+                </div>
+                <div className="mt-4">
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-base font-bold text-white">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 font-['Plus_Jakarta_Sans:Regular'] text-sm leading-relaxed text-white/80">
+                    {card.desc}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="relative hidden h-[680px] overflow-hidden md:block">
+            <div className="absolute left-[calc(50%-1120px)] top-0 flex items-center gap-5">
+              {[shapeCards[2], shapeCards[0], shapeCards[1], shapeCards[2], shapeCards[0]].map(
+                (card, index) => (
+                  <article
+                    key={`${card.title}-${index}`}
+                    className={`relative flex shrink-0 flex-col items-center overflow-hidden rounded-[22px] border-4 border-[#f786f8] bg-[#171717] px-8 text-center text-white ${
+                      index === 2
+                        ? "mt-[65px] h-[550px] w-[400px] pt-6"
+                        : `h-[640px] w-[440px] pt-8 ${
+                            index === 1 ? "rotate-[6deg]" : index === 3 ? "-rotate-[6deg]" : ""
+                          }`
+                    }`}
+                  >
+                  <div className="flex h-[300px] w-full shrink-0 items-center justify-center">
                     <img
                       src={card.src}
                       alt={card.alt}
@@ -118,30 +145,37 @@ export default function FilosofiLogoPage() {
                     />
                   </div>
                   <div className="mt-5">
-                    <h3 className="font-['Plus_Jakarta_Sans:Bold'] font-bold text-base sm:text-lg text-white">
+                    <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-2xl font-bold text-white">
                       {card.title}
                     </h3>
-                    <p className="mt-2 font-['Plus_Jakarta_Sans:Regular'] text-xs sm:text-sm leading-relaxed text-white/80">
+                    <p className="mt-3 font-['Plus_Jakarta_Sans:Regular'] text-lg leading-relaxed text-white/80">
                       {card.desc}
                     </p>
                   </div>
-                </div>
-              </article>
-            ))}
+                  </article>
+                ),
+              )}
+            </div>
           </div>
         </section>
 
         {/* Section: Warna */}
-        <section className="relative mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-16">
+        <section className="relative mx-auto max-w-5xl px-5 py-12 sm:px-6 sm:py-16">
           <EdgeGlitch side="left" className="top-1/3" />
 
           {/* Pill Header: Warna */}
-          <div className="flex justify-center mb-12 sm:mb-14">
-            <PixelPill>
-              <h2 className="font-[Arial] font-bold text-2xl sm:text-3xl text-white tracking-wide">
+          <div className="mb-12 flex justify-center sm:mb-14">
+            <div className="relative inline-flex items-center justify-center w-[220px] sm:w-[320px] md:w-[400px] aspect-[628/174]">
+              <img
+                src={buttonPillBg}
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute inset-0 h-full w-full object-contain"
+              />
+              <h2 className="relative z-10 font-[Arial] text-2xl font-bold tracking-wide text-white sm:text-3xl md:text-5xl">
                 Warna
               </h2>
-            </PixelPill>
+            </div>
           </div>
 
           <div className="flex flex-col gap-8 sm:gap-10">
@@ -149,10 +183,10 @@ export default function FilosofiLogoPage() {
               <div key={item.name} className="flex items-stretch gap-5 sm:gap-6">
                 <div className={`w-1.5 shrink-0 sm:w-2 ${item.barColor}`} />
                 <div className="py-0.5">
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] font-bold text-xl sm:text-2xl text-[#171717]">
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-xl font-bold text-[#171717] sm:text-2xl md:text-3xl">
                     {item.name}
                   </h3>
-                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-sm sm:text-base leading-relaxed text-[#171717]/80">
+                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-base leading-relaxed text-[#171717]/80 md:text-xl">
                     {item.description}
                   </p>
                 </div>

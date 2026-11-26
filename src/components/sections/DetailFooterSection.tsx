@@ -35,14 +35,14 @@ export default function DetailFooterSection() {
           className="absolute inset-0 z-0 h-full w-full object-cover object-center"
         />
         <div className="relative z-10 flex h-full w-full items-center justify-center px-4">
-          <h2 className="font-[Arial] font-bold text-[6.8vw] sm:text-5xl md:text-6xl lg:text-7xl text-[#cfffa3] text-center tracking-tight drop-shadow-md">
+          <h2 className="font-[Arial] text-center text-[6.8vw] font-bold tracking-tight text-[#cfffa3] drop-shadow-md sm:text-5xl md:text-6xl lg:text-[96px]">
             Langkah Baru Dimulai
           </h2>
         </div>
       </div>
 
       {/* Main Footer Content */}
-      <div className="relative mx-auto max-w-5xl px-4 py-12 sm:py-16 flex flex-col items-center">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 py-12 sm:py-20">
         {/* Scroll to top button */}
         <button
           type="button"
@@ -50,7 +50,7 @@ export default function DetailFooterSection() {
           aria-label="Kembali ke atas"
           className="absolute right-4 sm:right-8 top-12 sm:top-16 cursor-pointer transition-transform hover:-translate-y-1 active:translate-y-0"
         >
-          <img src={tombolAtas} alt="Ke atas" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
+          <img src={tombolAtas} alt="Ke atas" className="h-10 w-10 object-contain sm:h-12 sm:w-12" />
         </button>
 
         {/* Logo & Brand */}
@@ -58,13 +58,13 @@ export default function DetailFooterSection() {
           <img
             src={footerKabinetLogo}
             alt="Logo Kabinet Akasha"
-            className="h-28 sm:h-36 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-28 w-auto object-contain transition-transform group-hover:scale-105 sm:h-[280px]"
           />
           <div className="text-center sm:text-left">
-            <span className="block font-['Plus_Jakarta_Sans:Medium'] text-xl sm:text-2xl text-white/90">
+            <span className="block font-['Plus_Jakarta_Sans:Medium'] text-xl text-white/90 sm:text-5xl">
               Kabinet
             </span>
-            <strong className="block font-['Audiowide:Regular'] text-3xl sm:text-4xl tracking-wider text-white">
+            <strong className="block font-['Audiowide:Regular'] text-3xl tracking-wider text-white sm:text-6xl">
               AKASHA
             </strong>
           </div>
@@ -73,7 +73,7 @@ export default function DetailFooterSection() {
         {/* Navigation Links */}
         <nav
           aria-label="Footer navigation"
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm font-['Plus_Jakarta_Sans:Medium'] text-white/80"
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-['Plus_Jakarta_Sans:Medium'] text-xs text-white/80 sm:mt-16 sm:text-sm"
         >
           <Link href="/" className="hover:text-[#cfffa3] transition-colors">
             Beranda
@@ -93,10 +93,10 @@ export default function DetailFooterSection() {
         </nav>
 
         {/* Divider */}
-        <div className="mt-8 w-full max-w-3xl border-t border-white/15" />
+        <div className="mt-8 w-full max-w-3xl border-t border-white/15 sm:mt-12" />
 
         {/* Copyright */}
-        <p className="mt-6 text-center font-['Plus_Jakarta_Sans:Regular'] text-[11px] sm:text-xs text-white/60">
+        <p className="mt-6 text-center font-['Plus_Jakarta_Sans:Regular'] text-[11px] text-white/60 sm:mt-10 sm:text-xs">
           © 2026 <strong className="text-white">Kabinet Akasha</strong> | Ruang untuk Semua, Tumbuh dan Berdiri Bersama. All Rights Reserved.
         </p>
       </div>
