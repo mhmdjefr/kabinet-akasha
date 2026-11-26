@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import {
   akashaLogo,
@@ -33,8 +33,27 @@ function ActiveAccent() {
 export default function NavbarSection() {
   const [openDropdown, setOpenDropdown] = useState<"program" | "inovasi" | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleOutside = (event: PointerEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpenDropdown(null);
+    };
+
+    document.addEventListener("pointerdown", handleOutside);
+    window.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("pointerdown", handleOutside);
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   const isHomeActive = pathname === "/";
   const isProgramActive = pathname.startsWith("/program");
@@ -65,8 +84,17 @@ export default function NavbarSection() {
     }
   };
 
+  const handleDropdownButtonClick = (menu: "program" | "inovasi", sectionId: string) => {
+    if (openDropdown !== menu) {
+      setOpenDropdown(menu);
+      return;
+    }
+    navigate(sectionId);
+  };
+
   return (
     <nav
+      ref={navRef}
       className="fixed inset-x-0 top-0 z-50 hidden min-[768px]:block pointer-events-none drop-shadow-[0_6px_18px_rgba(0,0,0,0.32)]"
       data-node-id="1:923"
       data-name="Navbar"
@@ -167,8 +195,8 @@ export default function NavbarSection() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                onClick={() => navigate("program-unggulan")}
-                className="relative flex h-[44px] shrink-0 cursor-pointer items-center gap-1.5 px-3 py-2 transition-opacity hover:opacity-85 active:opacity-70 lg:gap-2 lg:px-3.5 xl:px-4"
+                onClick={() => handleDropdownButtonClick("program", "program-unggulan")}
+                className="relative flex h-[44px] shrink-0 cursor-pointer items-center gap-1.5 px-2.5 py-2 transition-opacity hover:opacity-85 active:opacity-70 lg:gap-2 lg:px-3.5 xl:px-4"
                 data-node-id="1:948"
                 data-name="Menu · Program Unggulan"
                 aria-expanded={openDropdown === "program"}
@@ -213,6 +241,12 @@ export default function NavbarSection() {
                           {item.label}
                         </button>
                       ))}
+                      <button
+                        onClick={() => navigate("program-unggulan")}
+                        className="mt-1 border-t border-white/10 pt-2 pb-1 text-center font-['Plus_Jakarta_Sans:Medium',Arial] text-xs font-medium text-white/60 transition-colors hover:text-[#cfffa3] cursor-pointer"
+                      >
+                        Lihat di Beranda
+                      </button>
                     </div>
                   </motion.div>
                 )}
@@ -226,8 +260,8 @@ export default function NavbarSection() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                onClick={() => navigate("gerakan-inovasi")}
-                className="relative flex h-[44px] shrink-0 cursor-pointer items-center gap-1.5 px-3 py-2 transition-opacity hover:opacity-85 active:opacity-70 lg:gap-2 lg:px-3.5 xl:px-4"
+                onClick={() => handleDropdownButtonClick("inovasi", "gerakan-inovasi")}
+                className="relative flex h-[44px] shrink-0 cursor-pointer items-center gap-1.5 px-2.5 py-2 transition-opacity hover:opacity-85 active:opacity-70 lg:gap-2 lg:px-3.5 xl:px-4"
                 data-node-id="1:953"
                 data-name="Menu · Gerakan Inovasi"
                 aria-expanded={openDropdown === "inovasi"}
@@ -272,6 +306,12 @@ export default function NavbarSection() {
                           {item.label}
                         </button>
                       ))}
+                      <button
+                        onClick={() => navigate("gerakan-inovasi")}
+                        className="mt-1 border-t border-white/10 pt-2 pb-1 text-center font-['Plus_Jakarta_Sans:Medium',Arial] text-xs font-medium text-white/60 transition-colors hover:text-[#cfffa3] cursor-pointer"
+                      >
+                        Lihat di Beranda
+                      </button>
                     </div>
                   </motion.div>
                 )}
