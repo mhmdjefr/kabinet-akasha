@@ -75,9 +75,9 @@ export default async function InovasiDetailPage({
           </div>
         </section>
 
-        {/* Numbered Points (Alternating Left/Right, bg-nomor-inovasi.png 208x210) */}
-        <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14 lg:max-w-none lg:px-0 lg:pt-[49px]">
-          <div className="flex flex-col gap-10 sm:gap-14 lg:gap-20">
+        {/* Numbered Points (Alternating Mentok Kiri/Kanan di Mobile & Desktop) */}
+        <section className="w-full px-0 py-10 sm:py-14 lg:pt-[49px]">
+          <div className="flex flex-col gap-8 sm:gap-14 lg:gap-20">
             {innovation.points.map((point, index) => {
               const num = index + 1;
               const isEven = num % 2 === 0;
@@ -85,12 +85,14 @@ export default async function InovasiDetailPage({
               return (
                 <article
                   key={index}
-                  className={`flex flex-col sm:flex-row items-center gap-5 sm:gap-8 ${
-                    isEven ? "sm:flex-row-reverse" : ""
+                  className={`flex items-center gap-4 sm:gap-8 lg:gap-12 ${
+                    isEven
+                      ? "flex-row-reverse pl-4 sm:pl-8 lg:pl-16"
+                      : "flex-row pr-4 sm:pr-8 lg:pr-16"
                   }`}
                 >
                   {/* Number Badge with bg-nomor-inovasi.png */}
-                  <div className="relative flex h-24 w-24 shrink-0 items-center justify-center lg:h-[200px] lg:w-[200px]">
+                  <div className="relative flex h-20 w-20 shrink-0 items-center justify-center sm:h-28 sm:w-28 lg:h-[200px] lg:w-[200px]">
                     <img
                       src={bgNomorInovasi}
                       alt=""
@@ -99,15 +101,15 @@ export default async function InovasiDetailPage({
                         isEven ? "-scale-x-100" : ""
                       }`}
                     />
-                    <span className="relative z-10 font-[Arial] text-6xl font-black text-white drop-shadow-[0_2px_6px_rgba(86,76,248,0.6)] [-webkit-text-stroke:2px_#564cf8] lg:text-[128px]">
+                    <span className="relative z-10 font-[Arial] text-5xl font-black text-white drop-shadow-[0_2px_6px_rgba(86,76,248,0.6)] [-webkit-text-stroke:2px_#564cf8] sm:text-6xl lg:text-[128px]">
                       {num}
                     </span>
                   </div>
 
                   {/* Point Text */}
                   <p
-                    className={`flex-1 font-['Plus_Jakarta_Sans:Medium'] text-center text-base font-medium leading-relaxed text-[#171717] sm:text-xl lg:text-[36px] ${
-                      isEven ? "sm:text-right" : "sm:text-left"
+                    className={`flex-1 font-['Plus_Jakarta_Sans:Medium'] text-sm font-medium leading-relaxed text-[#171717] sm:text-xl lg:text-[32px] xl:text-[36px] ${
+                      isEven ? "text-right" : "text-left"
                     }`}
                   >
                     {point}
