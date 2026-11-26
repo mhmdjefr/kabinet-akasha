@@ -173,6 +173,8 @@ export default function MobileCampaign() {
           <button onClick={scrollToTop}>Beranda</button>
           <button onClick={() => document.getElementById("program-unggulan")?.scrollIntoView({ behavior: "smooth" })}>Program Unggulan</button>
           <button onClick={() => document.getElementById("gerakan-inovasi")?.scrollIntoView({ behavior: "smooth" })}>Gerakan Inovasi</button>
+          <Link href="/filosofi-logo">Filosofi Logo</Link>
+          <a href="https://www.instagram.com/kabinet.akasha/" target="_blank" rel="noopener noreferrer">More Information</a>
         </nav>
         <button className="mobile-footer-up" onClick={scrollToTop} aria-label="Kembali ke atas">↑</button>
         <p>© 2026 Kabinet Akasha. All Rights Reserved.</p>

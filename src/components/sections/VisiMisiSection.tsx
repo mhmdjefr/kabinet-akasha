@@ -18,7 +18,7 @@ export default function VisiMisiSection() {
   return (
 <div
         id="visi-misi"
-        className="h-[4468px] md:h-[2782px] relative shrink-0 w-full bg-[#171717]"
+        className="h-[6966px] md:h-[2782px] relative shrink-0 w-full bg-[#171717]"
         data-node-id="1:774"
         data-name="04 · Visi & Misi"
       >
@@ -83,15 +83,16 @@ export default function VisiMisiSection() {
           </div>
         </div>
         <div
-          className="absolute left-[93.5px] top-[1076px] w-[1253px] grid grid-cols-1 md:grid-cols-2 gap-x-[91px] gap-y-[76px] justify-items-center"
+          className="absolute left-[93.5px] top-[1076px] w-[1253px] grid grid-cols-1 md:grid-cols-2 gap-x-[91px] gap-y-[90px] md:gap-y-[76px] justify-items-center"
           data-node-id="1:782"
           data-name="Misi · 2 × 2 / margin simetris 94px"
         >
-          <div
-            className="relative h-[767px] w-[581px]"
-            data-node-id="1:783"
-            data-name="01 · Transparansi"
-          >
+          <div className="relative h-[1381px] w-[1046px] md:h-[767px] md:w-[581px]">
+            <div
+              className="relative h-[767px] w-[581px] origin-top-left scale-[1.8] md:scale-100"
+              data-node-id="1:783"
+              data-name="01 · Transparansi"
+            >
             <div
               className="absolute h-[767px] left-0 top-0 w-[581px]"
               data-node-id="1:784"
@@ -146,12 +147,14 @@ export default function VisiMisiSection() {
               Mewujudkan tata kelola organisasi yang transparan dan akuntabel, mulai dari proses
               seleksi, kegiatan, hingga pengelolaan keuangan.
             </p>
+            </div>
           </div>
-          <div
-            className="relative h-[767px] w-[581px]"
-            data-node-id="1:790"
-            data-name="02 · Kesempatan Setara"
-          >
+          <div className="relative h-[1381px] w-[1046px] md:h-[767px] md:w-[581px]">
+            <div
+              className="relative h-[767px] w-[581px] origin-top-left scale-[1.8] md:scale-100"
+              data-node-id="1:790"
+              data-name="02 · Kesempatan Setara"
+            >
             <div
               className="absolute h-[767px] left-0 top-0 w-[581px]"
               data-node-id="1:791"
@@ -206,12 +209,14 @@ export default function VisiMisiSection() {
               Membuka ruang bagi seluruh mahasiswa TIK untuk terlibat, berkontribusi, dan
               menyampaikan aspirasi secara adil dan terbuka.
             </p>
+            </div>
           </div>
-          <div
-            className="relative h-[767px] w-[581px]"
-            data-node-id="1:797"
-            data-name="03 · Bertumbuh Bersama"
-          >
+          <div className="relative h-[1381px] w-[1046px] md:h-[767px] md:w-[581px]">
+            <div
+              className="relative h-[767px] w-[581px] origin-top-left scale-[1.8] md:scale-100"
+              data-node-id="1:797"
+              data-name="03 · Bertumbuh Bersama"
+            >
             <div
               className="absolute h-[767px] left-0 top-0 w-[581px]"
               data-node-id="1:798"
@@ -266,12 +271,14 @@ export default function VisiMisiSection() {
               Menghadirkan program pengembangan kompetensi akademik dan nonakademik yang
               berkelanjutan.
             </p>
+            </div>
           </div>
-          <div
-            className="relative h-[767px] w-[581px]"
-            data-node-id="1:804"
-            data-name="04 · Kemandirian"
-          >
+          <div className="relative h-[1381px] w-[1046px] md:h-[767px] md:w-[581px]">
+            <div
+              className="relative h-[767px] w-[581px] origin-top-left scale-[1.8] md:scale-100"
+              data-node-id="1:804"
+              data-name="04 · Kemandirian"
+            >
             <div
               className="absolute h-[767px] left-0 top-0 w-[581px]"
               data-node-id="1:805"
@@ -325,6 +332,7 @@ export default function VisiMisiSection() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ interface BackgroundOverlayProps {
 }
 
 export default function BackgroundOverlay({ isMobile }: BackgroundOverlayProps) {
-  const offset = isMobile ? 1686 : 0;
+  const offset = isMobile ? 4184 : 0;
 
   return (
     <div
