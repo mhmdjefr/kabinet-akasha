@@ -67,9 +67,9 @@ export default function FilosofiLogoPage() {
       <MobileNavbar />
       <NavbarSection />
 
-      <main className="pt-[60px] min-[768px]:pt-[90px]">
+      <main className="pt-[60px] min-[768px]:pt-[72px]">
         {/* Header Section */}
-        <section className="relative overflow-hidden py-12 text-center sm:py-16 md:pb-16 md:pt-[144px]">
+        <section className="relative overflow-hidden py-8 text-center sm:py-10 lg:py-12">
           {/* Blok dekorasi pixel di tepi halaman */}
           <div
             aria-hidden
@@ -83,24 +83,24 @@ export default function FilosofiLogoPage() {
           <EdgeGlitch side="right" className="top-24" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-4">
-            <h1 className="font-[Arial] text-5xl font-bold tracking-tight text-[#564cf8] sm:text-6xl md:text-7xl lg:text-[128px]">
+            <h1 className="font-[Arial] text-3xl font-bold tracking-tight text-[#564cf8] sm:text-4xl lg:text-5xl">
               Filosofi Logo
             </h1>
           </div>
         </section>
 
         {/* Section: Bentuk */}
-        <section className="relative w-full px-0 py-8 sm:py-12">
+        <section className="relative w-full px-0 py-4 sm:py-8">
           {/* Pill Header: Bentuk */}
-          <div className="mb-16 flex justify-center sm:mb-6">
-            <div className="relative inline-flex aspect-[628/174] w-[220px] items-center justify-center sm:w-[320px] md:w-[560px]">
+          <div className="mb-8 flex justify-center sm:mb-6">
+            <div className="relative inline-flex aspect-[628/174] w-[170px] items-center justify-center sm:w-[210px] lg:w-[240px]">
               <img
                 src={buttonPillBg}
                 alt=""
                 aria-hidden
                 className="pointer-events-none absolute inset-0 h-full w-full object-contain"
               />
-              <h2 className="relative z-10 font-[Arial] text-2xl font-bold tracking-wide text-white sm:text-3xl md:text-5xl">
+              <h2 className="relative z-10 font-[Arial] text-lg font-bold tracking-wide text-white sm:text-xl lg:text-2xl">
                 Bentuk
               </h2>
             </div>
@@ -109,21 +109,21 @@ export default function FilosofiLogoPage() {
           {/* Mobile: Auto-play Carousel + Dots Progress (tanpa tab pills) */}
           <FilosofiShapeCarousel cards={shapeCards} />
 
-          {/* Desktop: 5 Kartu Perspektif (Kartu 3 & 5 diperbesar di pinggir melewati layar, 3 kartu tengah dengan teks perspektif) */}
-          <div className="relative hidden w-full items-center justify-center gap-3 overflow-hidden py-4 md:flex lg:gap-5 xl:gap-7">
+          {/* Desktop: 5 Kartu Perspektif */}
+          <div className="relative hidden w-full items-center justify-center gap-3 overflow-hidden py-4 md:flex lg:gap-5 xl:gap-6">
             {/* Kartu Pinggir Kiri (Kartu 3 lebih besar, melewati tepi kiri layar) */}
             <img
               src={kartu3}
               alt=""
               aria-hidden
-              className="-ml-[190px] h-[460px] w-auto shrink-0 object-contain lg:-ml-[250px] lg:h-[580px] xl:-ml-[340px] xl:h-[780px]"
+              className="-ml-[160px] h-[380px] w-auto shrink-0 object-contain lg:-ml-[210px] lg:h-[460px] xl:-ml-[250px] xl:h-[540px]"
             />
 
             {/* Kartu 3 (Kiri: Elemen yang saling terhubung) */}
-            <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[640px]">
+            <article className="relative h-[330px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[390px] xl:h-[450px]">
               <img src={kartu3} alt="" className="h-full w-auto object-contain" />
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 px-6 py-8 text-center text-white lg:gap-5 lg:px-8 lg:py-10 xl:gap-6 xl:px-10 xl:py-14">
-                <div className="flex h-[56%] w-full items-center justify-center">
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-5 py-7 text-center text-white lg:gap-4 lg:px-7 lg:py-9 xl:gap-5 xl:px-8 xl:py-10">
+                <div className="flex h-[54%] w-full items-center justify-center">
                   <img
                     src={shapeCards[0].src}
                     alt={shapeCards[0].alt}
@@ -133,10 +133,10 @@ export default function FilosofiLogoPage() {
                 <div
                   style={{ transform: "perspective(800px) rotateY(16deg)" }}
                 >
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-xs font-bold text-white lg:text-sm xl:text-base">
                     {shapeCards[0].title}
                   </h3>
-                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                  <p className="mt-1 font-['Plus_Jakarta_Sans:Regular'] text-[10px] leading-relaxed text-white/85 lg:text-xs xl:text-[13px]">
                     {shapeCards[0].desc}
                   </p>
                 </div>
@@ -144,10 +144,10 @@ export default function FilosofiLogoPage() {
             </article>
 
             {/* Kartu 4 (Tengah: Bentuk dasar huruf "A") */}
-            <article className="relative h-[310px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[380px] xl:h-[520px]">
+            <article className="relative h-[270px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[325px] xl:h-[375px]">
               <img src={kartu4} alt="" className="h-full w-auto object-contain" />
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-5 py-6 text-center text-white lg:gap-4 lg:px-7 lg:py-8 xl:gap-5 xl:px-8 xl:py-10">
-                <div className="flex h-[56%] w-full items-center justify-center">
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 px-4 py-5 text-center text-white lg:gap-3 lg:px-6 lg:py-7 xl:gap-4 xl:px-7 xl:py-8">
+                <div className="flex h-[54%] w-full items-center justify-center">
                   <img
                     src={shapeCards[1].src}
                     alt={shapeCards[1].alt}
@@ -155,10 +155,10 @@ export default function FilosofiLogoPage() {
                   />
                 </div>
                 <div>
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-lg">
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-xs font-bold text-white lg:text-sm xl:text-base">
                     {shapeCards[1].title}
                   </h3>
-                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[10px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                  <p className="mt-1 font-['Plus_Jakarta_Sans:Regular'] text-[10px] leading-relaxed text-white/85 lg:text-[11px] xl:text-xs">
                     {shapeCards[1].desc}
                   </p>
                 </div>
@@ -166,10 +166,10 @@ export default function FilosofiLogoPage() {
             </article>
 
             {/* Kartu 5 (Kanan: Bentuk yang menyebar dari pusat) */}
-            <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[640px]">
+            <article className="relative h-[330px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[390px] xl:h-[450px]">
               <img src={kartu5} alt="" className="h-full w-auto object-contain" />
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 px-6 py-8 text-center text-white lg:gap-5 lg:px-8 lg:py-10 xl:gap-6 xl:px-10 xl:py-14">
-                <div className="flex h-[56%] w-full items-center justify-center">
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-5 py-7 text-center text-white lg:gap-4 lg:px-7 lg:py-9 xl:gap-5 xl:px-8 xl:py-10">
+                <div className="flex h-[54%] w-full items-center justify-center">
                   <img
                     src={shapeCards[2].src}
                     alt={shapeCards[2].alt}
@@ -179,10 +179,10 @@ export default function FilosofiLogoPage() {
                 <div
                   style={{ transform: "perspective(800px) rotateY(-16deg)" }}
                 >
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-xs font-bold text-white lg:text-sm xl:text-base">
                     {shapeCards[2].title}
                   </h3>
-                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                  <p className="mt-1 font-['Plus_Jakarta_Sans:Regular'] text-[10px] leading-relaxed text-white/85 lg:text-xs xl:text-[13px]">
                     {shapeCards[2].desc}
                   </p>
                 </div>
@@ -194,37 +194,37 @@ export default function FilosofiLogoPage() {
               src={kartu5}
               alt=""
               aria-hidden
-              className="-mr-[190px] h-[460px] w-auto shrink-0 object-contain lg:-mr-[250px] lg:h-[580px] xl:-mr-[340px] xl:h-[780px]"
+              className="-mr-[160px] h-[380px] w-auto shrink-0 object-contain lg:-mr-[210px] lg:h-[460px] xl:-mr-[250px] xl:h-[540px]"
             />
           </div>
         </section>
 
         {/* Section: Warna */}
-        <section className="relative mx-auto max-w-5xl px-5 py-12 sm:px-6 sm:py-16">
+        <section className="relative mx-auto max-w-2xl px-5 py-8 sm:px-6 sm:py-12">
           {/* Pill Header: Warna */}
-          <div className="mb-12 flex justify-center sm:mb-14">
-            <div className="relative inline-flex aspect-[628/174] w-[220px] items-center justify-center sm:w-[320px] md:w-[560px]">
+          <div className="mb-8 flex justify-center sm:mb-10">
+            <div className="relative inline-flex aspect-[628/174] w-[170px] items-center justify-center sm:w-[210px] lg:w-[240px]">
               <img
                 src={buttonPillBg}
                 alt=""
                 aria-hidden
                 className="pointer-events-none absolute inset-0 h-full w-full object-contain"
               />
-              <h2 className="relative z-10 font-[Arial] text-2xl font-bold tracking-wide text-white sm:text-3xl md:text-5xl">
+              <h2 className="relative z-10 font-[Arial] text-lg font-bold tracking-wide text-white sm:text-xl lg:text-2xl">
                 Warna
               </h2>
             </div>
           </div>
 
-          <div className="flex flex-col gap-8 sm:gap-10">
+          <div className="flex flex-col gap-6 sm:gap-7">
             {colorMeanings.map((item) => (
-              <div key={item.name} className="flex items-stretch gap-5 sm:gap-6">
-                <div className={`w-1.5 shrink-0 sm:w-2 ${item.barColor}`} />
+              <div key={item.name} className="flex items-stretch gap-4">
+                <div className={`w-1.5 shrink-0 ${item.barColor}`} />
                 <div className="py-0.5">
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-xl font-bold text-[#171717] sm:text-2xl md:text-[40px]">
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-lg font-bold text-[#171717] sm:text-xl lg:text-[22px]">
                     {item.name}
                   </h3>
-                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-base leading-relaxed text-[#171717]/80 md:text-[28px]">
+                  <p className="mt-1 font-['Plus_Jakarta_Sans:Regular'] text-sm leading-relaxed text-[#171717]/80 sm:text-base">
                     {item.description}
                   </p>
                 </div>

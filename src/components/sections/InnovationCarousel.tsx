@@ -56,15 +56,15 @@ export default function InnovationCarousel({
   return (
     <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16">
       {/* Pill Header (button.png) */}
-      <div className="mb-8 flex justify-center sm:mb-10">
-        <div className="relative inline-flex aspect-[628/174] w-[220px] items-center justify-center sm:w-[300px] md:w-[360px]">
+      <div className="mb-6 flex justify-center sm:mb-8">
+        <div className="relative inline-flex aspect-[628/174] w-[175px] items-center justify-center sm:w-[215px] lg:w-[245px]">
           <img
             src={buttonPillBg}
             alt=""
             aria-hidden
             className="pointer-events-none absolute inset-0 h-full w-full object-contain"
           />
-          <h2 className="relative z-10 font-[Arial] text-xl font-bold tracking-wide text-white sm:text-2xl md:text-3xl">
+          <h2 className="relative z-10 font-[Arial] text-base font-bold tracking-wide text-white sm:text-lg lg:text-xl">
             Tampilan Program
           </h2>
         </div>

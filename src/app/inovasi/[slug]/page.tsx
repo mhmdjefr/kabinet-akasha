@@ -48,37 +48,37 @@ export default async function InovasiDetailPage({
       {/* Tanpa padding-top agar banner langsung menempel dengan navbar tanpa gap */}
       <main>
         {/* Header Banner (gerakan-inovasi.png 1512x325, utuh sesuai vector) */}
-        <section className="relative w-full aspect-[1512/325] min-h-[130px] overflow-hidden bg-white lg:h-[340px] lg:aspect-auto">
+        <section className="relative w-full aspect-[1512/325] min-h-[125px] max-h-[210px] overflow-hidden bg-white">
           <img
             src={gerakanInovasiBanner}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover sm:object-contain object-center"
           />
-          <div className="relative z-10 flex h-full w-full items-center justify-center px-4 pt-8 min-[768px]:pt-12">
-            <h1 className="font-[Arial] font-bold text-[10.5vw] sm:text-7xl md:text-8xl text-white text-center tracking-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.4)]">
+          <div className="relative z-10 flex h-full w-full items-center justify-center px-4 pt-8 min-[768px]:pt-10">
+            <h1 className="font-[Arial] font-bold text-3xl sm:text-5xl lg:text-6xl text-white text-center tracking-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.4)]">
               {innovation.title}
             </h1>
           </div>
         </section>
 
         {/* Description Box (bg-detail-inovasi.png 1217x193) */}
-        <section className="mx-auto max-w-[1217px] px-4 pt-10 pb-8 sm:px-6 sm:pt-14 lg:px-0 lg:pt-[102px]">
-          <div className="relative mx-auto flex min-h-[120px] max-w-full items-center justify-center px-6 py-6 sm:min-h-[160px] sm:px-14 sm:py-8 lg:h-[180px] lg:px-16 lg:py-0">
+        <section className="mx-auto max-w-3xl px-4 pt-7 pb-5 sm:px-6 sm:pt-10">
+          <div className="relative mx-auto flex min-h-[90px] max-w-full items-center justify-center px-6 py-4 sm:min-h-[115px] sm:px-10 sm:py-5">
             <img
               src={bgDetailInovasi}
               alt=""
               aria-hidden
               className="pointer-events-none absolute inset-0 z-0 h-full w-full object-fill"
             />
-            <p className="relative z-10 text-center font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold leading-relaxed text-white sm:text-lg md:text-[30px]">
+            <p className="relative z-10 text-center font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold leading-relaxed text-white sm:text-base lg:text-[17px]">
               {innovation.description}
             </p>
           </div>
         </section>
 
         {/* Numbered Points (Alternating Mentok Kiri/Kanan di Mobile & Desktop) */}
-        <section className="w-full px-0 py-10 sm:py-14 lg:pt-[49px]">
-          <div className="flex flex-col gap-8 sm:gap-14 lg:gap-20">
+        <section className="w-full px-0 py-6 sm:py-10">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
             {innovation.points.map((point, index) => {
               const num = index + 1;
               const isEven = num % 2 === 0;
@@ -86,14 +86,14 @@ export default async function InovasiDetailPage({
               return (
                 <article
                   key={index}
-                  className={`flex items-center gap-4 sm:gap-8 lg:gap-12 ${
+                  className={`flex items-center gap-4 sm:gap-6 lg:gap-8 ${
                     isEven
-                      ? "flex-row-reverse pl-4 sm:pl-8 lg:pl-16"
-                      : "flex-row pr-4 sm:pr-8 lg:pr-16"
+                      ? "flex-row-reverse pl-4 sm:pl-10 lg:pl-16"
+                      : "flex-row pr-4 sm:pr-10 lg:pr-16"
                   }`}
                 >
                   {/* Number Badge with bg-nomor-inovasi.png */}
-                  <div className="relative flex h-20 w-20 shrink-0 items-center justify-center sm:h-28 sm:w-28 lg:h-[200px] lg:w-[200px]">
+                  <div className="relative flex h-16 w-16 shrink-0 items-center justify-center sm:h-20 sm:w-20 lg:h-24 lg:w-24">
                     <img
                       src={bgNomorInovasi}
                       alt=""
@@ -102,14 +102,14 @@ export default async function InovasiDetailPage({
                         isEven ? "-scale-x-100" : ""
                       }`}
                     />
-                    <span className="relative z-10 font-[Arial] text-5xl font-black text-white drop-shadow-[0_2px_6px_rgba(86,76,248,0.6)] [-webkit-text-stroke:2px_#564cf8] sm:text-6xl lg:text-[128px]">
+                    <span className="relative z-10 font-[Arial] text-3xl font-black text-white drop-shadow-[0_2px_6px_rgba(86,76,248,0.6)] [-webkit-text-stroke:2px_#564cf8] sm:text-4xl lg:text-5xl">
                       {num}
                     </span>
                   </div>
 
                   {/* Point Text */}
                   <p
-                    className={`flex-1 font-['Plus_Jakarta_Sans:Medium'] text-sm font-medium leading-relaxed text-[#171717] sm:text-xl lg:text-[32px] xl:text-[36px] ${
+                    className={`flex-1 font-['Plus_Jakarta_Sans:Medium'] text-sm font-medium leading-relaxed text-[#171717] sm:text-base lg:text-[17px] ${
                       isEven ? "text-right" : "text-left"
                     }`}
                   >

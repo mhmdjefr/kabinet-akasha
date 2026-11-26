@@ -191,13 +191,13 @@ export default function NavbarSection() {
           >
             <button
               onClick={() => navigate("beranda")}
-              className="relative flex h-[44px] shrink-0 cursor-pointer items-center justify-center px-3 py-2 lg:px-3.5 xl:w-[144px]"
+              className="relative flex h-[44px] shrink-0 cursor-pointer items-center justify-center px-3 py-2 lg:px-3.5 xl:px-4"
               data-node-id="1:945"
               data-name="Menu · Beranda"
             >
               {isHomeActive && <ActiveAccent />}
               <span
-                className={`relative z-10 whitespace-nowrap font-[Arial] text-[14px] font-bold lg:text-[15.5px] xl:text-[20px] ${
+                className={`relative z-10 whitespace-nowrap font-[Arial] text-[13.5px] font-bold lg:text-[14px] xl:text-[15.5px] ${
                   isHomeActive ? "text-[#1d1d1d]" : "text-white"
                 }`}
               >
@@ -221,7 +221,7 @@ export default function NavbarSection() {
               >
                 {isProgramActive && <ActiveAccent />}
                 <span
-                  className={`relative z-10 whitespace-nowrap font-[Arial] text-[14px] font-bold lg:text-[15.5px] xl:text-[20px] ${
+                  className={`relative z-10 whitespace-nowrap font-[Arial] text-[13.5px] font-bold lg:text-[14px] xl:text-[15.5px] ${
                     isProgramActive ? "text-[#1d1d1d]" : "text-white"
                   }`}
                 >
@@ -286,7 +286,7 @@ export default function NavbarSection() {
               >
                 {isInovasiActive && <ActiveAccent />}
                 <span
-                  className={`relative z-10 whitespace-nowrap font-[Arial] text-[14px] font-bold lg:text-[15.5px] xl:text-[20px] ${
+                  className={`relative z-10 whitespace-nowrap font-[Arial] text-[13.5px] font-bold lg:text-[14px] xl:text-[15.5px] ${
                     isInovasiActive ? "text-[#1d1d1d]" : "text-white"
                   }`}
                 >
@@ -346,7 +346,7 @@ export default function NavbarSection() {
             >
               {isFilosofiActive && <ActiveAccent />}
               <span
-                className={`relative z-10 whitespace-nowrap text-left font-[Arial] text-[14px] font-bold lg:text-[15.5px] xl:text-[20px] ${
+                className={`relative z-10 whitespace-nowrap text-left font-[Arial] text-[13.5px] font-bold lg:text-[14px] xl:text-[15.5px] ${
                   isFilosofiActive ? "text-[#1d1d1d]" : "text-white"
                 }`}
               >
