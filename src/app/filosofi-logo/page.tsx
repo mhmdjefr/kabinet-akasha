@@ -112,7 +112,7 @@ export default function FilosofiLogoPage() {
           <FilosofiShapeCarousel cards={shapeCards} />
 
           {/* Desktop: 5 Kartu Perspektif Asli (Kartu 2 - Kartu 6) dengan Konten di Dalamnya */}
-          <div className="relative hidden w-full items-center justify-center gap-3 overflow-hidden py-4 md:flex lg:gap-5 xl:gap-7">
+          <div className="relative hidden w-full items-center justify-between gap-3 overflow-hidden py-4 md:flex">
             <img
               src={kartu2}
               alt=""
@@ -120,71 +120,73 @@ export default function FilosofiLogoPage() {
               className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[700px]"
             />
 
-            {/* Kartu 3 (Kiri: Elemen yang saling terhubung) */}
-            <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[600px]">
-              <img src={kartu3} alt="" className="h-full w-auto object-contain" />
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-6 py-9 text-center text-white lg:px-8 lg:py-12 xl:px-10 xl:py-16">
-                <div className="flex h-[48%] w-full items-center justify-center">
-                  <img
-                    src={shapeCards[0].src}
-                    alt={shapeCards[0].alt}
-                    className="max-h-full w-auto object-contain"
-                  />
+            <div className="flex items-center justify-center gap-3 lg:gap-5 xl:gap-7">
+              {/* Kartu 3 (Kiri: Elemen yang saling terhubung) */}
+              <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[600px]">
+                <img src={kartu3} alt="" className="h-full w-auto object-contain" />
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-6 py-9 text-center text-white lg:px-8 lg:py-12 xl:px-10 xl:py-16">
+                  <div className="flex h-[48%] w-full items-center justify-center">
+                    <img
+                      src={shapeCards[0].src}
+                      alt={shapeCards[0].alt}
+                      className="max-h-full w-auto object-contain"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
+                      {shapeCards[0].title}
+                    </h3>
+                    <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                      {shapeCards[0].desc}
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-2">
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
-                    {shapeCards[0].title}
-                  </h3>
-                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
-                    {shapeCards[0].desc}
-                  </p>
-                </div>
-              </div>
-            </article>
+              </article>
 
-            {/* Kartu 4 (Tengah: Bentuk dasar huruf "A") */}
-            <article className="relative h-[310px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[380px] xl:h-[490px]">
-              <img src={kartu4} alt="" className="h-full w-auto object-contain" />
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-5 py-7 text-center text-white lg:px-7 lg:py-9 xl:px-8 xl:py-12">
-                <div className="flex h-[48%] w-full items-center justify-center">
-                  <img
-                    src={shapeCards[1].src}
-                    alt={shapeCards[1].alt}
-                    className="max-h-full w-auto object-contain"
-                  />
+              {/* Kartu 4 (Tengah: Bentuk dasar huruf "A") */}
+              <article className="relative h-[310px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[380px] xl:h-[490px]">
+                <img src={kartu4} alt="" className="h-full w-auto object-contain" />
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-5 py-7 text-center text-white lg:px-7 lg:py-9 xl:px-8 xl:py-12">
+                  <div className="flex h-[48%] w-full items-center justify-center">
+                    <img
+                      src={shapeCards[1].src}
+                      alt={shapeCards[1].alt}
+                      className="max-h-full w-auto object-contain"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-lg">
+                      {shapeCards[1].title}
+                    </h3>
+                    <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[10px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                      {shapeCards[1].desc}
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-2">
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-lg">
-                    {shapeCards[1].title}
-                  </h3>
-                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[10px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
-                    {shapeCards[1].desc}
-                  </p>
-                </div>
-              </div>
-            </article>
+              </article>
 
-            {/* Kartu 5 (Kanan: Bentuk yang menyebar dari pusat) */}
-            <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[600px]">
-              <img src={kartu5} alt="" className="h-full w-auto object-contain" />
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-6 py-9 text-center text-white lg:px-8 lg:py-12 xl:px-10 xl:py-16">
-                <div className="flex h-[48%] w-full items-center justify-center">
-                  <img
-                    src={shapeCards[2].src}
-                    alt={shapeCards[2].alt}
-                    className="max-h-full w-auto object-contain"
-                  />
+              {/* Kartu 5 (Kanan: Bentuk yang menyebar dari pusat) */}
+              <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[600px]">
+                <img src={kartu5} alt="" className="h-full w-auto object-contain" />
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-6 py-9 text-center text-white lg:px-8 lg:py-12 xl:px-10 xl:py-16">
+                  <div className="flex h-[48%] w-full items-center justify-center">
+                    <img
+                      src={shapeCards[2].src}
+                      alt={shapeCards[2].alt}
+                      className="max-h-full w-auto object-contain"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
+                      {shapeCards[2].title}
+                    </h3>
+                    <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                      {shapeCards[2].desc}
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-2">
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
-                    {shapeCards[2].title}
-                  </h3>
-                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
-                    {shapeCards[2].desc}
-                  </p>
-                </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
             <img
               src={kartu6}

@@ -23,11 +23,7 @@ export default function FigmaLandingPage() {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       setIsMobile(screenWidth < 768);
-      if (screenWidth < 1440) {
-        setScale(screenWidth / 1440);
-      } else {
-        setScale(1);
-      }
+      setScale(screenWidth / 1440);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -41,7 +37,7 @@ export default function FigmaLandingPage() {
       <div
         style={{
           width: 1440 * scale,
-          height: (isMobile ? 14142 : 12456) * scale,
+          height: (isMobile ? 16640 : 12456) * scale,
         }}
         className="desktop-canvas shrink-0 relative transition-transform duration-75"
       >
