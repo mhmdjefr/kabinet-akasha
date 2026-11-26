@@ -84,8 +84,8 @@ export const innovations: Innovation[] = [
     ],
     carouselLabels: [
       "Portofolio Mahasiswa",
-      "Jualan Merchandise",
-      "Jualan Aplikasi Online",
+      "Merchandise",
+      "Aplikasi Online",
     ],
     images: [
       "/assets/barnaby-portofolio.png",
