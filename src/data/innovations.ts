@@ -83,9 +83,14 @@ export const innovations: Innovation[] = [
       "Pengembangan lini jasa dilaksanakan bertahap, dimulai dari skema kerja sama informal antara mahasiswa dan pihak yang membutuhkan, dengan fasilitasi HIMATIK.",
     ],
     carouselLabels: [
-      "Deskripsi Mahasiswa TIK",
+      "Portofolio Mahasiswa",
       "Jualan Merchandise",
       "Jualan Aplikasi Online",
+    ],
+    images: [
+      "/assets/barnaby-portofolio.png",
+      "/assets/barnaby-merch.png",
+      "/assets/barnaby-aplikasi.png",
     ],
   },
 ];
