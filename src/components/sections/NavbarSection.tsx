@@ -40,11 +40,15 @@ export default function NavbarSection() {
   useEffect(() => {
     const handleOutside = (event: PointerEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
         setOpenDropdown(null);
       }
     };
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpenDropdown(null);
+      if (event.key === "Escape") {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        setOpenDropdown(null);
+      }
     };
 
     document.addEventListener("pointerdown", handleOutside);
@@ -52,6 +56,7 @@ export default function NavbarSection() {
     return () => {
       document.removeEventListener("pointerdown", handleOutside);
       window.removeEventListener("keydown", handleEscape);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
 
@@ -60,12 +65,18 @@ export default function NavbarSection() {
   const isInovasiActive = pathname.startsWith("/inovasi");
   const isFilosofiActive = pathname.startsWith("/filosofi-logo");
 
+  const supportsFineHover = () =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
   const handleMouseEnter = (menu: "program" | "inovasi") => {
+    if (!supportsFineHover()) return;
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setOpenDropdown(menu);
   };
 
   const handleMouseLeave = () => {
+    if (!supportsFineHover()) return;
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       setOpenDropdown(null);
@@ -73,6 +84,7 @@ export default function NavbarSection() {
   };
 
   const navigate = (id: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setOpenDropdown(null);
     if (pathname === "/") {
       document.getElementById(id)?.scrollIntoView({
@@ -85,6 +97,11 @@ export default function NavbarSection() {
   };
 
   const handleDropdownButtonClick = (menu: "program" | "inovasi", sectionId: string) => {
+    // Di perangkat sentuh/tablet (tanpa hover mouse), tombol utama bertindak sebagai toggle buka/tutup dropdown
+    if (!supportsFineHover()) {
+      setOpenDropdown((prev) => (prev === menu ? null : menu));
+      return;
+    }
     if (openDropdown !== menu) {
       setOpenDropdown(menu);
       return;

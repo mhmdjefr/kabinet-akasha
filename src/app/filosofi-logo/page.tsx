@@ -7,11 +7,9 @@ import {
   bentukDasar,
   buttonPillBg,
   elemenTerhubung,
-  kartu2,
   kartu3,
   kartu4,
   kartu5,
-  kartu6,
   menyebarDariPusat,
 } from "@/lib/assets";
 import { EdgeGlitch } from "@/components/ui/PixelElements";
@@ -111,86 +109,92 @@ export default function FilosofiLogoPage() {
           {/* Mobile: Auto-play Carousel + Dots Progress (tanpa tab pills) */}
           <FilosofiShapeCarousel cards={shapeCards} />
 
-          {/* Desktop: 5 Kartu Perspektif Asli (Kartu 2 - Kartu 6) dengan Konten di Dalamnya */}
+          {/* Desktop: 5 Kartu Perspektif (Kartu 3 & 5 diperbesar di pinggir melewati layar, 3 kartu tengah dengan teks perspektif) */}
           <div className="relative hidden w-full items-center justify-center gap-3 overflow-hidden py-4 md:flex lg:gap-5 xl:gap-7">
+            {/* Kartu Pinggir Kiri (Kartu 3 lebih besar, melewati tepi kiri layar) */}
             <img
-              src={kartu2}
+              src={kartu3}
               alt=""
               aria-hidden
-              className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[760px]"
+              className="-ml-[190px] h-[460px] w-auto shrink-0 object-contain lg:-ml-[250px] lg:h-[580px] xl:-ml-[340px] xl:h-[780px]"
             />
 
             {/* Kartu 3 (Kiri: Elemen yang saling terhubung) */}
             <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[640px]">
-                <img src={kartu3} alt="" className="h-full w-auto object-contain" />
-                <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-6 py-9 text-center text-white lg:px-8 lg:py-12 xl:px-10 xl:py-16">
-                  <div className="flex h-[48%] w-full items-center justify-center">
-                    <img
-                      src={shapeCards[0].src}
-                      alt={shapeCards[0].alt}
-                      className="max-h-full w-auto object-contain"
-                    />
-                  </div>
-                  <div className="mt-2">
-                    <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
-                      {shapeCards[0].title}
-                    </h3>
-                    <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
-                      {shapeCards[0].desc}
-                    </p>
-                  </div>
+              <img src={kartu3} alt="" className="h-full w-auto object-contain" />
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 px-6 py-8 text-center text-white lg:gap-5 lg:px-8 lg:py-10 xl:gap-6 xl:px-10 xl:py-14">
+                <div className="flex h-[56%] w-full items-center justify-center">
+                  <img
+                    src={shapeCards[0].src}
+                    alt={shapeCards[0].alt}
+                    className="h-full w-auto object-contain scale-105"
+                  />
                 </div>
-              </article>
-
-              {/* Kartu 4 (Tengah: Bentuk dasar huruf "A") */}
-              <article className="relative h-[310px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[380px] xl:h-[520px]">
-                <img src={kartu4} alt="" className="h-full w-auto object-contain" />
-                <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-5 py-7 text-center text-white lg:px-7 lg:py-9 xl:px-8 xl:py-12">
-                  <div className="flex h-[48%] w-full items-center justify-center">
-                    <img
-                      src={shapeCards[1].src}
-                      alt={shapeCards[1].alt}
-                      className="max-h-full w-auto object-contain"
-                    />
-                  </div>
-                  <div className="mt-2">
-                    <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-lg">
-                      {shapeCards[1].title}
-                    </h3>
-                    <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[10px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
-                      {shapeCards[1].desc}
-                    </p>
-                  </div>
+                <div
+                  style={{ transform: "perspective(800px) rotateY(16deg)" }}
+                >
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
+                    {shapeCards[0].title}
+                  </h3>
+                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                    {shapeCards[0].desc}
+                  </p>
                 </div>
-              </article>
+              </div>
+            </article>
 
-              {/* Kartu 5 (Kanan: Bentuk yang menyebar dari pusat) */}
-              <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[640px]">
-                <img src={kartu5} alt="" className="h-full w-auto object-contain" />
-                <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-6 py-9 text-center text-white lg:px-8 lg:py-12 xl:px-10 xl:py-16">
-                  <div className="flex h-[48%] w-full items-center justify-center">
-                    <img
-                      src={shapeCards[2].src}
-                      alt={shapeCards[2].alt}
-                      className="max-h-full w-auto object-contain"
-                    />
-                  </div>
-                  <div className="mt-2">
-                    <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
-                      {shapeCards[2].title}
-                    </h3>
-                    <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
-                      {shapeCards[2].desc}
-                    </p>
-                  </div>
+            {/* Kartu 4 (Tengah: Bentuk dasar huruf "A") */}
+            <article className="relative h-[310px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[380px] xl:h-[520px]">
+              <img src={kartu4} alt="" className="h-full w-auto object-contain" />
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-5 py-6 text-center text-white lg:gap-4 lg:px-7 lg:py-8 xl:gap-5 xl:px-8 xl:py-10">
+                <div className="flex h-[56%] w-full items-center justify-center">
+                  <img
+                    src={shapeCards[1].src}
+                    alt={shapeCards[1].alt}
+                    className="h-full w-auto object-contain scale-105"
+                  />
                 </div>
-              </article>
+                <div>
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-lg">
+                    {shapeCards[1].title}
+                  </h3>
+                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[10px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                    {shapeCards[1].desc}
+                  </p>
+                </div>
+              </div>
+            </article>
 
+            {/* Kartu 5 (Kanan: Bentuk yang menyebar dari pusat) */}
+            <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[640px]">
+              <img src={kartu5} alt="" className="h-full w-auto object-contain" />
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 px-6 py-8 text-center text-white lg:gap-5 lg:px-8 lg:py-10 xl:gap-6 xl:px-10 xl:py-14">
+                <div className="flex h-[56%] w-full items-center justify-center">
+                  <img
+                    src={shapeCards[2].src}
+                    alt={shapeCards[2].alt}
+                    className="h-full w-auto object-contain scale-105"
+                  />
+                </div>
+                <div
+                  style={{ transform: "perspective(800px) rotateY(-16deg)" }}
+                >
+                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-sm font-bold text-white lg:text-base xl:text-xl">
+                    {shapeCards[2].title}
+                  </h3>
+                  <p className="mt-1.5 font-['Plus_Jakarta_Sans:Regular'] text-[11px] leading-relaxed text-white/85 lg:text-xs xl:text-sm">
+                    {shapeCards[2].desc}
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            {/* Kartu Pinggir Kanan (Kartu 5 lebih besar, melewati tepi kanan layar) */}
             <img
-              src={kartu6}
+              src={kartu5}
               alt=""
               aria-hidden
-              className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[760px]"
+              className="-mr-[190px] h-[460px] w-auto shrink-0 object-contain lg:-mr-[250px] lg:h-[580px] xl:-mr-[340px] xl:h-[780px]"
             />
           </div>
         </section>

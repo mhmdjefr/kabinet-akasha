@@ -66,12 +66,12 @@ export default function FilosofiShapeCarousel({ cards }: { cards: ShapeCard[] })
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -24 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="flex h-[450px] w-full flex-col items-center justify-between overflow-hidden rounded-[18px] border-4 border-[#f786f8] bg-[#171717] px-6 py-6 text-center text-white shadow-[0_12px_32px_rgba(86,76,248,0.18)]"
+            className="flex h-[420px] w-full flex-col items-center justify-center gap-5 overflow-hidden rounded-[18px] border-4 border-[#f786f8] bg-[#171717] px-6 py-6 text-center text-white shadow-[0_12px_32px_rgba(86,76,248,0.18)]"
           >
-            <div className="flex h-52 w-full shrink-0 items-center justify-center">
-              <img src={card.src} alt={card.alt} className="max-h-full w-auto object-contain" />
+            <div className="flex h-56 w-full shrink-0 items-center justify-center">
+              <img src={card.src} alt={card.alt} className="h-full w-auto object-contain scale-105" />
             </div>
-            <div className="mt-4">
+            <div>
               <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-base font-bold text-white">
                 {card.title}
               </h3>
