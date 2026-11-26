@@ -1,8 +1,8 @@
 import {
-  imgItech,
-  imgSaum,
-  imgTikgames,
+  itechnoBanner,
   itekProgramLogo,
+  saumBanner,
+  tikgamesBanner,
   tikgemProgramLogo,
   tikgemProgramLogoImage,
 } from "@/lib/assets";
@@ -19,7 +19,7 @@ export const programs: Program[] = [
   {
     slug: "itechnocup",
     title: "ITechno Cup",
-    bannerImage: imgItech,
+    bannerImage: itechnoBanner,
     logo: itekProgramLogo,
     description:
       "ITechno Cup (Informatics Technologies and Computer Cup) adalah program kerja Departemen Pendidikan dan Teknologi, berupa kompetisi di bidang Teknologi Informatika dan Komputer yang berfokus pada pengembangan potensi mahasiswa berskala internasional, serta siswa SMA/SMK-sederajat berskala nasional di seluruh Indonesia.",
@@ -27,7 +27,7 @@ export const programs: Program[] = [
   {
     slug: "saum",
     title: "SAUM",
-    bannerImage: imgSaum,
+    bannerImage: saumBanner,
     logo: tikgemProgramLogo,
     description:
       "SAUM (Satu Aksi Untuk Masyarakat) adalah program kerja Departemen Sosial Mahasiswa yang mengajak dan mewadahi mahasiswa TIK untuk merealisasikan Tri Dharma Perguruan Tinggi yaitu pengabdian kepada masyarakat dengan kegiatan yang bermanfaat dan berdampak.",
@@ -35,7 +35,7 @@ export const programs: Program[] = [
   {
     slug: "tik-games",
     title: "TIK Games",
-    bannerImage: imgTikgames,
+    bannerImage: tikgamesBanner,
     logo: tikgemProgramLogoImage,
     description:
       "TIKGames adalah program kerja Departemen Kesehatan Mahasiswa yang berupa kompetisi di bidang olahraga guna mengembangkan minat dan bakat mahasiswa TIK. TIKGames juga dapat meningkatkan solidaritas sesama mahasiswa TIK.",
