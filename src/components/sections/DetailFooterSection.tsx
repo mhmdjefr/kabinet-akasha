@@ -35,7 +35,8 @@ export default function DetailFooterSection() {
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      setScale(screenWidth < 1440 ? screenWidth / 1440 : 1);
+      // Di mobile/tablet scale proporsional, di desktop dibatasi max 0.78 agar footer tidak raksasa
+      setScale(screenWidth < 1120 ? screenWidth / 1440 : 0.78);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
