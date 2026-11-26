@@ -112,17 +112,16 @@ export default function FilosofiLogoPage() {
           <FilosofiShapeCarousel cards={shapeCards} />
 
           {/* Desktop: 5 Kartu Perspektif Asli (Kartu 2 - Kartu 6) dengan Konten di Dalamnya */}
-          <div className="relative hidden w-full items-center justify-between gap-3 overflow-hidden py-4 md:flex">
+          <div className="relative hidden w-full items-center justify-center gap-3 overflow-hidden py-4 md:flex lg:gap-5 xl:gap-7">
             <img
               src={kartu2}
               alt=""
               aria-hidden
-              className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[700px]"
+              className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[760px]"
             />
 
-            <div className="flex items-center justify-center gap-3 lg:gap-5 xl:gap-7">
-              {/* Kartu 3 (Kiri: Elemen yang saling terhubung) */}
-              <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[600px]">
+            {/* Kartu 3 (Kiri: Elemen yang saling terhubung) */}
+            <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[640px]">
                 <img src={kartu3} alt="" className="h-full w-auto object-contain" />
                 <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-6 py-9 text-center text-white lg:px-8 lg:py-12 xl:px-10 xl:py-16">
                   <div className="flex h-[48%] w-full items-center justify-center">
@@ -144,7 +143,7 @@ export default function FilosofiLogoPage() {
               </article>
 
               {/* Kartu 4 (Tengah: Bentuk dasar huruf "A") */}
-              <article className="relative h-[310px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[380px] xl:h-[490px]">
+              <article className="relative h-[310px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[380px] xl:h-[520px]">
                 <img src={kartu4} alt="" className="h-full w-auto object-contain" />
                 <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-5 py-7 text-center text-white lg:px-7 lg:py-9 xl:px-8 xl:py-12">
                   <div className="flex h-[48%] w-full items-center justify-center">
@@ -166,7 +165,7 @@ export default function FilosofiLogoPage() {
               </article>
 
               {/* Kartu 5 (Kanan: Bentuk yang menyebar dari pusat) */}
-              <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[600px]">
+              <article className="relative h-[380px] shrink-0 transition-transform duration-300 hover:scale-[1.02] lg:h-[460px] xl:h-[640px]">
                 <img src={kartu5} alt="" className="h-full w-auto object-contain" />
                 <div className="absolute inset-0 z-10 flex flex-col items-center justify-between px-6 py-9 text-center text-white lg:px-8 lg:py-12 xl:px-10 xl:py-16">
                   <div className="flex h-[48%] w-full items-center justify-center">
@@ -186,13 +185,12 @@ export default function FilosofiLogoPage() {
                   </div>
                 </div>
               </article>
-            </div>
 
             <img
               src={kartu6}
               alt=""
               aria-hidden
-              className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[700px]"
+              className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[760px]"
             />
           </div>
         </section>
