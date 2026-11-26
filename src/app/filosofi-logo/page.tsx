@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavbarSection from "@/components/sections/NavbarSection";
 import MobileNavbar from "@/components/sections/MobileNavbar";
 import DetailFooterSection, { Vote2Chibi } from "@/components/sections/DetailFooterSection";
+import FilosofiShapeCarousel from "@/components/sections/FilosofiShapeCarousel";
 import {
   bentukDasar,
   buttonPillBg,
@@ -107,26 +108,8 @@ export default function FilosofiLogoPage() {
             </div>
           </div>
 
-          <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-[10vw] pb-4 md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {shapeCards.map((card) => (
-              <article
-                key={card.title}
-                className="flex h-[460px] w-[80vw] shrink-0 snap-center snap-always flex-col items-center overflow-hidden rounded-[18px] border-4 border-[#f786f8] bg-[#171717] px-5 pt-4 text-center text-white"
-              >
-                <div className="flex h-52 w-full shrink-0 items-center justify-center">
-                  <img src={card.src} alt={card.alt} className="max-h-full w-auto object-contain" />
-                </div>
-                <div className="mt-4">
-                  <h3 className="font-['Plus_Jakarta_Sans:Bold'] text-base font-bold text-white">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 font-['Plus_Jakarta_Sans:Regular'] text-sm leading-relaxed text-white/80">
-                    {card.desc}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
+          {/* Mobile: Auto-play Carousel + Dots Progress (tanpa tab pills) */}
+          <FilosofiShapeCarousel cards={shapeCards} />
 
           {/* Desktop: 5 Kartu Perspektif Asli (Kartu 2 - Kartu 6) dengan Konten di Dalamnya */}
           <div className="relative hidden w-full items-center justify-center gap-3 overflow-hidden py-4 md:flex lg:gap-5 xl:gap-7">
