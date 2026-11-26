@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  akashaLogo,
   candidateAnisaPhoto,
   candidateJeffriPhoto,
   heroBackgroundPhoto,
@@ -118,9 +117,15 @@ export default function MobileCampaign() {
         <h2>Program Unggulan</h2>
         <p>Melalui program unggulan, Akasha membuka ruang bagi mahasiswa TIK untuk berkolaborasi, mengembangkan potensi, dan menciptakan dampak nyata.</p>
         <div className="mobile-program-grid">
-          <article><img src={itekProgramLogo} alt="ITEK" /></article>
-          <article><img src={tikgemProgramLogoImage} alt="TIKGAMES" /></article>
-          <article><img src={tikgemProgramLogo} alt="TIKGEM" /></article>
+          <Link href="/program/itechnocup" className="block transition-transform active:scale-95">
+            <article><img src={itekProgramLogo} alt="ITechno Cup" /></article>
+          </Link>
+          <Link href="/program/tik-games" className="block transition-transform active:scale-95">
+            <article><img src={tikgemProgramLogoImage} alt="TIK Games" /></article>
+          </Link>
+          <Link href="/program/saum" className="block transition-transform active:scale-95">
+            <article><img src={tikgemProgramLogo} alt="SAUM" /></article>
+          </Link>
         </div>
       </section>
 
@@ -167,6 +172,8 @@ export default function MobileCampaign() {
           <button onClick={scrollToTop}>Beranda</button>
           <button onClick={() => document.getElementById("program-unggulan")?.scrollIntoView({ behavior: "smooth" })}>Program Unggulan</button>
           <button onClick={() => document.getElementById("gerakan-inovasi")?.scrollIntoView({ behavior: "smooth" })}>Gerakan Inovasi</button>
+          <Link href="/filosofi-logo">Filosofi Logo</Link>
+          <a href="https://www.instagram.com/kabinet.akasha/" target="_blank" rel="noopener noreferrer">More Information</a>
         </nav>
         <button className="mobile-footer-up" onClick={scrollToTop} aria-label="Kembali ke atas">↑</button>
         <p>© 2026 Kabinet Akasha. All Rights Reserved.</p>

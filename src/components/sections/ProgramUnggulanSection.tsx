@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { tikgemProgramLogoImage, itekProgramLogo, programSectionDivider, tikgemProgramLogo } from "@/lib/assets";
 
 export default function ProgramUnggulanSection() {
@@ -32,9 +33,10 @@ export default function ProgramUnggulanSection() {
           className="-translate-x-1/2 absolute content-stretch flex gap-[40px] items-center leading-[0] left-[calc(50%+0.03px)] top-[476px]"
           data-node-id="1:834"
         >
-          <div
+          <Link
+            href="/program/itechnocup"
             id="itechnocup"
-            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
+            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0 cursor-pointer transition-transform duration-300 hover:scale-105"
             data-node-id="1:835"
           >
             <div
@@ -64,10 +66,11 @@ export default function ProgramUnggulanSection() {
                 />
               </div>
             </div>
-          </div>
-          <div
+          </Link>
+          <Link
+            href="/program/saum"
             id="saum"
-            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
+            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0 cursor-pointer transition-transform duration-300 hover:scale-105"
             data-node-id="1:838"
           >
             <div
@@ -95,10 +98,11 @@ export default function ProgramUnggulanSection() {
                 src={tikgemProgramLogoImage}
               />
             </div>
-          </div>
-          <div
+          </Link>
+          <Link
+            href="/program/tik-games"
             id="tik-games"
-            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0"
+            className="scroll-mt-32 grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0 cursor-pointer transition-transform duration-300 hover:scale-105"
             data-node-id="1:841"
           >
             <div
@@ -126,7 +130,7 @@ export default function ProgramUnggulanSection() {
                 src={tikgemProgramLogo}
               />
             </div>
-          </div>
+          </Link>
         </div>
         <div
           className="-translate-x-1/2 absolute content-stretch flex items-center justify-between leading-[0] left-[calc(50%-0.5px)] top-[144px] w-[1545px]"

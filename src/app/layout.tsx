@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Kabinet Akasha — Ruang untuk Semua, Tumbuh dan Berdiri Bersama",
+    default: "Kabinet Akasha - Ruang untuk Semua, Tumbuh dan Berdiri Bersama",
     template: "%s | Kabinet Akasha",
   },
   description:
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: "/",
     siteName: "Kabinet Akasha",
-    title: "Kabinet Akasha — Ruang untuk Semua, Tumbuh dan Berdiri Bersama",
+    title: "Kabinet Akasha - Ruang untuk Semua, Tumbuh dan Berdiri Bersama",
     description:
       "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2026–2027 bersama M. Jeffri & P. Anisa La A. Kenali visi, misi, filosofi, program unggulan, dan gerakan inovasi kami.",
     images: [
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Kabinet Akasha — Ruang untuk Semua, Tumbuh dan Berdiri Bersama",
+    title: "Kabinet Akasha - Ruang untuk Semua, Tumbuh dan Berdiri Bersama",
     description:
       "Website Resmi Kampanye Kabinet Akasha HIMATIK Periode 2026–2027 bersama M. Jeffri & P. Anisa La A.",
     images: ["/assets/icon.png"],
