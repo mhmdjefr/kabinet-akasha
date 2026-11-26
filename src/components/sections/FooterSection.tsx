@@ -1,12 +1,23 @@
 "use client";
 
+import { useRouter, usePathname } from "next/navigation";
 import { scrollToTopIcon, footerNavigationDot, footerKabinetLogo, footerDivider, footerTopWave, footerBackgroundVector } from "@/lib/assets";
 
-const scrollToSection = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-};
-
 export default function FooterSection() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const scrollToSection = (id: string) => {
+    if (id === "filosofi-logo" && pathname !== "/") {
+      router.push("/filosofi-logo");
+      return;
+    }
+    if (pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      router.push(id === "beranda" ? "/" : `/#${id}`);
+    }
+  };
   return (
 <div
         className="h-[1055px] relative shrink-0 w-full"

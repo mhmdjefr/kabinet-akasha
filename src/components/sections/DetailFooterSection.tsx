@@ -1,15 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import {
-  footerKabinetLogo,
-  footerNavigationDot,
-  imgFooter,
-  programKanan,
-  stripFooter,
-  tombolAtas,
-  vote2ForAkasha,
-} from "@/lib/assets";
+import { useEffect, useState } from "react";
+import FooterSection from "@/components/sections/FooterSection";
+import { programKanan, stripFooter, vote2ForAkasha } from "@/lib/assets";
 
 export function Vote2Chibi() {
   return (
@@ -37,93 +30,38 @@ export function Vote2Chibi() {
 }
 
 export default function DetailFooterSection() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      setScale(screenWidth < 1440 ? screenWidth / 1440 : 1);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <footer className="relative w-full bg-[#171717] text-white overflow-hidden">
-      {/* Banner Langkah Baru Dimulai (1-group asset img-footer.png, utuh sesuai vector) */}
-      <div className="relative w-full aspect-[2242/401] min-h-[120px] overflow-hidden bg-white">
-        <img
-          src={imgFooter}
-          alt=""
-          className="absolute inset-0 z-0 h-full w-full object-cover sm:object-contain object-center"
-        />
-        <div className="relative z-10 flex h-full w-full items-center justify-center px-4">
-          <h2 className="font-[Arial] text-center text-[6.8vw] font-bold tracking-tight text-[#cfffa3] drop-shadow-md sm:text-5xl md:text-6xl lg:text-[96px]">
-            Langkah Baru Dimulai
-          </h2>
-        </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pt-12 pb-24 min-[768px]:py-20">
-        {/* Scroll to top button */}
-        <button
-          type="button"
-          onClick={scrollToTop}
-          aria-label="Kembali ke atas"
-          className="absolute right-4 sm:right-8 top-12 sm:top-16 cursor-pointer transition-transform hover:-translate-y-1 active:translate-y-0"
+    <footer className="w-full overflow-hidden bg-[#171717] pb-16 min-[768px]:pb-0">
+      <div className="flex justify-center">
+        <div
+          style={{
+            width: 1440 * scale,
+            height: 1055 * scale,
+          }}
+          className="relative shrink-0 overflow-hidden"
         >
-          <img src={tombolAtas} alt="Ke atas" className="h-10 w-10 object-contain sm:h-12 sm:w-12" />
-        </button>
-
-        {/* Logo & Brand */}
-        <Link href="/" className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 group">
-          <img
-            src={footerKabinetLogo}
-            alt="Logo Kabinet Akasha"
-            className="h-28 w-auto object-contain transition-transform group-hover:scale-105 sm:h-[280px]"
-          />
-          <div className="text-center sm:text-left">
-            <span className="block font-['Plus_Jakarta_Sans:Medium'] text-xl text-white/90 sm:text-5xl">
-              Kabinet
-            </span>
-            <strong className="block font-['Audiowide:Regular'] text-3xl tracking-wider text-white sm:text-6xl">
-              AKASHA
-            </strong>
-          </div>
-        </Link>
-
-        {/* Navigation Links (selaras FooterSection.tsx) */}
-        <nav
-          aria-label="Footer navigation"
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 font-[Arial] text-xs text-[#dfdfdf] sm:mt-16 sm:gap-x-6 sm:text-base md:text-lg"
-        >
-          <Link href="/" className="hover:text-[#cfffa3] transition-colors">
-            Beranda
-          </Link>
-          <img src={footerNavigationDot} alt="" aria-hidden className="size-[5px] shrink-0" />
-          <Link href="/#program-unggulan" className="hover:text-[#cfffa3] transition-colors">
-            Program Unggulan
-          </Link>
-          <img src={footerNavigationDot} alt="" aria-hidden className="size-[5px] shrink-0" />
-          <Link href="/#gerakan-inovasi" className="hover:text-[#cfffa3] transition-colors">
-            Gerakan Inovasi
-          </Link>
-          <img src={footerNavigationDot} alt="" aria-hidden className="size-[5px] shrink-0" />
-          <Link href="/filosofi-logo" className="hover:text-[#cfffa3] transition-colors">
-            Filosofi Logo
-          </Link>
-          <img src={footerNavigationDot} alt="" aria-hidden className="size-[5px] shrink-0" />
-          <a
-            href="https://www.instagram.com/kabinet.akasha/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#cfffa3] transition-colors"
+          <div
+            style={{
+              transform: `scale(${scale})`,
+              transformOrigin: "top left",
+            }}
+            className="absolute left-0 top-0 w-[1440px] h-[1055px]"
           >
-            More Information
-          </a>
-        </nav>
-
-        {/* Divider */}
-        <div className="mt-8 w-full max-w-3xl border-t border-white/15 sm:mt-12" />
-
-        {/* Copyright */}
-        <p className="mt-6 text-center font-['Plus_Jakarta_Sans:Regular'] text-[11px] text-white/60 sm:mt-10 sm:text-xs">
-          © 2026 <strong className="text-white">Kabinet Akasha</strong> | Ruang untuk Semua, Tumbuh dan Berdiri Bersama. All Rights Reserved.
-        </p>
+            <FooterSection />
+          </div>
+        </div>
       </div>
     </footer>
   );
