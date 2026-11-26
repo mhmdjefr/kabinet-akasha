@@ -18,21 +18,27 @@ import MobileNavbar from "./sections/MobileNavbar";
 export default function FigmaLandingPage() {
   const [scale, setScale] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      const screenWidth = window.innerWidth;
-      setIsMobile(screenWidth < 768);
-      if (screenWidth < 1440) {
-        setScale(screenWidth / 1440);
+      const w = window.innerWidth;
+      setIsMobile(w < 768);
+      setIsCompact(w < 1024);
+      if (w < 1440) {
+        // <1440px: scale proporsional ke lebar layar
+        setScale(w / 1440);
       } else {
-        setScale(1);
+        // ≥1440px: cap di 0.78 agar konten tidak terlalu besar di layar lebar
+        setScale(0.78);
       }
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const footerHeight = isMobile ? 480 : isCompact ? 520 : 600;
+  const canvasHeight = (isMobile ? 15585 : 11401) + footerHeight;
 
   return (
     <div className="campaign-shell flex justify-center bg-[#171717] min-h-screen overflow-x-hidden">
@@ -41,7 +47,7 @@ export default function FigmaLandingPage() {
       <div
         style={{
           width: 1440 * scale,
-          height: (isMobile ? 16640 : 12456) * scale,
+          height: canvasHeight * scale,
         }}
         className="desktop-canvas shrink-0 relative overflow-hidden transition-transform duration-75"
       >
