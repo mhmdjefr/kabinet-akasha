@@ -55,7 +55,7 @@ export default function InnovationCarousel({
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16">
-      {/* Pill Header */}
+      {/* Pill Header (button.png) */}
       <div className="mb-8 flex justify-center sm:mb-10">
         <div className="relative inline-flex aspect-[628/174] w-[220px] items-center justify-center sm:w-[300px] md:w-[360px]">
           <img
@@ -70,26 +70,28 @@ export default function InnovationCarousel({
         </div>
       </div>
 
-      {/* Tab Pills Selector */}
-      <div className="mb-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-        {images.map((_, i) => {
-          const isActive = i === index;
-          const label = labels[i] ?? `Slide ${i + 1}`;
-          return (
-            <button
-              key={label}
-              type="button"
-              onClick={() => stopAndGo(i)}
-              className={`cursor-pointer border-2 px-3.5 py-1.5 font-['Plus_Jakarta_Sans:Bold'] text-xs font-bold transition-all sm:px-4 sm:py-2 sm:text-sm ${
-                isActive
-                  ? "border-[#171717] bg-[#cfffa3] text-[#171717] shadow-[3px_3px_0_#171717]"
-                  : "border-[#171717]/20 bg-white text-[#171717]/75 hover:border-[#564cf8] hover:text-[#564cf8]"
-              }`}
-            >
-              {label}
-            </button>
-          );
-        })}
+      {/* Tab Pills Selector (gaya pill modern senada MobileNavbar) */}
+      <div className="mb-6 flex justify-center">
+        <div className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-2xl bg-[#17171a] p-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.18)] sm:rounded-full">
+          {images.map((_, i) => {
+            const isActive = i === index;
+            const label = labels[i] ?? `Slide ${i + 1}`;
+            return (
+              <button
+                key={label}
+                type="button"
+                onClick={() => stopAndGo(i)}
+                className={`cursor-pointer rounded-full px-3.5 py-1.5 font-['Plus_Jakarta_Sans:Medium'] text-xs font-semibold transition-all duration-200 sm:px-4 sm:py-2 sm:text-sm ${
+                  isActive
+                    ? "bg-[#cfffa3] text-[#171717] shadow-sm"
+                    : "text-white/75 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Carousel Frame + Side Controls */}
@@ -99,9 +101,9 @@ export default function InnovationCarousel({
           type="button"
           onClick={() => stopAndGo(index - 1)}
           aria-label="Slide sebelumnya"
-          className="hidden sm:grid size-11 md:size-12 shrink-0 cursor-pointer place-items-center border-2 border-[#171717] bg-[#cfffa3] text-[#171717] shadow-[4px_4px_0_#171717] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_#171717] active:translate-y-1"
+          className="hidden sm:grid size-11 md:size-12 shrink-0 cursor-pointer place-items-center rounded-full bg-[#17171a] text-white shadow-[0_8px_24px_rgba(0,0,0,0.22)] transition-all duration-200 hover:bg-[#564cf8] hover:scale-105 active:scale-95"
         >
-          <ChevronLeft className="size-6 stroke-[2.5]" />
+          <ChevronLeft className="size-5 md:size-6" />
         </button>
 
         {/* Image Viewport */}
@@ -111,9 +113,9 @@ export default function InnovationCarousel({
           onTouchCancel={() => {
             touchStartX.current = null;
           }}
-          className="relative w-full overflow-hidden border-2 border-[#171717] bg-[#171717] p-2 shadow-[6px_6px_0_#564cf8] sm:p-3 sm:shadow-[10px_10px_0_#564cf8] touch-pan-y"
+          className="relative w-full overflow-hidden rounded-2xl border border-[#564cf8]/20 bg-gradient-to-b from-[#17171a] to-[#232136] p-2 shadow-[0_20px_50px_rgba(86,76,248,0.18)] sm:rounded-3xl sm:p-3 touch-pan-y"
         >
-          <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden bg-white sm:h-[440px] md:h-[520px]">
+          <div className="relative flex h-[280px] w-full items-center justify-center overflow-hidden rounded-xl bg-white sm:h-[440px] sm:rounded-2xl md:h-[520px]">
             <AnimatePresence mode="wait">
               <motion.img
                 key={images[index]}
@@ -134,9 +136,9 @@ export default function InnovationCarousel({
           type="button"
           onClick={() => stopAndGo(index + 1)}
           aria-label="Slide berikutnya"
-          className="hidden sm:grid size-11 md:size-12 shrink-0 cursor-pointer place-items-center border-2 border-[#171717] bg-[#cfffa3] text-[#171717] shadow-[4px_4px_0_#171717] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_#171717] active:translate-y-1"
+          className="hidden sm:grid size-11 md:size-12 shrink-0 cursor-pointer place-items-center rounded-full bg-[#17171a] text-white shadow-[0_8px_24px_rgba(0,0,0,0.22)] transition-all duration-200 hover:bg-[#564cf8] hover:scale-105 active:scale-95"
         >
-          <ChevronRight className="size-6 stroke-[2.5]" />
+          <ChevronRight className="size-5 md:size-6" />
         </button>
       </div>
 
@@ -146,34 +148,51 @@ export default function InnovationCarousel({
           type="button"
           onClick={() => stopAndGo(index - 1)}
           aria-label="Slide sebelumnya"
-          className="grid sm:hidden size-10 cursor-pointer place-items-center border-2 border-[#171717] bg-[#cfffa3] text-[#171717] shadow-[3px_3px_0_#171717] active:translate-y-0.5"
+          className="grid sm:hidden size-10 cursor-pointer place-items-center rounded-full bg-[#17171a] text-white shadow-md transition-colors active:bg-[#564cf8]"
         >
-          <ChevronLeft className="size-5 stroke-[2.5]" />
+          <ChevronLeft className="size-5" />
         </button>
 
         <div className="flex items-center gap-2">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => stopAndGo(i)}
-              aria-label={`Pilih slide ${i + 1}`}
-              className={`h-2.5 cursor-pointer rounded-full transition-all ${
-                i === index
-                  ? "w-8 bg-[#564cf8]"
-                  : "w-2.5 bg-[#171717]/20 hover:bg-[#564cf8]/50"
-              }`}
-            />
-          ))}
+          {images.map((_, i) => {
+            const isActive = i === index;
+            return (
+              <button
+                key={i}
+                type="button"
+                onClick={() => stopAndGo(i)}
+                aria-label={`Pilih slide ${i + 1}`}
+                className={`relative h-2 cursor-pointer overflow-hidden rounded-full transition-all duration-300 ${
+                  isActive
+                    ? "w-10 bg-[#564cf8]/25"
+                    : "w-2 bg-[#171717]/20 hover:bg-[#564cf8]/50"
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    key={`progress-${index}-${autoPlay}`}
+                    initial={{ width: autoPlay ? "0%" : "100%" }}
+                    animate={{ width: "100%" }}
+                    transition={
+                      autoPlay
+                        ? { duration: 4, ease: "linear" }
+                        : { duration: 0.2 }
+                    }
+                    className="block h-full rounded-full bg-[#564cf8]"
+                  />
+                )}
+              </button>
+            );
+          })}
         </div>
 
         <button
           type="button"
           onClick={() => stopAndGo(index + 1)}
           aria-label="Slide berikutnya"
-          className="grid sm:hidden size-10 cursor-pointer place-items-center border-2 border-[#171717] bg-[#cfffa3] text-[#171717] shadow-[3px_3px_0_#171717] active:translate-y-0.5"
+          className="grid sm:hidden size-10 cursor-pointer place-items-center rounded-full bg-[#17171a] text-white shadow-md transition-colors active:bg-[#564cf8]"
         >
-          <ChevronRight className="size-5 stroke-[2.5]" />
+          <ChevronRight className="size-5" />
         </button>
       </div>
     </section>
