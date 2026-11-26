@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {
   footerKabinetLogo,
+  footerNavigationDot,
   imgFooter,
   programKanan,
   stripFooter,
@@ -85,26 +86,35 @@ export default function DetailFooterSection() {
           </div>
         </Link>
 
-        {/* Navigation Links */}
+        {/* Navigation Links (selaras FooterSection.tsx) */}
         <nav
           aria-label="Footer navigation"
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-['Plus_Jakarta_Sans:Medium'] text-xs text-white/80 sm:mt-16 sm:text-sm"
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 font-[Arial] text-xs text-[#dfdfdf] sm:mt-16 sm:gap-x-6 sm:text-base md:text-lg"
         >
           <Link href="/" className="hover:text-[#cfffa3] transition-colors">
             Beranda
           </Link>
-          <span className="text-white/40">•</span>
+          <img src={footerNavigationDot} alt="" aria-hidden className="size-[5px] shrink-0" />
           <Link href="/#program-unggulan" className="hover:text-[#cfffa3] transition-colors">
             Program Unggulan
           </Link>
-          <span className="text-white/40">•</span>
+          <img src={footerNavigationDot} alt="" aria-hidden className="size-[5px] shrink-0" />
           <Link href="/#gerakan-inovasi" className="hover:text-[#cfffa3] transition-colors">
             Gerakan Inovasi
           </Link>
-          <span className="text-white/40">•</span>
+          <img src={footerNavigationDot} alt="" aria-hidden className="size-[5px] shrink-0" />
           <Link href="/filosofi-logo" className="hover:text-[#cfffa3] transition-colors">
             Filosofi Logo
           </Link>
+          <img src={footerNavigationDot} alt="" aria-hidden className="size-[5px] shrink-0" />
+          <a
+            href="https://www.instagram.com/kabinet.akasha/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#cfffa3] transition-colors"
+          >
+            More Information
+          </a>
         </nav>
 
         {/* Divider */}
