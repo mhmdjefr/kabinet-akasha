@@ -12,9 +12,9 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const programUnggulanItems = [
-  { label: "ITechnoCup", id: "itechnocup" },
-  { label: "SAUM", id: "saum" },
-  { label: "TIK Games", id: "tik-games" },
+  { label: "ITechnoCup", href: "/program/itechnocup" },
+  { label: "SAUM", href: "/program/saum" },
+  { label: "TIK Games", href: "/program/tik-games" },
 ];
 
 const gerakanInovasiItems = [
@@ -127,12 +127,18 @@ export default function NavbarSection() {
           data-node-id="1:945"
           data-name="Menu · Beranda"
         >
-          <img
-            alt=""
-            className="absolute left-0 top-[-14px] h-[71px] w-[144px]"
-            src={homeMenuAccent}
-          />
-          <span className="relative z-10 whitespace-nowrap font-[Arial] text-[20px] font-bold text-[#1d1d1d]">
+          {pathname === "/" && (
+            <img
+              alt=""
+              className="pointer-events-none absolute left-0 top-[-14px] h-[71px] w-[144px]"
+              src={homeMenuAccent}
+            />
+          )}
+          <span
+            className={`relative z-10 whitespace-nowrap font-[Arial] text-[20px] font-bold ${
+              pathname === "/" ? "text-[#1d1d1d]" : "text-white"
+            }`}
+          >
             Beranda
           </span>
         </button>
@@ -145,20 +151,31 @@ export default function NavbarSection() {
         >
           <button
             onClick={() => navigate("program-unggulan")}
-            className="flex h-[44px] shrink-0 cursor-pointer items-center gap-[8px] px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
+            className="relative flex h-[44px] shrink-0 cursor-pointer items-center gap-[8px] px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
             data-node-id="1:948"
             data-name="Menu · Program Unggulan"
             aria-expanded={openDropdown === "program"}
             aria-haspopup="true"
           >
-            <span className="whitespace-nowrap font-[Arial] text-[20px] font-bold text-white">
+            {pathname.startsWith("/program") && (
+              <img
+                alt=""
+                className="pointer-events-none absolute inset-x-0 top-[-14px] h-[71px] w-full object-fill"
+                src={homeMenuAccent}
+              />
+            )}
+            <span
+              className={`relative z-10 whitespace-nowrap font-[Arial] text-[20px] font-bold ${
+                pathname.startsWith("/program") ? "text-[#1d1d1d]" : "text-white"
+              }`}
+            >
               Program Unggulan
             </span>
             <img
               alt=""
-              className={`size-[16px] shrink-0 transition-transform duration-200 ${
+              className={`relative z-10 size-[16px] shrink-0 transition-transform duration-200 ${
                 openDropdown === "program" ? "rotate-180" : ""
-              }`}
+              } ${pathname.startsWith("/program") ? "invert" : ""}`}
               src={chevronDownIcon}
             />
           </button>
@@ -175,8 +192,11 @@ export default function NavbarSection() {
                 <div className="w-[200px] bg-[#17171a]/95 backdrop-blur-md border border-white/15 rounded-md shadow-[0_16px_40px_rgba(0,0,0,0.75)] p-2 flex flex-col gap-1">
                   {programUnggulanItems.map((item) => (
                     <button
-                      key={item.id}
-                      onClick={() => navigate(item.id)}
+                      key={item.href}
+                      onClick={() => {
+                        setOpenDropdown(null);
+                        router.push(item.href);
+                      }}
                       className="w-full text-left px-3.5 py-2 rounded-sm font-['Plus_Jakarta_Sans:Medium',Arial] text-[15px] font-semibold text-white/90 hover:text-[#17171a] hover:bg-[#cfffa3] transition-colors duration-150 cursor-pointer"
                     >
                       {item.label}
@@ -196,20 +216,31 @@ export default function NavbarSection() {
         >
           <button
             onClick={() => navigate("gerakan-inovasi")}
-            className="flex h-[44px] shrink-0 cursor-pointer items-center gap-[8px] px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
+            className="relative flex h-[44px] shrink-0 cursor-pointer items-center gap-[8px] px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
             data-node-id="1:953"
             data-name="Menu · Gerakan Inovasi"
             aria-expanded={openDropdown === "inovasi"}
             aria-haspopup="true"
           >
-            <span className="whitespace-nowrap font-[Arial] text-[20px] font-bold text-white">
+            {pathname.startsWith("/inovasi") && (
+              <img
+                alt=""
+                className="pointer-events-none absolute inset-x-0 top-[-14px] h-[71px] w-full object-fill"
+                src={homeMenuAccent}
+              />
+            )}
+            <span
+              className={`relative z-10 whitespace-nowrap font-[Arial] text-[20px] font-bold ${
+                pathname.startsWith("/inovasi") ? "text-[#1d1d1d]" : "text-white"
+              }`}
+            >
               Gerakan Inovasi
             </span>
             <img
               alt=""
-              className={`size-[16px] shrink-0 transition-transform duration-200 ${
+              className={`relative z-10 size-[16px] shrink-0 transition-transform duration-200 ${
                 openDropdown === "inovasi" ? "rotate-180" : ""
-              }`}
+              } ${pathname.startsWith("/inovasi") ? "invert" : ""}`}
               src={chevronDownIcon}
             />
           </button>
@@ -243,12 +274,26 @@ export default function NavbarSection() {
         </div>
 
         <button
-          onClick={() => navigate("filosofi-logo")}
-          className="flex h-[44px] shrink-0 cursor-pointer items-center px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
+          onClick={() => {
+            setOpenDropdown(null);
+            router.push("/filosofi-logo");
+          }}
+          className="relative flex h-[44px] shrink-0 cursor-pointer items-center px-[16px] py-[10px] transition-opacity hover:opacity-80 active:opacity-60"
           data-node-id="1:958"
           data-name="Menu · Filosofi Logo"
         >
-          <span className="whitespace-nowrap text-left font-[Arial] text-[20px] font-bold text-white">
+          {pathname.startsWith("/filosofi-logo") && (
+            <img
+              alt=""
+              className="pointer-events-none absolute inset-x-0 top-[-14px] h-[71px] w-full object-fill"
+              src={homeMenuAccent}
+            />
+          )}
+          <span
+            className={`relative z-10 whitespace-nowrap text-left font-[Arial] text-[20px] font-bold ${
+              pathname.startsWith("/filosofi-logo") ? "text-[#1d1d1d]" : "text-white"
+            }`}
+          >
             Filosofi Logo
           </span>
         </button>
