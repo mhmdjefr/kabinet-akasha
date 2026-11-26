@@ -3,6 +3,7 @@ import { getInnovation, innovations } from "@/data/innovations";
 import NavbarSection from "@/components/sections/NavbarSection";
 import MobileNavbar from "@/components/sections/MobileNavbar";
 import DetailFooterSection, { Vote2Chibi } from "@/components/sections/DetailFooterSection";
+import InnovationCarousel from "@/components/sections/InnovationCarousel";
 import {
   bgDetailInovasi,
   bgNomorInovasi,
@@ -22,7 +23,7 @@ export async function generateMetadata({
   const innovation = getInnovation(slug);
   if (!innovation) return {};
   return {
-    title: `${innovation.title} — Gerakan Inovasi`,
+    title: `${innovation.title} - Gerakan Inovasi`,
     description: innovation.description,
   };
 }
@@ -119,6 +120,15 @@ export default async function InovasiDetailPage({
             })}
           </div>
         </section>
+
+        {/* Preview Carousel (TIKTrack & Barnaby 2.0) */}
+        {innovation.images && innovation.images.length > 0 && (
+          <InnovationCarousel
+            images={innovation.images}
+            labels={innovation.carouselLabels}
+            title={innovation.title}
+          />
+        )}
 
         {/* Chibi Vote2ForAkasha */}
         <Vote2Chibi />

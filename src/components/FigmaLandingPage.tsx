@@ -52,7 +52,7 @@ export default function FigmaLandingPage() {
           }}
           className="absolute left-0 top-0 bg-white content-stretch flex flex-col items-start w-[1440px]"
           data-node-id="1:648"
-          data-name="Campaign Website - Landing Page — Rapih"
+          data-name="Campaign Website - Landing Page - Rapih"
         >
           {/* 00 · Background Multi-layer Overlay */}
           <BackgroundOverlay isMobile={isMobile} />

@@ -18,7 +18,7 @@ export async function generateMetadata({
   const program = getProgram(slug);
   if (!program) return {};
   return {
-    title: `${program.title} — Program Unggulan`,
+    title: `${program.title} - Program Unggulan`,
     description: program.description,
   };
 }
