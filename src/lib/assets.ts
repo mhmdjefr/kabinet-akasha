@@ -67,6 +67,7 @@ export const navbarDivider = `${assetPathPrefix}/f8bd1.svg`;
 export const homeMenuAccent = `${assetPathPrefix}/8a709.svg`;
 export const chevronDownIcon = `${assetPathPrefix}/bb4c0.svg`;
 export const vote2ForAkasha = `${assetPathPrefix}/vote-2.png`;
+export const stripFooter = `${assetPathPrefix}/strip-footer.png`;
 export const imgFooter = `${assetPathPrefix}/img-footer.png`;
 export const tombolAtas = `${assetPathPrefix}/tombol-atas.png`;
 export const buttonPillBg = `${assetPathPrefix}/button.png`;
