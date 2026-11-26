@@ -129,12 +129,12 @@ export default function FilosofiLogoPage() {
           </div>
 
           {/* Desktop: 5 Kartu Perspektif Asli (Kartu 2 - Kartu 6) dengan Konten di Dalamnya */}
-          <div className="relative hidden w-full items-center justify-between gap-3 overflow-hidden py-4 md:flex lg:gap-5 xl:justify-center xl:gap-8">
+          <div className="relative hidden w-full items-center justify-center gap-3 overflow-hidden py-4 md:flex lg:gap-5 xl:gap-7">
             <img
               src={kartu2}
               alt=""
               aria-hidden
-              className="h-[460px] w-auto shrink-0 object-contain lg:h-[580px] xl:absolute xl:left-0 xl:h-[740px]"
+              className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[700px]"
             />
 
             {/* Kartu 3 (Kiri: Elemen yang saling terhubung) */}
@@ -207,7 +207,7 @@ export default function FilosofiLogoPage() {
               src={kartu6}
               alt=""
               aria-hidden
-              className="h-[460px] w-auto shrink-0 object-contain lg:h-[580px] xl:absolute xl:right-0 xl:h-[740px]"
+              className="h-[440px] w-auto shrink-0 object-contain lg:h-[540px] xl:h-[700px]"
             />
           </div>
         </section>
