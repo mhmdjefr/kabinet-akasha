@@ -3,6 +3,8 @@ import { getProgram, programs } from "@/data/programs";
 import NavbarSection from "@/components/sections/NavbarSection";
 import MobileNavbar from "@/components/sections/MobileNavbar";
 import DetailFooterSection, { Vote2Chibi } from "@/components/sections/DetailFooterSection";
+import { EdgeGlitch } from "@/components/ui/PixelElements";
+import { vectorProgram } from "@/lib/assets";
 
 export function generateStaticParams() {
   return programs.map((item) => ({ slug: item.slug }));
@@ -40,49 +42,46 @@ export default async function ProgramDetailPage({
       <NavbarSection />
 
       <main className="pt-[60px] min-[768px]:pt-[90px]">
-        {/* Header Banner */}
-        <section className="relative w-full h-[180px] sm:h-[240px] md:h-[280px] overflow-hidden bg-[#564cf8]">
+        {/* Header Banner (stack bannerImage + vector-program, rasio 1:1 tanpa stretch) */}
+        <section className="relative w-full aspect-[1512/511] overflow-hidden bg-white">
           <img
             src={program.bannerImage}
             alt=""
-            className="h-full w-full object-cover opacity-60 mix-blend-luminosity"
+            className="absolute inset-0 z-0 h-full w-full object-contain"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#564cf8]/60 via-[#564cf8]/50 to-[#171717]/70 flex items-center justify-center px-4">
-            <h1 className="font-[Arial] font-bold text-4xl sm:text-6xl md:text-7xl text-[#cfffa3] text-center tracking-tight drop-shadow-lg">
+          <img
+            src={vectorProgram}
+            alt=""
+            className="pointer-events-none absolute inset-0 z-10 h-full w-full object-contain"
+          />
+          <div className="relative z-20 flex h-full w-full items-center justify-center px-4">
+            <h1 className="font-[Arial] font-bold text-[10vw] sm:text-7xl md:text-8xl text-[#cfffa3] text-center tracking-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
               {program.title}
             </h1>
           </div>
-          {/* Bottom pixelated border accent */}
-          <div className="absolute bottom-0 inset-x-0 h-3 bg-white [clip-path:polygon(0_100%,15%_100%,15%_0,35%_0,35%_100%,60%_100%,60%_0,85%_0,85%_100%,100%_100%)]" />
         </section>
 
         {/* Diamond Logo & Description */}
-        <section className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20">
-          {/* Dekorasi gradient strip kiri-kanan */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-0 top-24 hidden sm:block h-20 w-36 bg-gradient-to-r from-[#cfffa3]/70 via-[#564cf8]/40 to-transparent"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute right-0 top-24 hidden sm:block h-20 w-36 bg-gradient-to-l from-[#f786f8]/70 via-[#564cf8]/40 to-transparent"
-          />
+        <section className="relative mx-auto max-w-4xl px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20">
+          {/* Dekorasi gradient strip kiri-kanan, sejajar tengah diamond */}
+          <EdgeGlitch side="left" className="top-1/2 -translate-y-1/2" />
+          <EdgeGlitch side="right" className="top-1/2 -translate-y-1/2" />
 
           {/* Diamond Box */}
-          <div className="relative z-10 flex justify-center my-6 sm:my-10">
-            <div className="relative flex h-48 w-48 sm:h-56 sm:w-56 items-center justify-center rotate-45 border-[5px] border-[#f786f8] bg-[#171717] shadow-[0_14px_35px_rgba(0,0,0,0.22)]">
-              <div className="-rotate-45 flex items-center justify-center p-6 w-full h-full">
+          <div className="relative z-10 flex justify-center">
+            <div className="rotate-45 border-[6px] border-[#f786f8] bg-white p-[4px] shadow-[0_18px_45px_rgba(86,76,248,0.22)]">
+              <div className="flex h-[180px] w-[180px] items-center justify-center bg-[#171717] sm:h-[236px] sm:w-[236px] md:h-[264px] md:w-[264px]">
                 <img
                   src={program.logo}
                   alt={program.title}
-                  className="max-h-32 sm:max-h-36 w-auto object-contain"
+                  className="h-auto w-auto max-h-[115px] sm:max-h-[150px] md:max-h-[170px] max-w-[115px] sm:max-w-[150px] md:max-w-[170px] -rotate-45 object-contain"
                 />
               </div>
             </div>
           </div>
 
           {/* Description */}
-          <p className="mx-auto mt-14 sm:mt-16 max-w-2xl text-center font-['Plus_Jakarta_Sans:Medium'] font-medium text-base sm:text-xl leading-relaxed text-[#171717]">
+          <p className="mx-auto mt-20 sm:mt-24 max-w-2xl text-center font-['Plus_Jakarta_Sans:Medium'] font-medium text-base sm:text-xl leading-relaxed text-[#171717]">
             {program.description}
           </p>
         </section>
