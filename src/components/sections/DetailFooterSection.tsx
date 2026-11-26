@@ -42,7 +42,7 @@ export default function DetailFooterSection() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 py-12 sm:py-20">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pt-12 pb-24 min-[768px]:py-20">
         {/* Scroll to top button */}
         <button
           type="button"
