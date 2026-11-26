@@ -4,6 +4,8 @@ import Link from "next/link";
 import {
   footerKabinetLogo,
   imgFooter,
+  programKanan,
+  stripFooter,
   tombolAtas,
   vote2ForAkasha,
 } from "@/lib/assets";
@@ -11,6 +13,19 @@ import {
 export function Vote2Chibi() {
   return (
     <div className="relative flex justify-center py-12 sm:py-20 bg-white overflow-hidden">
+      {/* Dekorasi strip vertikal kiri bawah (strip-footer.png) & horizontal kanan bawah (program-kanan.png) */}
+      <img
+        src={stripFooter}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute left-0 bottom-0 w-[14vw] max-w-[209px] h-auto object-contain"
+      />
+      <img
+        src={programKanan}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute right-0 bottom-4 w-[24vw] max-w-[320px] h-auto object-contain opacity-90"
+      />
       <img
         src={vote2ForAkasha}
         alt="Vote 2 For Akasha"
